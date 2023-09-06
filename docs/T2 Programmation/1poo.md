@@ -1,7 +1,7 @@
 # Programmation Orientée Objet
 
 !!! info "Lien Capytale"
-    [Notebook Capytale](https://capytale2.ac-paris.fr/web/c/d7ca-1776728) regroupant l'ensemble des exercices. La correction sera disponible plus tard.
+    [Notebook Capytale d7ca-1776728](https://capytale2.ac-paris.fr/web/c/d7ca-1776728) regroupant l'ensemble des exercices. La correction sera disponible plus tard.
 
 ## Préambule
 
