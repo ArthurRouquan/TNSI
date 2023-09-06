@@ -1,5 +1,8 @@
 # Programmation Orientée Objet
 
+!!! info "Lien Capytale"
+    [Notebook Capytale](https://capytale2.ac-paris.fr/web/c/d7ca-1776728) regroupant l'ensemble des exercices. La correction sera disponible plus tard.
+
 ## Préambule
 
 La Programmation Orientée Objet (abrégée POO) est un **paradigme de programmation**, au même titre que la programmation impérative que nous pratiquons déjà ou la programmation fonctionnelle que nous étudierons cette année. Chaque paradigme de programmation peut être considéré comme une philosophie, un parti-pris revendiqué dans la manière d'aborder un problème à résoudre. En optant pour la POO, nous faisons le choix d'organiser et structurer notre code de manière à regrouper des données et des fonctionnalités associées au sein d'entités autonomes appelées objets. C'est un outil que tout programmeur doit maîtriser !
@@ -99,14 +102,14 @@ livre3 = Livre("Les Frères Karamazov", "Fiodor Dostoïevski", 1880)
 
 ??? question ":fontawesome-solid-book:   Exercice 1 - Un rat de bibliothèque"
   
-    1. Instancier un nouveau livre `mon_livre_favori`.
+    1. Instancier un nouveau livre `mon_livre_favori` et afficher ensuite son titre.
 
     2. Le professeur documentaliste souhaite que vos livres prennent en compte la langue originale d'écriture. Modifiez donc la classe `Livre` pour inclure un nouvel attribut appelé `langue_originale`. Ensuite, mettez à jour l'instantiation des quatre livres précédemment créés pour inclure également l'information sur la langue originale.
    
     3. Écrire une fonction `plus_ancien(livre1, livre2)` qui renvoie le titre du livre ayant été publié en premier parmi les deux livres passés en argument.
 
         ```py title="Exemple d'utilisation de la classe"
-        >>> livre1 = Livre("L'Étranger", "Albert Camus", 1942,)
+        >>> livre1 = Livre("L'Étranger", "Albert Camus", 1942)
         >>> livre2 = Livre("Martin Eden", "Jack London", 1909)
         >>> livre3 = Livre("Les Frères Karamazov", "Fiodor Dostoïevski", 1880)
         >>> plus_ancien(livre1, livre3)
@@ -366,13 +369,14 @@ Le **constructeur** `#!py def __init__(self, ...):` est donc une méthode spéci
 
 
 
-## Résumé 
+## Résumé et vocabulaire
 
 * Classe = Type personnalisé 
 * Objet = Instance concrète d'une classe (de la même manière que l'objet/valeur `42` est une instance de la classe/type `int`) = "Grosse" variable qui réunit un ensemble de valeurs (attributs) et de fonctions internes (méthodes)
 * Attributs = Valeurs agglomérées dans une classe
 * Méthodes = Fonctions spécifiques et internes à une classe
     * Constructeur = Méthode spéciale qui permet de créer (initialiser, instancier) un objet
+* Créer = initialiser = instancier 
 
 
 ## Compléments
