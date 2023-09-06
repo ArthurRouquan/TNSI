@@ -3,6 +3,8 @@
     margin: 0 auto;
 }
 
+
+
 .wiggle:hover {
     animation: shake 0.5s;
     animation-iteration-count: infinite;
@@ -135,4 +137,8 @@ th, td {
 /* dark mode alternating table bg colors */
 [data-md-color-scheme="slate"] .md-typeset__table tr:nth-child(2n) {
     background-color: hsla(var(--md-hue),25%,25%,1)
+}
+
+strong {
+    color: #ef5552; /* Remplacez "purple" par la couleur de votre choix */
 }
