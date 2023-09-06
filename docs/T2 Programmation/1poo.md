@@ -1,7 +1,7 @@
 # Programmation Orientée Objet
 
 !!! info "Lien Capytale"
-    [Notebook Capytale d7ca-1776728](https://capytale2.ac-paris.fr/web/c/d7ca-1776728) regroupant l'ensemble des exercices. La correction sera disponible plus tard.
+    [:fontawesome-solid-link: Notebook Capytale d7ca-1776728](https://capytale2.ac-paris.fr/web/c/d7ca-1776728) regroupant l'ensemble des exercices. La correction sera disponible plus tard.
 
 ## Préambule
 
@@ -65,6 +65,9 @@ livre1 = Livre("L'Étranger", "Albert Camus", 1942)
 livre2 = Livre("Martin Eden", "Jack London", 1909)
 livre3 = Livre("Les Frères Karamazov", "Fiodor Dostoïevski", 1880)
 ```
+
+!!! info "Visualisation du déroulement avec PythonTutor"
+    Il est possible de visualiser l’exécution du programme pas-à-pas grâce à [ :fontawesome-solid-link: PythonTutor](https://pythontutor.com/render.html#code=class%20Livre%3A%20%20%0A%20%20%20%20def%20__init__%28self,%20un_titre,%20un_auteur,%20une_ann%C3%A9e%29%3A%20%0A%20%20%20%20%20%20%20%20self.titre%20%20%3D%20un_titre%20%0A%20%20%20%20%20%20%20%20self.auteur%20%3D%20un_auteur%0A%20%20%20%20%20%20%20%20self.ann%C3%A9e%20%20%3D%20une_ann%C3%A9e%0A%0Alivre1%20%3D%20Livre%28%22L'%C3%89tranger%22,%20%22Albert%20Camus%22,%201942%29%0Alivre2%20%3D%20Livre%28%22Martin%20Eden%22,%20%22Jack%20London%22,%201909%29%0Alivre3%20%3D%20Livre%28%22Les%20Fr%C3%A8res%20Karamazov%22,%20%22Fiodor%20Dosto%C3%AFevski%22,%201880%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false). Il est indispensable en programmation de connaître exactement le déroulement des opérations !
 
 !!! tip "Code de base d'une classe"
     Une nouvelle classe s'écrit souvent comme :
