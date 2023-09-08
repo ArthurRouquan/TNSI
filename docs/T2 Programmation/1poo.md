@@ -5,7 +5,9 @@
 
 ## Préambule
 
-La Programmation Orientée Objet (abrégée POO) est un **paradigme de programmation**, au même titre que la programmation impérative que nous pratiquons déjà ou la programmation fonctionnelle que nous étudierons cette année. Chaque paradigme de programmation peut être considéré comme une philosophie, un parti-pris revendiqué dans la manière d'aborder un problème à résoudre. En optant pour la POO, nous faisons le choix d'organiser et structurer notre code de manière à regrouper des données et des fonctionnalités associées au sein d'entités autonomes appelées objets. C'est un outil que tout programmeur doit maîtriser !
+La Programmation Orientée Objet (abrégée POO) est un **paradigme de programmation**, au même titre que la programmation impérative que nous pratiquons déjà ou la programmation fonctionnelle que nous étudierons cette année. Chaque paradigme de programmation peut être considéré comme une philosophie, un parti-pris revendiqué dans la manière d'aborder un problème à résoudre.
+
+En optant pour la POO, nous faisons le choix d'organiser et structurer notre code de manière à regrouper des données et des fonctionnalités associées au sein d'entités autonomes appelées objets. C'est un outil que tout programmeur doit maîtriser !
 
 ## Un objet ? Un agglomérat de valeurs.
 
@@ -180,7 +182,7 @@ def calculer_aire(rectangle):
     return rectangle.longueur * rectangle.largeur
 ```
 
-Une fois la classe `Rectangle` et la fonction `calculer_aire`, l'utilisateur pourrait les utiliser comme :
+Une fois la classe `Rectangle` et la fonction `calculer_aire` définies, l'utilisateur peut les utiliser comme :
 
 ```py
 # Création d'objets de la classe Rectangle
@@ -212,7 +214,7 @@ class Rectangle:
 rect1 = Rectangle(5, 3)
 rect2 = Rectangle(7, 4)
 
-# Appel de la fonction calculer_aire
+# Appel de la méthode calculer_aire
 aire1 = rect1.calculer_aire()
 aire2 = rect2.calculer_aire()
 
@@ -222,7 +224,7 @@ print(aire2)
 ```
 
 !!! tip "Appel d'une méthode"
-    Pour appeler une méthode sur un objet, on écrira `objet.méthode()`.
+    Pour appeler une méthode sur un objet, on écrira `objet.méthode(arg1, arg2, ...)`.
 
 
 !!! note "Plus de précision sur `self`"
@@ -239,16 +241,16 @@ print(aire2)
 
     - `rect1.calculer_aire()` est appelé en tant que méthode de l'objet `rect1`. Cela signifie que la méthode `calculer_aire` est définie *spécifiquement* pour les objets de la classe `Rectangle`. Une nouvelle classe `Cercle` pourrait alors définir une méthode `calculer_aire` spécifique.
 
+Le **constructeur** `#!py def __init__(self, ...):` est donc une méthode spéciale qui permet d'instancier un nouvel objet et d'**initialiser** ses attributs.
+
+## Exercices
+
 ??? question ":fontawesome-solid-shapes:   Exercice 4 - Ça ne manque pas d'aire !"
     1. Créer une fonction `calculer_périmètre(rectangle)` externe qui renvoie le périmètre du rectangle donné en argument.
     
     2. Transformer cette fonction en une méthode de la classe `Rectangle`.
 
     3. Au sein du même script où est définit la classe `Rectangle`, définir une nouvelle classe `Cercle`. On souhaite une fonction ou une méthode qui permet de calculer aussi l'aire pour les instances de `Cercle`.
-
-Le **constructeur** `#!py def __init__(self, ...):` est donc une méthode spéciale qui permet d'instancier un nouvel objet et d'**initialiser** ses attributs.
-
-## Exercices
 
 ??? question ":fontawesome-solid-car:   Exercice 5 - Vroum Vroum"
     1. Écrire une classe `Voiture` qui contiendra les attributs `kilometrage`, `consommation` (nombre de litres de carburant consommé par kilomètre) dont les valeurs seront données comme arguments à l'initialisation et un dernier attribut `carburant` valant 0 par défaut.
@@ -370,20 +372,89 @@ Le **constructeur** `#!py def __init__(self, ...):` est donc une méthode spéci
     Les dés valent 2, 5 et 6 et leur somme vaut 13.
     ```
 
-
-
 ## Résumé et vocabulaire
 
-* Classe = Type personnalisé 
-* Objet = Instance concrète d'une classe (de la même manière que l'objet/valeur `42` est une instance de la classe/type `int`) = "Grosse" variable qui réunit un ensemble de valeurs (attributs) et de fonctions internes (méthodes)
-* Attributs = Valeurs agglomérées dans une classe
-* Méthodes = Fonctions spécifiques et internes à une classe
-    * Constructeur = Méthode spéciale qui permet de créer (initialiser, instancier) un objet
-* Créer = initialiser = instancier 
+![type:video](./ressources/objet.mp4){: style='width: 100%'}
+
+| Terme            | Définition                                                                                     |
+| ---------------- | ---------------------------------------------------------------------------------------------- |
+| **Classe**       | Type personnalisé. Modèle pour créer des objets définissant leurs attributs et leurs méthodes. |
+| **Objet**        | Instance concrète d'une classe. Agglomère un ensemble de valeurs (attributs).                  |
+| **Attributs**    | Valeurs agglomérées dans un objet.                                                             |
+| **Méthodes**     | Fonctions spécifiques et internes à une classe.                                                |
+| **Constructeur** | Méthode spéciale qui permet d'instancier un nouvel objet et d'initialiser ses attributs.       |
+
+## Projets
+
+L'objectif principal de ces projets est d'apprendre à structurer son code en définissant des classes pertinentes.
+
+=== "Jeu de cartes « Bataille »"
+    Implémentez le jeu de cartes simple "Bataille" où deux joueurs comparent les cartes pour déterminer le gagnant. Vous pouvez utiliser des objets pour représenter les cartes, les mains des joueurs et le jeu en lui-même.
+    
+    * Caractères pour représenter la couleur d'une carte : `♥ ♦️ ♣️ ♠️`.
+
+    * Introduction à la **surcharge des opérateurs** `__str__` et `__lt__`.
 
 
-## Compléments
+    
+
+=== "Un jeu similaire à agar.io"
+    L'objectif de ce projet est de créer une version simplifiée du jeu [agar.io](https://agar.io/) en utilisant Python et Pygame. Le joueur contrôle une cellule circulaire avec les touches directionnelles pour absorber les cellules plus petites tout en évitant les cellules plus grandes. Vous pouvez utiliser des objets pour représenter ces cellules par exemple. On se propose initialement de créer des cellules ennemies fixes de différentes tailles.
+
+    [:fontawesome-solid-link: La documentation Pygame](https://www.pygame.org/docs/)
+
+    ```py title="Un code minimal introductif à Pygame"
+    import pygame
+
+    # Initialisation de Pygame
+    pygame.init()
+    fenêtre = pygame.display.set_mode((1280, 720))  # création d'une nouvelle fenêtre
+    pygame.display.set_caption("Mon super programme")  # titre de la fenêtre
+
+
+    # Boucle principale du jeu
+    continuer = True
+    while continuer:
+        
+        # Gestion des événements (touche clavier pressée, clic de souris etc.)
+        for événement in pygame.event.get():
+            if événement.type == pygame.QUIT:  # lorsque l'utilisateur ferme la fenêtre
+                continuer = False
+        
+        # Dessin (draw)
+        fenêtre.fill("#21222c")  # efface l'écran (fill = remplir)
+        pygame.draw.circle(fenêtre, "#f3bc3e", (320, 240), 10) # dessine un disque
+        pygame.display.flip()  # mise à jour de l'affichage
+        
+
+    # Sortie
+    pygame.quit()
+    ```
+
+=== "Combat Pokémon"
+    L'objectif de ce projet est de créer une version très simplifiée du jeu de combat au tour par tour Pokémon. 
+
+    * Un pokémon a un nom, un type, un niveau, un nombre de PV, une statistique d'attaque et de défense, et un ensemble de 4 capacités.
+
+    * Une capacité possède une puissance de base, un type et un pourcentage d'échec critique.
+
+    * La formule suivante permet de déterminer le nombre de PV perdus :
+        $$
+            \texttt{PV}_\text{perdus} = \left\lfloor \left( \left\lfloor 0.02 \times \frac{\left\lfloor \texttt{Niv} \times 0.4 +2 \right\rfloor \times \texttt{Att} \times \texttt{Pui}}{\texttt{Déf}} \right\rfloor + 2 \right) \times \texttt{CM} \right\rfloor
+        $$
+
+        * $\texttt{Niv}$ (resp. $\texttt{Att}$) est le niveau (resp. attaque) du Pokémon attaquant
+        * $\texttt{Déf}$ est la défense du Pokémon attaqué
+        * $\texttt{Pui}$ est la puissance de base de la capacité utilisée
+        * $\texttt{CM}$ est un coefficient multiplicateur qui résulte de la multiplication des paramètres suivants :
+            * $\times 1.5$ si le Pokémon est du même type que la capacité qu'il lance 
+            * $\times 1$ ou $\times 2$ ou $\times 0.5$ suivant l'efficacité du type de la capacité 
+            * Un nombre généré aléatoirement compris entre 0.85 et 1
+    * Un Pokémon adversaire est choisi aléatoirement et le joueur choisit un Pokémon parmi trois propositions. Le combat débute et se termine quand un des deux Pokémons est KO. Les combats sont au tour par tour, avec le joueur choisissant la capacité à lancer pour son Pokémon.
+
+
+<!-- ## Compléments
 
 ??? note "Points clés de la POO non abordés"
     Curieusement, les concepts les plus importants de la POO ne seront pas abordés cette année, à savoir l'**héritage**, le **polymorphisme** et l'**encapsulation**. Les concepts abordés ici sont finalement plus ou moins transposables dans n'importe quel langage au paradigme impératif comme le C. 
-
+ -->
