@@ -384,20 +384,39 @@ Le **constructeur** `#!py def __init__(self, ...):` est donc une méthode spéci
 | **Méthodes**     | Fonctions spécifiques et internes à une classe.                                                |
 | **Constructeur** | Méthode spéciale qui permet d'instancier un nouvel objet et d'initialiser ses attributs.       |
 
-## Projets
+## Mini-Projet : Mettre le paquet
 
-L'objectif principal de ces projets est d'apprendre à structurer son code en définissant des classes pertinentes.
+L'objectif principal de ce projets est d'apprendre à structurer son code en définissant des classes pertinentes.
 
-=== "Jeu de cartes « Bataille »"
-    Implémentez le jeu de cartes simple "Bataille" où deux joueurs comparent les cartes pour déterminer le gagnant. Vous pouvez utiliser des objets pour représenter les cartes, les mains des joueurs et le jeu en lui-même.
-    
-    * Caractères pour représenter la couleur d'une carte : `♥ ♦️ ♣️ ♠️`.
+On souhaite créer le jeu de cartes *Bataille* (un peu plus tard). Pour y parvenir, on souhaite d'abord représenter **un paquet de cartes** qui soit général : il pourra s'agir du paquet des 52 cartes, mais aussi de la main d'un joueur ou d'un tas de cartes quelconque. 
 
-    * Introduction à la **surcharge des opérateurs** `__str__` et `__lt__`.
+```pycon title="Exemple d'utilisation"
+>>> paquet = créer_52_cartes()
+>>> paquet.mélanger() 
+>>> print(paquet)
+Le paquet contient les cartes :
+3♦️ 10♥ D♥ 4♥ 9♠️ 3♥ As♠️ 8♠️ 4♦️ 6♣️ R♥ V♥ V♠️ 2♥ 5♣️ 8♣️ 9♣️ D♦️ V♣️ 6♦️ 3♠️ 7♥ D♣️ 3♣️ R♠️ 7♣️ 2♣️ 6♥ 2♠️ As♣️ 2♦️ 5♠️ V♦️ 5♦️ 7♦️ 8♥ 6♠️ 7♠️ 9♥ 8♦️ 9♦️ 10♣️ R♣️ R♦️ As♦️ As♥ 4♠️ 5♥ 4♣️ 10♦️ D♠️ 10♠️
+>>> carte = paquet.tirer_carte()
+>>> print(carte)
+10♠️
+>>> len(paquet)
+51
+>>> paquet.ajouter_carte_dessous(carte)
+>>> len(paquet)
+52
+>>> paquet1, paquet2 = couper(paquet)
+>>> print(paquet1)
+Le paquet contient les cartes :
+10♠️ 3♦️ 10♥ D♥ 4♥ 9♠️ 3♥ As♠️ 8♠️ 4♦️ 6♣️ R♥ V♥ V♠️ 2♥ 5♣️ 8♣️ 9♣️ D♦️ V♣️ 6♦️ 3♠️ 7♥ D♣️ 3♣️ R♠️
+```
+
+Implémenter les classes (attributs, méthodes) et les fonctions pertinentes pour aboutir à ces fonctionnalités.
 
 
-    
 
+
+
+<!-- 
 === "Un jeu similaire à agar.io"
     L'objectif de ce projet est de créer une version simplifiée du jeu [agar.io](https://agar.io/) en utilisant Python et Pygame. Le joueur contrôle une cellule circulaire avec les touches directionnelles pour absorber les cellules plus petites tout en évitant les cellules plus grandes. Vous pouvez utiliser des objets pour représenter ces cellules par exemple. On se propose initialement de créer des cellules ennemies fixes de différentes tailles.
 

@@ -213,8 +213,8 @@ print(résultat)  # affiche 42
     tab = [3, 4, 58, 10, 2]
 
     # Accès à un élément grâce à son indice
-    print(tab[2]) # affiche 58
-    tab[2] = 999  # tab vaut [3, 4, 999, 10, 2]
+    print(tab[2]) # (lecture) affiche 58
+    tab[2] = 999  # (écriture) tab vaut [3, 4, 999, 10, 2]
 
     # Taille d'une liste
     print(len(tab))  # affiche 5
@@ -256,6 +256,40 @@ print(résultat)  # affiche 42
 
 ### Dictionnaire `#!py dict`
 
+```py
+# Construction explicite d'un dictionnaire :
+eleve = {
+    "prénom": "Michel",
+    "nom": "Dupont",
+    "âge": 17,
+    "taille": 175
+}
+
+# On accède à une valeur, grâce à sa clé :
+print(eleve["prénom"])
+
+# Modification d'une valeur :
+eleve["age"] = 42
+
+# Suppression d'une association :
+eleve.pop("taille") # (note : ici, la méthode .pop renvoie la valeur associée à la clé, donc 175)
+
+print(eleve.keys()) # ensemble des clés
+print(eleve.values()) # ensemble des valeurs
+print(eleve.items()) # ensemble des clés-valeurs
+
+# parcours par clé 
+for clé in eleve:
+    print(clé, eleve[clé])
+
+# parcours par valeurs
+for valeur in eleve.values():
+    print(valeur)
+
+# parcours par clé et valeurs
+for clé, valeur in eleve.items():
+    print(clé, valeur)
+```
 
 
 ## Bibliothèques
