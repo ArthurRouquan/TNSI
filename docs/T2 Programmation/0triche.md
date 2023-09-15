@@ -1,5 +1,8 @@
 # Feuille de triche 
 
+!!! info "Révisions 1ère NSI sur Capytale"
+    * [:fontawesome-solid-link: Révision sur les listes](https://capytale2.ac-paris.fr/web/c/a4c3-1839468)
+
 ## :fontawesome-solid-shapes: Types et Valeurs
 
 Un programme manipule des **valeurs**. Chaque valeur appartient à un **type** particulier.
