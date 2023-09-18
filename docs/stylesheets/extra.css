@@ -106,6 +106,10 @@
     max-width: 100%;
 }
 
+table {
+    display: block;
+    margin: 0 auto;  
+}
 
 th, td {
     border: 1px solid var(--md-typeset-table-color);
@@ -113,6 +117,7 @@ th, td {
     border-bottom: none;
     border-left: none;
     border-top: none;
+
 }
 
 .md-typeset__table {
