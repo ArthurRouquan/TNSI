@@ -2,6 +2,7 @@
 
 !!! info "Révisions 1ère NSI sur Capytale"
     * [:fontawesome-solid-link: Révision sur les listes](https://capytale2.ac-paris.fr/web/c/a4c3-1839468)
+    * [:fontawesome-solid-link: Révision sur les tuples et les dictionnaires](https://capytale2.ac-paris.fr/web/c/d35e-1851649)
 
 ## :fontawesome-solid-shapes: Types et Valeurs
 
