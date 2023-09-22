@@ -32,7 +32,7 @@ Un programme manipule des **valeurs**. Chaque valeur appartient à un **type** p
 
 ## :fontawesome-solid-box: Variables
 
-Une variable **stocke** une valeur et est identifié par un **nom**.
+Une variable **stocke** une valeur et est identifiée par un **nom**.
 Lors de l’évaluation d’une expression, le nom d’une variable est alors substitué par sa valeur actuelle.
 
 ```py
@@ -228,10 +228,14 @@ print(résultat)  # affiche 42
     tab.remove(10) # tab vaut [3, 4, 999, 2, 42]
     ```
 
+
 * Créer un tableau :
     ```py
     # Création explicite
     tab = [3, 4, 58, 10, 2]
+
+    # Création à partir d'un élément
+    tab = ['chat'] * 5  # ['chat', 'chat', 'chat', 'chat', 'chat']
 
     # Création à partir d'un autre itérable
     tab = list(range(6))  # tab vaut [0, 1, 2, 3, 4, 5]
