@@ -24,9 +24,9 @@ Cette structure de données est :
 
 On se propose d'implémenter une pile par le biais d'une classe.
 
-| Opération     | Description                                                         |
-| ------------- | ------------------------------------------------------------------- |
-| Constructeur  | Créer une pile vide.                                                |
+| Opération         | Description                                                         |
+| ----------------- | ------------------------------------------------------------------- |
+| Constructeur      | Créer une pile vide.                                                |
 | `pile.empiler(e)` | Ajoute l'élément `e` au sommet de la pile.                          |
 | `pile.dépiler()`  | Renvoie l'élément au sommet de la pile et le supprime.              |
 | `pile.est_vide()` | Renvoie `True` si la pile ne contient aucun élément, `False` sinon. |
@@ -192,6 +192,8 @@ False
 
 Implémenter une pile à partir d'un tableau **statique** (de taille fixe). L'implémentation ne doit donc pas utiliser la méthode `.append` et `.pop` des listes. 
 
+![type:video](./ressources/statique.mp4){: style='width: 100%'}
+
 ```py title="Début de l'implémentation"
 class Pile:
     def __init__(self, capacité: int):
@@ -243,6 +245,7 @@ Définir le reste des primitives d'une pile.
                 return
 
             sommet = self.sommet()
+            self.éléments[self.indice_sommet] = None
             self.indice_sommet -= 1
             return sommet
 
@@ -255,12 +258,12 @@ Définir le reste des primitives d'une pile.
 
 La *notation polonaise inverse* (NPI), également connue sous le nom de *notation post-fixée*, permet d'écrire de façon non ambiguë des expressions arithmétiques sans utiliser de parenthèses.
 
-| Notation usuelle | Notation polonaise inversé |
-| :--------------- | :--- |
-| $5 + 10$ | $\texttt{5 10 +}$ |
-| $3 \times (4 + 7)$ | $\texttt{4 7 + 3 *}$ |
-| $(10 + 4) - 2$ | $\texttt{10 4 + 2 -}$ |
-| $(1 + 2) \times (3 - 6)$ | $\texttt{1 2 + 6 3 - *}$ |
+| Notation usuelle         | Notation polonaise inversé |
+| :----------------------- | :------------------------- |
+| $5 + 10$                 | $\texttt{5 10 +}$          |
+| $3 \times (4 + 7)$       | $\texttt{4 7 + 3 *}$       |
+| $(10 + 4) - 2$           | $\texttt{10 4 + 2 -}$      |
+| $(1 + 2) \times (3 - 6)$ | $\texttt{1 2 + 6 3 - *}$   |
 
 Les calculatrices NPI se reposent sur l'utilisation d'une pile, en d'autres termes les opérandes sont disposées au sommet de la pile, tandis que les résultats des calculs sont retournés aussi au sommet de la pile.
 
@@ -286,7 +289,7 @@ Les calculatrices NPI se reposent sur l'utilisation d'une pile, en d'autres term
     * Pour tester si une chaîne de caractères est numérique, on peut tenter de la convertir en `#!py float`, si cela échoue alors c'est une valeur non-numérique :
         ```py
         def est_numérique(chaine: str) -> bool:
-            """ Renvoie True si chaine peut être converti en float, False sinon. """
+            """ Renvoie True si chaine peut être convertie en float, False sinon. """
             try:  # try = essayer
                 float(chaine)  # renvoie une exception si chaine n'est pas convertible en float
                 return True

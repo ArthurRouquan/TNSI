@@ -107,6 +107,74 @@ class ListeChaînée:
 
     3. Implémenter une pile à partir d'une liste chaînée.
 
+## Exercices supplémentaires
+
+??? question "Exercices"
+   
+    1. Écrire une fonction `créer_liste_depuis_tab(tab)` qui crée une liste chaînée à partir du tableau passé en argument.
+
+        ```py
+        >>> l = créer_liste_depuis_tab([12, 15, 17])
+        >>> l.afficher()
+        12 -> 15 -> 17
+        ```
+   
+    2. Ajouter une méthode `n_ième_élément(self, n)` à la classe `ListeChaînée` qui renvoie la valeur du $n$-ième élément de la liste chaînée `self`.
+   
+        ```py
+        >>> l = créer_liste_depuis_tab([12, 35, 8, 42, 27, 35])
+        >>> l.n_ième_élément(4)
+        27
+        ```
+
+    3. Écrire une fonction `concaténer_listes(l1, l2)` qui renvoie une liste chaînée obtenue par concaténation de `l1` et `l2` (sans copier les chaînons).
+
+        ```py
+        >>> l1 = créer_liste_depuis_tab([12, 15, 17])
+        >>> l2 = créer_liste_depuis_tab([887, 998])
+        >>> l3 = concaténer_listes(l1, l2)
+        >>> l3.afficher()
+        12 -> 15 -> 17 -> 887 -> 998
+        ```
+
+    4. Ajouter une méthode `renverser(self)` à la classe `ListeChaînée` qui renverse les éléments de la liste chaînée `self`.
+
+        ```py
+        >>> l = créer_liste_depuis_tab([12, 15, 17])
+        >>> l.renverser()
+        >>> l.afficher()
+        17 -> 15 -> 12
+        ```
+
+    5. Ajouter une méthode `insérer(self, élément, n)` à la classe `ListeChaînée` qui insère l'élément `élément` à la $n$-ième position de la liste chaînée `self`.
+
+        ```py
+        >>> l = créer_liste_depuis_tab([12, 15, 17, 45])
+        >>> l.insérer(999, 2)
+        >>> l.afficher()
+        12 -> 15 -> 999 -> 17 -> 45
+        ```
+
+    6. Ajouter une méthode `retirer(self, n)` à la classe `ListeChaînée` qui retire l'élément à la $n$-ième position de la liste chaînée `self`.
+
+        ```py
+        >>> l = créer_liste_depuis_tab([12, 15, 17, 45])
+        >>> l.retirer(2)
+        >>> l.afficher()
+        12 -> 15 -> 45
+        ```
+
+    7. Ajouter une méthode `occurrences(self, élément)` à la classe `ListeChaînée` qui renvoie le nombre d’occurrences de `élément` dans la liste chaînée `self`.
+   
+        ```py
+        >>> l = créer_liste_depuis_tab([12, 35, 12, 42, 12, 35])
+        >>> l.occurrences(12)
+        3
+        ```
+
+    8. Établir la complexité en temps pour chacune des méthodes et fonctions écrites précédemment.
+
+
 
 ## Liste doublement chaînée
 
@@ -130,3 +198,31 @@ class ListeDoublementChaînée:
 ```
 
 On pourra alors définir tout un tas de primitives sur cette structure : `taille`, `est_vide`, `tête`, `queue`, `insérer_devant`, `insérer_derrière` etc. Une liste doublement chaînée est souvent utilisée comme conteneur sous-jacent de la prochaine structure de données étudiée, les **files**.
+
+## Clarification sur l'allocation de mémoire
+
+### Tableau dynamique `#!py list`
+
+<div class="video-wrap">
+    <div class="video-container">
+        <iframe src="https://peertube.lyceeconnecte.fr/videos/embed/38dce6db-0d99-4041-b7d1-e8b085508711" frameborder="0" allowfullscreen="1"></iframe>
+    </div>
+</div>
+
+
+### Liste chaînée `ListeChaînée`
+
+<!-- ![type:video](./ressources/alllists.mp4){: style='width: 100%'} -->
+
+![type:video](./ressources/alllists.mp4){: style='width: 100%'}
+
+### Différence de complexité des primitives
+
+
+|     Structure de données      |        Ajouter au début        |           Ajouter à la fin            |            Insérer             |      Supprimer un élément      |    Accès au $i$-ème élément    |
+| :---------------------------: | :----------------------------: | :-----------------------------------: | :----------------------------: | :----------------------------: | :----------------------------: |
+| Tableau dynamique `#!py list` | <div class="on">\(O(n)\)</div> | <div class="o1">\(O(1)\)</div> amorti | <div class="on">\(O(n)\)</div> | <div class="on">\(O(n)\)</div> | <div class="o1">\(O(1)\)</div> |
+|         Liste chaînée         | <div class="o1">\(O(1)\)</div> |    <div class="on">\(O(n)\)</div>     | <div class="o1">\(O(1)\)</div> | <div class="o1">\(O(1)\)</div> | <div class="on">\(O(n)\)</div> |
+|   Liste doublement chaînée    | <div class="o1">\(O(1)\)</div> |    <div class="o1">\(O(1)\)</div>     | <div class="o1">\(O(1)\)</div> | <div class="o1">\(O(1)\)</div> | <div class="on">\(O(n)\)</div> |
+
+Ainsi il faut bien choisir, selon son utilisation, le conteneur sous-jacent des éléments lorsqu'on implémente une nouvelle structure de données comme une pile ou une file.

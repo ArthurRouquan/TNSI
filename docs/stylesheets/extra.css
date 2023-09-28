@@ -148,3 +148,25 @@ th, td {
 strong {
     color: #ef5552; /* Remplacez "purple" par la couleur de votre choix */
 }
+
+.o1 {
+    background-color: #C8E6C9; /* Green color */
+    border: 1px solid #4CAF50;
+    color: #4CAF50; /* White text color */
+    padding: 2px 8px; /* Adjust padding as needed */
+    border-radius: 4px; /* Adjust border radius as needed for rounding */
+    display: inline-block; /* Makes the rectangle only as wide as the content */
+    font-size: small;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.on {
+    background-color: #FFF9C4; /* Green color */
+    border: 1px solid #F9A825;
+    color: #F9A825; /* White text color */
+    padding: 2px 8px; /* Adjust padding as needed */
+    border-radius: 4px; /* Adjust border radius as needed for rounding */
+    display: inline-block; /* Makes the rectangle only as wide as the content */
+    font-size: small;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+}

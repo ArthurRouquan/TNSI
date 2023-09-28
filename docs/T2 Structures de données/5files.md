@@ -20,11 +20,11 @@ L'interface d'une file est composée des primitives suivantes :
 
 ## Implémentation
 
-* Implémenter une file à partir d'un tableau dynamique (`#!py list`) comme conteneur sous-jacent (utiliser les méthodes `.insert` et `.pop`).
+* Implémenter une file à partir d'un tableau dynamique (`#!py list`) comme conteneur sous-jacent (utiliser les méthodes `.insert` et `.pop`). Donner la complexité en temps des primitives.
 
-* Implémenter une file à partir d'une liste doublement chaînée.
+* Implémenter une file à partir d'une liste doublement chaînée. Donner la complexité en temps des primitives.
 
-* Implémenter une file à partir d'un tableau statique circulaire (à implémenter aussi).
+
 
 ```py title="Exemple d'utilisation d'une file"
 >>> f = File()
@@ -60,3 +60,7 @@ True
 ## Exercices
 
 * Paquet de cartes
+
+* Implémenter une file statique à partir d'un tableau statique circulaire (à implémenter aussi).
+
+* Implémentation d'une file avec deux piles.
