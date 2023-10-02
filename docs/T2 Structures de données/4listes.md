@@ -36,35 +36,35 @@ Contrairement à un tableau dynamique, les éléments ne sont plus stockés de m
 class Chaînon:
     def __init__(self, élément, chaînon_suivant):
         self.élément = élément
-        self.chaînon_suivant = chaînon_suivant # référence du chaînon suivant
+        self.suivant = chaînon_suivant # référence du chaînon suivant
 
 
 class ListeChaînée:
     def __init__(self):
         """ Initialise une liste chaînée vide. """
-        self.chaînon_tête = None  # référence du premier chaînon
+        self.tête = None  # référence du premier chaînon
 
     def insérer_devant(self, élément):
         """ Insère un nouvel élément à la tête de la liste. """
-        chaînon = Chaînon(élément, self.chaînon_tête)  #(1)!
-        self.chaînon_tête = chaînon  #(2)!
+        chaînon = Chaînon(élément, self.tête)  #(1)!
+        self.tête = chaînon  #(2)!
 
     def est_vide(self):
         """ Renvoie True si la liste ne contient aucun élément, False sinon. """
-        return self.chaînon_tête is None
+        return self.tête is None
 
     def retirer_tête(self):
         """ Retire le premier élément de la liste. """
         if self.est_vide():
             return None
-        self.chaînon_tête = self.chaînon_tête.suivant  #(3)!
+        self.tête = self.tête.suivant  #(3)!
 
     def insérer_après(self, chaînon, élément):
-        """ Insère un nouvel élément après le chaînon donnée. """
+        """ Insère un nouvel élément après le chaînon donné. """
         pass
     
-    def tête(self):
-        """ Renvoie l'élément du premier élément de la liste. """
+    def premier_élément(self):
+        """ Renvoie l'élément du premier chaînon de la liste. """
         pass
 
     def taille(self):
@@ -173,6 +173,10 @@ class ListeChaînée:
         ```
 
     8. Établir la complexité en temps pour chacune des méthodes et fonctions écrites précédemment.
+
+    9. Ajouter une méthode `vers_tableau(self)` à la classe `ListeChaînée` qui renvoie un tableau des éléments de la liste chaînée `self`. Cette dernière méthode vous permettra de quasiment connaître votre note à l'avance ! Nommer votre fichier contenant votre classe Liste et les différentes fonctions demandées sous le nom `liste.py`, puis enregistrer le fichier [:fontawesome-brands-python: `note_liste.py`](ressources/note_liste.py) à coté et exécuter-le !
+
+    10. Les 4 derniers points de la note seront réservés à la clarté et à la documentation de votre code (description des méthodes / fonctions, typage des paramètres et de la valeur renvoyée si possible, noms de variables clairs).
 
 
 
