@@ -92,6 +92,78 @@ Le but de ce projet est de coder un jeu de Bataille en Python et de réutiliser 
    
     3. le tas de cartes d'un joueur lors d'une bataille ?
 
-2. Écrire la classe `Carte` dont les attributs sont `valeur` et `couleur` (on représentera la couleur par un entier entre 0 et 3 et la valeur par un entier entre 1 et 13). Définir la méthode `#!py __str__` qui permettra d'afficher facilement une carte avec `#!py print` (utiliser les caractères spéciaux `♥ ♦️ ♣️ ♠️`).
+2. Écrire la classe `Carte` dont les attributs sont `valeur` et `couleur` (on représentera la couleur par un entier entre 0 et 3 et la valeur par un entier entre 2 et 14, où 14 correspond à l'As). Définir la méthode `#!py __repr__`  qui permettra d'afficher facilement une carte avec `#!py print` (utiliser les caractères spéciaux `♥ ♦️ ♣️ ♠️`).
 
-3. Proposer une implémentation du jeu de la Bataille.
+    ```pycon title="Exemple d'utilisation de la classe Carte"
+    >>> print(Carte(2, 0))
+    2♥
+    >>> print(Carte(14, 3))
+    As♠️
+    >>> print(Carte(11, 1))
+    V♦️
+    ```
+
+3. On propose d'implémenter un paquet de cartes avec un tableau dynamique `#!py list` comme conteneur sous-jacent. Compléter la classe suivante :
+
+    ```py title="Classe Paquet à compléter"
+    class Paquet:
+        """ Représente un paquet de cartes. """
+
+        def __init__(self, cartes: list[Carte]) -> None:
+            self.cartes = cartes  # [carte_dessous, ..., carte_dessus]
+
+        def tirer_carte_dessus(self) -> Carte:
+            """ Retire et renvoie la carte au desssus du paquet. """
+            pass
+
+        def ajouter_carte_dessus(self, carte: Carte) -> None:
+            """ Ajoute une carte au dessus du paquet. """
+            pass
+
+        def ajouter_carte_dessous(self, carte: Carte) -> None:
+            """ Ajoute une carte au dessous du paquet. """
+            pass
+
+        def ajouter_paquet_dessous(self, autre) -> None:
+            """ Ajoute un autre paquet de carte en dessous du paquet. """
+            pass
+
+        def est_vide(self) -> bool:
+            """ Renvoie True si le paquet est vide, False sinon. """
+            pass
+
+        def __repr__(self) -> str:
+            pass
+
+        def mélanger(self) -> None:
+            """ Mélange les cartes du paquet. """
+            pass
+    ```
+
+
+4. Compléter les fonctions libres suivantes :
+
+    ```py title="Fonctions libres à compléter"
+    def générer_paquet_52_cartes() -> Paquet:
+        """ Génère un paquet classique de 52 cartes. """
+        pass
+
+
+    def couper(paquet: Paquet) -> tuple[Paquet, Paquet]:
+        """ Coupe le paquet en deux et renvoie les deux nouveaux paquets. """
+        pass
+
+    ```
+
+    ```pycon title="Exemple d'utilisation"
+    >>> paquet = générer_paquet_52_cartes()
+    >>> print(paquet)
+    [2♥, 3♥, 4♥, 5♥, 6♥, 7♥, 8♥, 9♥, 10♥, V♥, D♥, R♥, As♥, 2♦️, 3♦️, 4♦️, 5♦️, 6♦️, 7♦️, 8♦️, 9♦️, 10♦️, V♦️, D♦️, R♦️, As♦️, 2♣️, 3♣️, 4♣️, 5♣️, 6♣️, 7♣️, 8♣️, 9♣️, 10♣️, V♣️, D♣️, R♣️, As♣️, 2♠️, 3♠️, 4♠️, 5♠️, 6♠️, 7♠️, 8♠️, 9♠️, 10♠️, V♠️, D♠️, R♠️, As♠️]
+    >>> p, q = couper(paquet)
+    >>> print(q)
+    [2♣️, 3♣️, 4♣️, 5♣️, 6♣️, 7♣️, 8♣️, 9♣️, 10♣️, V♣️, D♣️, R♣️, As♣️, 2♠️, 3♠️, 4♠️, 5♠️, 6♠️, 7♠️, 8♠️, 9♠️, 10♠️, V♠️, D♠️, R♠️, As♠️]
+    ```
+
+5. Implémenter une classe `Bataille` qui comprend une méthode `réinitialiser` qui distribue aléatoirement les cartes entre deux joueurs et `jouer` qui joue automatiquement le jeu de Bataille.
+
+6. En moyenne, sur un grand nombre de parties, combien de tours de jeu comporte une partie de Bataille ?
