@@ -32,7 +32,7 @@
     ```py title="Style impératif"
     def factorielle(n):
         produit = 1
-        for facteur in range(1, n):
+        for facteur in range(1, n + 1):
             produit *= facteur
         return produit
     ```
