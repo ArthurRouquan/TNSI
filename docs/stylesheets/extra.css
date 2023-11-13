@@ -170,3 +170,20 @@ strong {
     font-size: small;
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
 }
+
+.underline {
+    position: relative;
+}
+
+.underline::after {
+    content: "";
+    position: absolute;
+    bottom: -3px; /* Adjust as needed */
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid #212121; /* Adjust color as needed */
+}
+
+[data-md-color-scheme="slate"] .underline::after {
+    border-bottom: 2px solid #e9ebfc;
+}

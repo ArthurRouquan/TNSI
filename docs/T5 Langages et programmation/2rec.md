@@ -21,7 +21,6 @@
 * Si un programme récursif peut se traduire dans un style impératif (avec de simples boucles) et inversement, aborder de manière récursive un problème est parfois plus facile. 
 
     <div style="display:flex; justify-content: center; align-items: center; gap: 10px;">
-
     ```py title="Style récursif"
     def factorielle(n):
         if n == 0:
@@ -40,8 +39,28 @@
 
 * On peut correspondre le concept de récursivité à celui de récurrence en mathématiques.
 
-
-
 * Lorsque $f$ s'appelle elle-même, on parle de récursivité **directe**. Lorsque $f$ appelle $g$ qui appelle $f$, on parle de récursivité **indirecte**.
 
+* Il est possible de visualiser l'ordre des appels récursifs grâce à un **arbre d'appels** : 
 
+    <div style="display:flex; justify-content: center; align-items: center; gap: 0px;">
+    ```py title="Somme récursive"
+    def somme(n):
+        if n == 0:  # condition terminale
+            return 0
+        else:
+            return n + somme(n - 1)
+    ```
+    ![](ressources/somme.gif){ width=300 }
+    </div>
+
+
+    <div style="display:flex; justify-content: center; align-items: center; gap: 0px;">
+    ![](ressources/fib.gif){ width=300 }
+    ```py title="Suite de Fibonacci"
+    def f(n):
+        if n <= 1:  # condition terminale
+            return n
+        return f(n - 1) + f(n - 2)
+    ```
+    </div>
