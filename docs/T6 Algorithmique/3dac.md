@@ -3,6 +3,8 @@
 !!! info "Liens Capytale"
     * TP Tri Fusion : [:fontawesome-solid-link: Notebook Capytale b99a-2247717](https://capytale2.ac-paris.fr/web/c/b99a-2247717)
     * Correction : Disponible plus tard !
+    * TP Les points les plus rapprochés : [:fontawesome-solid-link: Notebook Capytale a613-2265790](https://capytale2.ac-paris.fr/web/c/a613-2265790)
+    * Correction : Disponible plus tard !
 
 
 ## Synthèse
