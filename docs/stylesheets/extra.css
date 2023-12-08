@@ -187,3 +187,17 @@ strong {
 [data-md-color-scheme="slate"] .underline::after {
     border-bottom: 2px solid #e9ebfc;
 }
+
+div.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+    color: #73C2FB;
+    text-shadow: 0 0 5px #1E90FF, 0 0 10px #1E90FF;
+
+    /* text-align: center; */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    line-height: 1.1;
+}
+
