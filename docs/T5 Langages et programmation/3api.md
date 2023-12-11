@@ -184,14 +184,12 @@ pprint(data)
 Finalement, tout se passe comme si on appelait une fonction d'un module extérieure, les différents paramètres sont passés directement dans l'URL.
 
 !!! question "Exercice" 
-    Écrire la fonction `get_location(city: str) -> tuple[float, float]` qui renvoie la latitude et la longitude de ville `city` donnée en paramètre. (note: `API_KEY` sera une variable globale)
-
-
+    Écrire la fonction `coordonnées(ville: str) -> tuple[float, float]` qui renvoie la latitude et la longitude de ville `ville` donnée en paramètre. (note: `API_KEY` sera une variable globale)
 
 
 ## Le temps est bon, le ciel et bleu
 
-Écrire le code Python qui affiche le bulletin météo des trois prochains jours de manière élégante :
+Ce projet a pour but d'écrire le code Python qui affiche le bulletin météo des trois prochains jours de manière élégante d'une ville donnée :
 
 ```
 
@@ -230,28 +228,79 @@ Finalement, tout se passe comme si on appelait une fonction d'un module extérie
 ┃ • Pression moyenne         : 1013.0 hPa
 ```
 
-Pour cela, on utilisera :
+### Démarche et outils
 
-* L'API [5 Day / 3 Hour Forecast](https://openweathermap.org/forecast5) dont la documentation en anglais sera à lire.
+* L'API [5 Day / 3 Hour Forecast](https://openweathermap.org/forecast5) dont la documentation en anglais sera à lire pour récupérer les données météorologiques sur les prochains jours. Il faudra ensuite filtrer ces données pour récupérer ce que l'on souhaite.
 
 * Le module [`datetime`](https://docs.python.org/fr/3/library/datetime.html) qui permettra de manipuler facilement les dates.
 
 * Pour arrondir des nombres, centrer du texte etc. on utilisera les [f-strings](http://cissandbox.bentley.edu/sandbox/wp-content/uploads/2022-02-10-Documentation-on-f-strings-Updated.pdf) de manière un peu plus avancée.
 
-Pour que le module `datetime` « parle » français, il faudra spécifier la constante `LC_TIME` au début de votre programme :
 
-```py
-import locale
-locale.setlocale(locale.LC_TIME, 'fr_FR')
-```
+??? tip "Le module `datetime`"
+    * La classe `datetime.date` permet de représenter une date (jour, mois, année) et de la manipuler facilement. Par exemple, `datetime.date.today()` renvoie la date actuelle sour la forme d'un objet de type `datetime.date` :
+    
+        ```py
+        >>> import datetime
+        >>> datetime.date.today()
+        datetime.date(2023, 12, 11)
+        >>> d = datetime.date(2024, 4, 6)  # 6 Avril 2024
+        ```
 
-Spécification :
+    * La classe `datetime.timedelta` représente une durée, soit un écart entre deux objets de `datetime.date` :
+        
+        ```py
+        >>> datetime.date(2023, 12, 25) + datetime.timedelta(days=1)
+        datetime.date(2023, 12, 26)
+        ```
+
+    * Une instance de `datetime.date` se convertit en chaîne de caractères grâce à `date.strftime(format)` ou `format` est une chaîne de caractères qui représente la mise en forme souhaitée :
+
+        ```py
+        >>> d = datetime.date(2023, 12, 25)
+        >>> d.strftime('%d / %m / %Y')
+        '25 / 12 / 2023'
+        ```
+
+        Rendez-vous sur [ce lien](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior) pour connaître tous les formatages possibles.
+
+    * Pour que `date.strftime` « parle » français, il faudra spécifier la constante `LC_TIME` au début de votre programme :
+
+        ```py
+        import locale
+        locale.setlocale(locale.LC_TIME, 'fr_FR')
+        ```
+
+    * La méthode `datetime.date.fromtimestamp` sera très utile pour récupérer la date depuis les données météorologiques.
+
+??? tip "Formatage avancé"
+
+    * Il est courant d'insérer des valeurs dans une chaîne de caractères en définissant une f-string :
+    
+        ```py
+        >>> a = 42
+        >>> f"La variable a contient la valeur {a} !"
+        'La variable a contient la valeur 42 !'
+        ```
+
+    * On peut spécifier en plus d'autres paramètres, comme le nombre de chiffres après la virgule à afficher :
+
+        ```py
+        >>> a = 10.123456789
+        >>> f"La variable a contient la valeur {a:.3} !"
+        'La variable a contient la valeur 10.123 !'
+        ```
+    
+    * Rendez-vous sur [ce lien](http://cissandbox.bentley.edu/sandbox/wp-content/uploads/2022-02-10-Documentation-on-f-strings-Updated.pdf) pour en savoir plus, surtout au niveau des alignements par exemple !
+
+
+### Spécifications
 
 * Le bulletin météo des 3 prochains jours (pas aujourd'hui).
 
 * Pour chaque jour :
 
-    * Afficher correctement la date.
+    * Afficher correctement la date comme dans l'exemple.
 
     * Donner la température maximale, moyenne et minimale en degré Celsius.
 
@@ -261,4 +310,6 @@ Spécification :
 
     * Donner la pression moyenne en hPa.
 
-Décomposer votre programme en fonctions bien spécifiques pour rendre le code plus intelligible ! Et n'oublier pas les commentaires.
+* Décomposer votre programme en fonctions spécifiques et pertinentes pour rendre le code plus intelligible.
+  
+* Ne pas oublier les commentaires (pour chaque fonction) et d'utiliser des noms de variables pertinents.
