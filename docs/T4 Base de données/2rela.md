@@ -1,7 +1,5 @@
 # Le modèle relationnel
 
-## Introduction et histoire
-
 ## Définition et exemple
 
 On considère la table suivante :
