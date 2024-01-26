@@ -1,13 +1,61 @@
-# Programmation dynamique
+# Programmation Dynamique
 
-La programmation dynamique est **une stratégie algorithmique de résolution** d'un problème d'optimisation quelconque. 
-Cette stratégie repose sur deux grands principes :
+## Définition générale
 
-* **Décomposition** : Le problème principal est résolu en le décomposant en sous-problèmes plus petits. Sous-problèmes qui à leur tour seront résolus en les décomposant en sous-problèmes encore plus petits... et ainsi de suite jusqu'aux cas de bases. Un problème sera donc formulé de manière récursive.
+La <span class=h>programmation dynamique</span> est une stratégie algorithmique de résolution optimale d'un problème d'optimisation. Cette stratégie repose sur deux grands principes :
+
+* <span class=h>:fontawesome-solid-sitemap: Décomposition</span> : Le problème est décomposé en sous-problèmes plus petits par une définition récursive.
+
+* <span class=h>:fontawesome-solid-box-archive: Mémoïsation</span> : Lorsqu'un sous-problème est résolu, afin d'éviter de le rerésoudre si celui-ci se présente à nouveau ultérieurement, le coût de sa solution est conservé.
 
 
-* **Mémoïsation** : Lorsqu'un sous-problème est résolu, sa solution est conservée. Cela permet d'éviter de recalculer la solution du même sous-problème si celui-ci se présente à nouveau ultérieurement
+La résolution d'un problème d'optimisation repose souvent sur une série de <span class=h>choix</span> successifs. Un choix guide la transition d'un <span class=h>état</span> à un autre. Un état étant l'ensemble des informations qui caractérisent totalement la situation au moment d'effectuer un choix.
 
+La définition récursive du problème se manifeste à travers la **fonction d'état**. Cette fonction récursive exprime le coût optimal d'un état donné en fonction des coûts optimaux des états qui le suivent dans la séquence de décision.
+
+
+
+<!-- 
+
+## Exemple introductif
+
+Afin de mettre en lumière les différentes étapes à suivre pour appliquer cette stratégie à un problème quelconque, étudions le problème du rendu de monnaie.
+
+!!! note "Problème du rendu de monnaie"
+    Vous devez rendre une somme $S$ d'argent à un vendeur. Pour cela, vous disposez d'une quantité illimitée de pièces de différentes valeurs $V = \left\{ v_1,~ v_2,~ \ldots~ ,~ v_n \right\}$. Votre objectif est de rembourser cette somme en utilisant le moins de pièces possible.
+
+1. Définir les **données** fixes du problème. Ce sont les paramètres qui définissent entièrement une instance du problème.
+
+    > * Somme $S \in \mathbb{N}$ à rendre.
+    * Les différentes valeurs de pièces $V = \left\{ v_1,~ v_2,~ \ldots~ ,~ v_n \right\}$.
+
+2. Identifier une succession de **choix** à effectuer.
+   
+    > Ici, à chaque étape, je choisie une pièce d'une valeur particulière à rendre. 
+
+3. Définir les variables qui caractérisent totalement l'**état** d'une étape de décision (au moment où un choix est effectué). Que modifie un choix lors de ma prochaine prise de décision ?
+   
+    > Lorsque que je choisie une pièce de valeur $v$ et la rend, la somme à rendre se retrouve soustrait de $v$. Donc l'état d'une étape est caractérisé par une somme $s$ à rendre.
+
+ -->
+
+<!-- Soit un problème d'optimisation. La programmation dynamique s'applique de manière générale en suivant les étapes :
+
+1. Définir les **données** fixes.
+2. Définir l'**objectif** du problème, c'est-à-dire la quantité que l'on souhaite maximiser ou minimiser.
+3. Identifier une succession de **choix** à effectuer.
+4. Définir les variables qui définissent totalement l'état lors d'une étape de décision.
+5. Écrire la **fonction d'état**. -->
+
+
+
+
+
+
+
+
+
+<!-- 
 
 ## Fibonacci
 
@@ -137,4 +185,4 @@ n & \text{sinon}
     $$
     f(c, i) = \max \bigg\{  v_i + f(c - p_i, i - 1), f(c, i - 1) \bigg\}
     $$
-
+ -->

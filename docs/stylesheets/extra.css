@@ -160,6 +160,16 @@ strong {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
+[data-md-color-scheme="slate"] .h {
+    color: #ef5552;
+    /* color: #f6c146; */
+    /* color: #f6c146;
+    background-color: #f6c14660;
+    padding: 0px 3px;
+    border-radius: 3px; */
+    font-weight: bold;
+}
+
 .on {
     background-color: #FFF9C4; /* Green color */
     border: 1px solid #F9A825;
