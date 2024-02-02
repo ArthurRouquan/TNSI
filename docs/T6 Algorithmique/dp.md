@@ -127,7 +127,9 @@ Afin de mettre en lumière les différentes étapes à suivre pour appliquer cet
         return cache[somme]
     ```
 
+8. Discuter de la complexité de l'algorithme. Elle est souvent équivalente à la taille de l'espace des états, car dans le pire des cas, le cache doit être totalement rempli.
 
+    > L'ensemble des états possibles est au pire de taille $S + 1$, donc l'algorithme est de complexité $O(S)$.
 
 
 ## Un second exemple
@@ -169,7 +171,7 @@ Problème du sac-à-dos.
 
 * État :
 
-    > À chaque étape de décision, il est essentiel de connaître quels objets sont encore à considérer et quelle est la capacité restante du sac. On définit un état $(i, c)$ où les objets $i + 1$ à $n - 1$ ont déjà été considérés — on considère donc actuellement l'objet $i$ — et le sac dispose d'une capacité restante de $c$.
+    > À chaque étape de décision, il est essentiel de connaître quels objets sont encore à considérer et quelle est la capacité restante du sac. On définit un état $(i, c)$ où les objets $> i$ ont été considérés — on considère donc actuellement l'objet $i$ — et le sac dispose d'une capacité restante de $c$.
 
 * Choix :
 
@@ -197,6 +199,74 @@ Problème du sac-à-dos.
     $$
     >
     > Résoudre le problème initial revient à calculer $z(n - 1, C)$.
+    >
+    > ![](ressources/kp_combiner.svg){ width="50%" .center }
+    > 
+
+## Découpe de bonbon
+
+!!! note "Problème de découpe"
+    Dans la cour de récréation, le marché des rubans de *Hubba Bubba*, un chewing-gum en forme de ruban, connaît une forte demande. Chaque longueur de ruban a un prix spécifique, et un élève se pose la question sur la manière optimale de découper son ruban de longueur $L \in \mathbb N$ afin de maximiser son bénéfice. Les morceaux découpés doivent être de longueur entière.
+
+
+<!-- > Par exemple, pour les prix des longueurs suivantes :
+>
+> $$
+\begin{array}{c*{7}{p{2cm}}}
+    \hline
+    \text{Longueur} & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+    \text{Prix} & 1 & 5 & 8 & 9 & 10 & 17 & 17 & 20 & 24 & 30 \\ \hline
+\end{array}
+$$
+>
+> Si la longueur initiale du ruban de l'élève est $L = 4$ :
+> 
+> * Pas de découpe : 9€
+> *Longueurs 1 et 3 : 1€ + 8€ = 9€
+> * 2 et 2 : 5€ + 5€ = 10€
+>
+> Donc la meilleur solution est découper 2 pièces de 2 pour un profit de 10€. -->
+
+* Données :
+    
+    > * Une longueur de ruban $L$
+    > * Le prix $p_l$ des différentes longueurs $l \in [\![1, L]\!]$.
+
+* Objectif :
+  
+    > Maximiser le profit réalisé.
+
+* Série de décisions :
+
+    > À chaque étape, on choisit une longueur à découper du ruban.
+
+* État :
+
+    > L'état est défini par la longueur restante du ruban $l$.
+
+* Choix :
+
+    > À partir de l'état $l$, les longueurs possibles à découper du ruban sont $[\![1, l]\!]$. 
+
+* Fonction d'état :
+
+    >
+    $$
+    \texttt{profit_max}(l) = \begin{cases}
+        0 & \text{si } n = 0 \\
+        \max \Big\{ p_l + \texttt{profit_max}(l - d) ~\Big|~ d \in [\![1, l]\!]    \Big\} & \text{sinon} \\
+    \end{cases}
+    $$
+    >
+    > Résoudre le problème initial revient à calculer $\texttt{profit_max}(L)$.
+
+
+
+
+
+
+
+
 
 
 
