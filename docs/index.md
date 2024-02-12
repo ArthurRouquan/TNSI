@@ -1,6 +1,8 @@
 # Accueil
 
-<div class="ascii-art">
+<img src="ressources/stack_vs_recursion.png" style="width: 75%; border-radius: 10px; display: block; margin: 0 auto;">
+
+<!-- <div class="ascii-art">
 >>> flocons = [Flocon() for i in range(3)]
 >>> print(flocons)
 
@@ -12,7 +14,7 @@
         _/\/\_           / _/ \_ \            //\\
         /\  /\          '  /\ /\  '         ./    \.
        '      '           *  '  *           ''    ''
-</div>
+</div> -->
 
 <!-- # Accueil
 
