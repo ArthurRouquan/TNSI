@@ -1,13 +1,38 @@
 # Programmation Dynamique
 
-## Introduction
+## Exemple introductif
 
-La **programmation dynamique** est une stratégie algorithmique de résolution optimale d'un problème d'optimisation. Cette stratégie repose sur deux grands principes :
+Soit le problème du rendu de monnaie.
 
-* **:fontawesome-solid-sitemap: Décomposition** : Le problème est décomposé en sous-problèmes plus petits par une définition récursive.
+!!! question
+    1. Soit $S = 27$€ et les valeurs de pièces $V = \left\{ 1, 5, 10 \right\}$ ? Quelle est la solution optimale ? Quelle est son coût ?
+    
+    2. De même pour $S = 6$€ et les valeurs de pièces $V = \left\{ 1, 3, 4 \right\}$.
 
-* **:fontawesome-solid-box-archive: Mémoïsation** : Lorsqu'un sous-problème est résolu, afin d'éviter de le rerésoudre si celui-ci se présente à nouveau ultérieurement, le coût de sa solution est conservé.
+    3. Compléter le graphe orienté suivant :
 
+    4. Plus généralement, 
+
+    4. Supposons que l'on ait le nombre minimal de pièces à rendre pour les sommes à rendre 5€, 3€ et 2€. 
+
+
+
+
+
+<!-- ## Introduction
+
+La **programmation dynamique** est une stratégie algorithmique de résolution à l'optimalité d'un problème d'optimisation. Cette stratégie repose sur deux grands principes :
+
+* **:fontawesome-solid-sitemap: Décomposition** : Un problème est décomposé récursivement en sous-problèmes plus petits. Le coût optimal d'un problème sera calculé à partir des coûts optimaux de ses sous-problèmes.
+
+* **:fontawesome-solid-box-archive: Mémoïsation** : Lorsqu'un sous-problème est résolu, afin d'éviter de le rerésoudre si celui-ci se présente à nouveau ultérieurement, le coût de sa solution est conservé. -->
+
+
+
+
+
+
+<!-- 
 ## Illustration du principe de mémoïsation
 
 Exemple classique avec Fibonacci.
@@ -22,11 +47,11 @@ Résoudre un problème d'optimisation implique généralement de prendre une sui
 
 On pourra alors représenter l'espace des états comme un graphe orienté où les sommets sont des états et les arcs correspondent à des choix.
 
-Il suffit ensuite d'exprimer le coût optimal que l'on peut obtenir depuis un état particulier de manière récursive, c'est-à-dire en fonction des coûts optimaux de ses états enfants. C'est ainsi que l'on définit la **fonction d'état**. Cette démarche ressemble à l'étape « Combiner » dans la stratégie « Diviser pour régner » : on suppose avoir résolu les sous-problèmes d'un problème parent et on cherche maintenant à résoudre ce problème parent.
+Il suffit ensuite d'exprimer le coût optimal que l'on peut obtenir depuis un état particulier de manière récursive, c'est-à-dire en fonction des coûts optimaux de ses états enfants. C'est ainsi que l'on définit la **fonction d'état**. Cette démarche ressemble à l'étape « Combiner » dans la stratégie « Diviser pour régner » : on suppose avoir résolu les sous-problèmes d'un problème parent et on cherche maintenant à résoudre ce problème parent. -->
 
 <!-- > Une fois la fonction d'état définie, il est possible de l'implémenter directement en Python sous la forme d'une fonction récursive. Or, on risque de calculer cette fonction plusieurs fois pour le même état. On conserve alors le coût optimal pour chaque état dans un cache, c'est le principe de mémoïsation. -->
 
-## Un premier exemple introductif
+<!-- ## Un premier exemple introductif
 
 Afin de mettre en lumière les différentes étapes à suivre pour appliquer cette stratégie à un problème quelconque, étudions le problème du rendu de monnaie.
 
@@ -206,7 +231,7 @@ Problème du sac-à-dos.
 ## Découpe de bonbon
 
 !!! note "Problème de découpe"
-    Dans la cour de récréation, le marché des rubans de *Hubba Bubba*, un chewing-gum en forme de ruban, connaît une forte demande. Chaque longueur de ruban a un prix spécifique, et un élève se pose la question sur la manière optimale de découper son ruban de longueur $L \in \mathbb N$ afin de maximiser son bénéfice. Les morceaux découpés doivent être de longueur entière.
+    Dans la cour de récréation, le marché des rubans de *Hubba Bubba*, un chewing-gum en forme de ruban, connaît une forte demande. Chaque longueur de ruban a un prix spécifique, et un élève se pose la question sur la manière optimale de découper son ruban de longueur $L \in \mathbb N$ afin de maximiser son bénéfice. Les morceaux découpés doivent être de longueur entière. -->
 
 
 <!-- > Par exemple, pour les prix des longueurs suivantes :
@@ -227,7 +252,7 @@ $$
 >
 > Donc la meilleur solution est découper 2 pièces de 2 pour un profit de 10€. -->
 
-* Données :
+<!-- * Données :
     
     > * Une longueur de ruban $L$
     > * Le prix $p_l$ des différentes longueurs $l \in [\![1, L]\!]$.
@@ -258,7 +283,7 @@ $$
     \end{cases}
     $$
     >
-    > Résoudre le problème initial revient à calculer $\texttt{profit_max}(L)$.
+    > Résoudre le problème initial revient à calculer $\texttt{profit_max}(L)$. -->
 
 
 

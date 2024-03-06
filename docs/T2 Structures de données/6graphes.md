@@ -1,7 +1,7 @@
 # Les graphes
 
 !!! info "Liens Capytale"
-    * À la découvertes des graphes : [:fontawesome-solid-link: Notebook Capytale ceb1-2792273](https://capytale2.ac-paris.fr/web/c/ceb1-2792273)
+    * À la découverte des graphes : [:fontawesome-solid-link: Notebook Capytale ceb1-2792273](https://capytale2.ac-paris.fr/web/c/ceb1-2792273)
     * Représentation des graphes : [:fontawesome-solid-link: Notebook Capytale 505c-2844042](https://capytale2.ac-paris.fr/web/c/505c-2844042)
     * Parcours en largeur : [:fontawesome-solid-link: Notebook Capytale be49-2854965](https://capytale2.ac-paris.fr/web/c/be49-2854965)
     * Parcours en profondeur : [:fontawesome-solid-link: Notebook Capytale e655-2874716](https://capytale2.ac-paris.fr/web/c/e655-2874716) Aïe aïe aïe la version impérative est erronée, faites un tour sur Wikipedia pour le pseudocode, ce que j'aurai dû faire ! Merci Louis ! 😰

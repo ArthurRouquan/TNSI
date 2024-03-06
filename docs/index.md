@@ -1,6 +1,11 @@
 # Accueil
 
-<img src="ressources/stack_vs_recursion.png" style="width: 75%; border-radius: 10px; display: block; margin: 0 auto;">
+<img src="ressources/meme_tree.png" style="width: 50%; border-radius: 10px; display: block; margin: 0 auto;">
+
+!!! success "Travaux en cours"
+    * Finir l'algorithme de Dijkstra et le bulletin météo et me l'envoyer !
+    * [Les arbres binaires](/T2 Structures de données/7arbres/)
+
 
 <!-- <div class="ascii-art">
 >>> flocons = [Flocon() for i in range(3)]
