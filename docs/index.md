@@ -4,7 +4,7 @@
 
 !!! success "Travaux en cours"
     * Finir l'algorithme de Dijkstra et le bulletin météo et me l'envoyer !
-    * [Les arbres binaires](/T2 Structures de données/7arbres/)
+    * [Les arbres binaires](TNSI/T2 Structures de données/7arbres/)
 
 
 <!-- <div class="ascii-art">
