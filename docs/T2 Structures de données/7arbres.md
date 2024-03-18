@@ -3,7 +3,7 @@
 !!! info "Liens Capytale"
     * À la découverte des arbres binaires : [:fontawesome-solid-link: Notebook Capytale ac40-3104814](https://capytale2.ac-paris.fr/web/c/ac40-3104814)
     * Les parcours des arbres binaires : [:fontawesome-solid-link: Notebook Capytale e6d0-3126581](https://capytale2.ac-paris.fr/web/c/e6d0-3126581)
-    * Les arbres binaires de rechercher : [:fontawesome-solid-link: Notebook Capytale ddd2-3129906](https://capytale2.ac-paris.fr/web/c/ddd2-3129906)
+    * Les arbres binaires de recherche : [:fontawesome-solid-link: Notebook Capytale ddd2-3129906](https://capytale2.ac-paris.fr/web/c/ddd2-3129906)
 
 ## Définitions
 
@@ -28,7 +28,7 @@
     
     $$\big\lceil \log_2 \left( n + 1 \right) \big\rceil \leq h \leq n$$
 
-    On retient qu'un arbre équilibré avec $n$ nœuds a une hauteur $O(\ln n)$.
+    On retient qu'un arbre équilibré avec $n$ nœuds a une hauteur d'environ $\log_2(n)$.
 
 * Implémentation minimale d'un arbre binaire :
 
@@ -38,16 +38,14 @@
             self.valeur = valeur       # (1)! 
             self.gauche = noeud_gauche # (2)!
             self.droit  = noeud_droit  # (3)!
-
-    class ArbreBinaire:
-        def __init__(self, racine: Noeud):
-            self.racine = racine # (4)! 
     ```
+
 
     1. Une valeur associée à un nœud (un nombre, une chaîne de caractères etc.)
     2. Une référence vers le nœud fils **gauche**. `None` s'il n'existe pas.
     3. Une référence vers le nœud fils **droit**. `None` s'il n'existe pas.
-    4. Il est notable de remarquer qu'un arbre ne conserve qu'une référence vers sa racine, car on peut accéder à tous les autres nœuds depuis la racine grâce à un parcours. C'est un peu comme les listes chaînées où l'on ne conservait qu'une référence vers le chaînon « tête ».
+
+    Chaque nœud d'un arbre peut être vu comme la racine d'un sous-arbre ! Il est alors assez courant de confondre les notions de nœuds et d'arbres.
 
 ##  Algorithmes classiques
 
@@ -55,7 +53,6 @@
 
     ![](ressources/sousarbre.png){ width="75%" .center}
 
-    Chaque nœud d'un arbre peut être vu comme la racine d'un sous-arbre ! Il est alors assez courant de confondre les notions de nœuds et d'arbres. Par exemple, l'arbre « C » est le sous-arbre de racine C.
 
 * La taille d'un arbre $A$ (son nombre de nœuds) peut être définie récursivement comme :
 
@@ -75,8 +72,63 @@
             return 0
         else:
             return 1 + taille(racine.gauche) + taille(racine.droit)
-
-    def taille_arbre(arbre: ArbreBinaire):
-        """ Permet à l'utilisateur d'écrire `taille_arbre(A)` plutôt que `taille(A.racine)` """
-        return taille(arbre.racine)
     ```
+
+* La hauteur d'un arbre $A$ :
+ 
+    $$
+    \text{hauteur}(A)= \begin{cases}
+    0 & \text{si} \ A = \varnothing \\
+    1 + \max\Big( \text{hauteur}(A_g),\ \text{hauteur}(A_d) \Big) & \text{sinon}
+    \end{cases}
+    $$
+
+    ```py
+    def hauteur(racine: Noeud):
+        """ Renvoie la hauteur de l'arbre dont la racine est `racine` """
+        if racine is None:
+            return 0
+        else:
+            return 1 + max(hauteur(racine.gauche), hauteur(racine.droit))
+    ```
+
+## Parcours en profondeur d'un arbre binaire
+
+* Il existe trois parcours en profondeur d'un arbre binaire suivant l'ordre de visite de la racine d'un sous-arbre :
+
+    ![](ressources/parcours_arbre.png){ width="75%" .center}
+
+
+* Finalement, en terme de code, il suffit de déplacer une simple ligne de code :
+
+    ```py title="Décommenter la ligne suivant le parcours souhaité"
+    def parcours(racine: Noeud):
+        if racine is not None:
+            # print(racine.valeur) # Parcours préfixe
+            parcours(racine.gauche)
+            # print(racine.valeur) # Parcours infixe
+            parcours(racine.droit)
+            # print(racine.valeur) # Parcours suffixe
+    ```
+
+* Le parcours **préfixe** est le parcours en profondeur classique. Le parcours **infixe** sera utile pour afficher les valeurs d'un ABR dans l'ordre.
+
+## Arbre Binaire de Recherche (ABR)
+
+* Un **Arbre Binaire de Recherche** (ABR) est un arbre binaire où la valeur (qu'on appelle **clé**) de chaque nœud est inférieure à toutes les valeurs dans son sous-arbre droit et supérieure à toutes les valeurs dans son sous-arbre gauche.
+
+    ![](ressources/abr.png){ width="75%" .center}
+
+    Le parcours **infixe** permet de traiter les nœuds par ordre croissant.
+
+* Cette structure de données permet de maintenir des valeurs triées (et donc de rechercher rapidement une valeur grâce à une recherche dichotomique) et d'insérer de manière efficiente de nouvelles valeurs.
+
+<center>
+
+|    Structure     |   Complexité moyenne <br/> `insérer`    |  Complexité moyenne <br/> `rechercher`  |
+| :--------------: | :-------------------------------: | :-------------------------------: |
+| Tableau non-trié |   <div class="o1">$O(1)$</div>    |   <div class="on">$O(n)$</div>    |
+|   Tableau trié   |   <div class="on">$O(n)$</div>    | <div class="o1">$O(\log n)$</div> |
+|       ABR        | <div class="o1">$O(\log n)$</div> | <div class="o1">$O(\log n)$</div> |
+
+<center/>
