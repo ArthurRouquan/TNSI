@@ -1,6 +1,139 @@
 # Programmation Dynamique
 
-## Exemple introductif
+!!! info "Liens utiles" 
+    * Diaporama à venir (quelques problèmes de conversion) !
+    * [Cours / Activité](ressources/dp.pdf)
+
+
+## Exemple - Rendu de monnaie
+
+1. Définir les **données** du problème :
+
+    > * Somme $S$ à rendre.
+    > * Les différentes valeurs des pièces $P = \left\{ p_1,~ p_2,~ \ldots~ ,~ p_n \right\}$.
+
+2. Identifier l'**objectif** du problème.
+
+    > On souhaite minimiser le nombre de pièces rendus.
+
+3. Identifier une séquence de choix à effectuer.
+   
+    > À chaque étape, on choisit une pièce d'une valeur particulière à rendre.
+
+4. Définir les variables qui caractérisent totalement l'**état** d'une étape de décision.
+   
+    > Lorsque qu'on choisit une pièce de valeur $v$ et la rend, la somme à rendre est retranchée de $v$. Donc l'état d'une étape est caractérisé par une seule variable, à savoir la somme restante $s$ à rendre.
+
+5. Définir précisément l'ensemble des **choix** possibles à partir d'un état particulier.
+    
+    > Soit une somme restante $s$ à rendre, l'ensemble des choix possibles est $\big\{ p \in P ~\big|~p \leq s \big\}$.
+    > Choisir une pièce de valeur $p$ de cet ensemble mène vers l'état $s - p$.
+
+6. Définition récursive du **coût optimal** :
+   
+    > On définit $c^\star(s)$ comme le nombre minimum de pièces à rendre pour rembourser la somme restante $s$.
+    >
+    > $$c^\star(s) = \begin{cases} 0 & \text{si } s = 0 \\ 1 + \min \Big\{ c^\star(s - p) ~\Big|~ p \in P,\ p \leq s \Big\} & \text{sinon} \end{cases}$$
+    > 
+    > Résoudre le problème initial revient à calculer $c^\star(S)$.
+
+7. **Implémentation** en Python :
+
+    === "Naïf"
+        ```py
+        def rendu(somme, pieces):
+            def c(s):
+                if s == 0:
+                    return 0
+                else:
+                    return min(c(s - p) + 1 for p in pieces if p <= s)
+            return c(somme)
+
+        print('Coût optimal :', rendu(25, [1, 5, 6, 7]))
+        ```
+
+    === "Cache `#!py dict`"
+        ```py
+        def rendu(somme, pieces):
+            cache = {}  # état ↔ coût optimal
+            # cache[état] = coût optimal de l'état
+            
+            def c(s):
+                if s not in cache:  # si on a pas déjà calculé le coût opt. de cet état, on le calcule
+                    if s == 0:
+                        cache[s] = 0
+                    else:
+                        cache[s] = min(c(s - p) + 1 for p in pieces if p <= s)
+                return cache[s] 
+            
+            return c(somme)
+
+        print('Coût optimal :', rendu(25, [1, 5, 6, 7]))
+        ```
+
+    === "Cache `#!py list`"
+        ```py
+        def rendu(somme, pieces):
+            cache = [None] * (somme + 1)  # cache[état] = cout opt. de l'état
+            cache[0] = 0  # on inclut le cas de base ici
+            
+            def c(s):
+                if cache[s] is None:  # si on a pas déjà calculé le coût opt. de cet état, on le calcule
+                    cache[s] = min(c(s - p) + 1 for p in pieces if p <= s)
+                return cache[s] 
+            
+            return c(somme)
+        
+        print('Coût optimal :', rendu(25, [1, 5, 6, 7]))
+        ```
+
+    === "Approche bottom-up"
+        ```py
+        def rendu(somme, pieces):
+            cache = [0] + [None] * somme 
+            for s in range(1, somme + 1):
+                cache[s] = 1 + min(cache[s - p] for p in pieces if p <= s)
+            return cache[somme]
+
+        print('Coût optimal :', rendu(25, [1, 5, 6, 7]))
+        ```
+
+    === "Cache `#!py dict` + Solution"
+        ```py
+        def rendu(somme, pieces):
+            cache = {0: (0, None)}  # état <-> (coût optimal, meilleur choix)
+
+            def c(s):
+                if s not in cache:
+                    cache[s] = min((c(s - p) + 1, p) for p in pieces if p <= s)
+                return cache[s][0]  # on retourne le coût optimal
+            
+            # 1. Remplir le cache
+            c(somme) 
+
+            # 2. Retrouver la solution
+            solution = []
+            s = somme
+            while s != 0:
+                piece = cache[s][1]
+                solution.append(piece)
+                s -= piece
+            
+            # 3. Renvoyer la solution optimale et le coût optimal
+            return solution, cache[somme][0]
+
+
+        print("Solution / Coût opt. :", rendu(25, [1, 5, 6, 7]))
+        ```    
+
+8. Déterminer la **complexité :**
+    
+    > Il y a dans le pire des cas $S + 1$ états. Pour chaque état, on a $|P| = n$ choix, donc :
+    > 
+    > * Complexité en temps : $O(S \cdot n)$
+    > * Complexité en espace : $O(S)$ 
+
+<!-- ## Exemple introductif
 
 Soit le problème du rendu de monnaie.
 
@@ -13,7 +146,7 @@ Soit le problème du rendu de monnaie.
 
     4. Plus généralement, 
 
-    4. Supposons que l'on ait le nombre minimal de pièces à rendre pour les sommes à rendre 5€, 3€ et 2€. 
+    5. Supposons que l'on ait le nombre minimal de pièces à rendre pour les sommes à rendre 5€, 3€ et 2€.  -->
 
 
 
@@ -78,7 +211,7 @@ Afin de mettre en lumière les différentes étapes à suivre pour appliquer cet
 
 4. Définir les variables qui caractérisent totalement l'**état** d'une étape de décision. Finalement, que modifie un choix lors de la prochaine étape de décision ?
    
-    > Lorsque qu'on choisit une pièce de valeur $v$ et la rend, la somme à rendre est retranchée de $v$. Donc l'état d'une étape est caractérisé par une seule variable, à savoir la somme restante $s$ à rendre.
+    > Lorsque qu'on choisit une pièce de valeur $p$ et la rend, la somme à rendre est retranchée de $p$. Donc l'état d'une étape est caractérisé par une seule variable, à savoir la somme restante $s$ à rendre.
 
 5. Définir précisément l'ensemble des **choix** possibles à partir d'un état particulier.
     
