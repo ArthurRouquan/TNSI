@@ -27,10 +27,10 @@ Lorsqu'un routeur reçoit un paquet, il utilise sa **table de routage** pour dé
 <center>
 
 | Réseau destination | Prochain routeur | Interface Ethernet |
-|:------------------:|:----------------:|:------------------:|
-|          A         |         -        |        eth0        |
-|          B         |        R3        |        eth1        |
-|          C         |        R2        |        eth2        |
+| :----------------: | :--------------: | :----------------: |
+|         A          |        -         |        eth0        |
+|         B          |        R3        |        eth1        |
+|         C          |        R2        |        eth2        |
 
 </center>
 
@@ -183,10 +183,10 @@ Cette dernière table de R2 sera transmise à l'étape suivante à R1, et une li
     <center>
 
     | Réseau destination | Prochain routeur | Distance |
-    |:------------------:|:----------------:|:--------:|
-    |          A         |         -        |     1    |
-    |          B         |        R3        |     3    |
-    |          C         |        R2        |     3    |
+    | :----------------: | :--------------: | :------: |
+    |         A          |        -         |    1     |
+    |         B          |        R3        |    3     |
+    |         C          |        R2        |    3     |
 
     </center>
 
@@ -206,3 +206,119 @@ De même, si un routeur ne reçoit pas d'informations d'un de ses voisins direct
 ## Un deuxième protocole automatique de routage : OSPF
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-utHPKREZV8" title="L3 : Le routage à état de liens 📶" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 75%; border-radius: 5px; display: block; margin: 0 auto;"></iframe>
+
+### Le principe 
+
+Les algorithmes de routage à état de lien utilisent une méthode appelée **plus court chemin d'abord** (SPF, Shortest Path First). Pour trouver le plus court chemin, les routeurs doivent connaître la **carte complète du réseau**. Pour cela, chaque routeur envoie régulièrement l’état de ses liens à tous les autres routeurs du réseau. Les informations échangées concernent uniquement la qualité des connexions entre deux routeurs, souvent mesurée par leur vitesse en **bits par seconde** (bps), comme Mbps ou Gbps.
+
+Si un routeur reçoit une nouvelle information différente de celle qu’il a déjà, il met à jour ses données. Après un certain temps, tous les routeurs ont échangé ces informations et possèdent tous la **même** table de routage. Ainsi, chaque routeur peut trouver le chemin le plus court pour envoyer des données à travers le réseau.
+
+
+<div style="display: flex; justify-content: space-around; align-items: center;">
+    <img src="../images/OSPF1.png" alt="OSPF Image" style="max-width: 50%; height: auto;">
+    <table>
+        <thead>
+            <tr>
+                <th align="center">Routeur</th>
+                <th align="center">Lien</th>
+                <th align="center">Vitesse (Mbps)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">A</td>
+                <td align="center">AB</td>
+                <td align="center">1000</td>
+            </tr>
+            <tr>
+                <td align="center">A</td>
+                <td align="center">AE</td>
+                <td align="center">10</td>
+            </tr>
+            <tr>
+                <td align="center">B</td>
+                <td align="center">BA</td>
+                <td align="center">1000</td>
+            </tr>
+            <tr>
+                <td align="center">B</td>
+                <td align="center">BC</td>
+                <td align="center">1000</td>
+            </tr>
+            <tr>
+                <td align="center">C</td>
+                <td align="center">CB</td>
+                <td align="center">1000</td>
+            </tr>
+            <tr>
+                <td align="center">C</td>
+                <td align="center">CD</td>
+                <td align="center">100</td>
+            </tr>
+            <tr>
+                <td align="center">D</td>
+                <td align="center">DC</td>
+                <td align="center">100</td>
+            </tr>
+            <tr>
+                <td align="center">D</td>
+                <td align="center">DE</td>
+                <td align="center">10</td>
+            </tr>
+            <tr>
+                <td align="center">E</td>
+                <td align="center">ED</td>
+                <td align="center">10</td>
+            </tr>
+            <tr>
+                <td align="center">E</td>
+                <td align="center">EA</td>
+                <td align="center">10</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+Si on considère l'exemple précédent, le routeur A sélectionnera le routeur B comme voie pour atteindre C et D. Il choisira par contre de rejoindre E par sa liaison directe avec lui, certes lente mais qui reste plus rapide que de passer par `B ► C ► D ► E`.
+
+### L'algorithme de Dijkstra
+
+Pour déterminer le plus court chemin, on utilise **l'algorithme de Dijkstra** !
+
+!!! question "Question 6"
+
+    Un journaliste britannique d’une revue consacrée à l’automobile doit tester les autoroutes françaises. Pour remplir sa mission, il décide de louer une voiture et de circuler entre six grandes villes françaises : Bordeaux (B), Lyon (L),Marseille (M), Nantes (N), Paris (P) et Toulouse(T).
+
+    <img src="../images/dijkstra3.png" style="width: 50%; border-radius: 5px; display: block; margin: 0 auto;">
+
+    Le journaliste se trouve à Nantes et désire se rendre le plus rapidement possible à Marseille. Déterminer un trajet qui minimise son temps de parcours.
+
+    Dérouler l'algorithme de Dijkstra sur cet exemple.
+
+### Le protocole OSPF
+
+Le protocole OSPF pour Open Shortest Path First est un protocole à état de lien, normalisé en 1990, décrit dans la RFC 2328. Il est pris en charge par le protocole IP. C’est le protocole de routage interne dominant et il est supporté par la plupart des routeurs. Ce protocole attribue un coût à chaque lien entre les routeurs du réseau. Le O du sigle OSPF signifie que sa spécification doit appartenir au domaine public et que toute solution propriétaire est exclue.
+
+L’algorithme pour trouver la meilleure route est celui de Dijkstra qui fournit dans ce cas le coût cumulé le plus faible des liens de la route vers une destination d’une zone donnée. Le coût utilisé pour chaque lien doit être inversement proportionnel à la bande passante du lien en question. Ce coût peut être défini manuellement ou calculé avec la formule suivante :
+
+$$
+\text{Coût} = \frac{C}{ \text{Bande passante} }
+$$
+
+!!! warning "Une constate à bien définir"
+    La constante $C$ est arbitraire. Elle peut valoir 10^8, 10^9 ou 10^10 selon la plus grande bande passante du réseau. Par contre, il faut veiller à utiliser la même valeur pour tous les routeurs d'un même réseau. Ce choix est effectué afin que tous les coûts calculés soient des entiers positifs.
+
+
+!!! example "Exemple"
+
+    En reprenant les bandes passantes données dans le premier exemple, et avec une constante de $10^9$ :
+
+    * 1 Gbps a un coût de $\frac{10^9}{10^9} = 1$
+    * 100 Mbps a un coût de $\frac{10^9}{100 \times 10^6} = 10$
+    * 10 Mbps a un coût de $\frac{10^9}{10 \times 10^6} = 100$
+  
+    Ainsi une route à 10 Mbps est considérée comme 100 fois plus « lente » qu'une liaison à 1 Gbps.
+
+!!! question "Question 7"
+    Faire l'annale de bac suivante : [Sujet 2021 - Exercice 5](images/exo.pdf)
