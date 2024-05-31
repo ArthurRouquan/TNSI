@@ -1,0 +1,1650 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2rec/">
+      
+      
+        <link rel="next" href="../../T6%20Algorithmique/3dac/">
+      
+      
+      <link rel="icon" href="../../assets/laptop-code.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>Modularité et API - Terminale NSI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_ansi.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modularite-et-api" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Terminale NSI" class="md-header__button md-logo" aria-label="Terminale NSI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Terminale NSI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Modularité et API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Terminale NSI" class="md-nav__button md-logo" aria-label="Terminale NSI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    Terminale NSI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    La correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Défis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Défis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D%C3%A9fis/1schelling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modèle de ségrégation de Schelling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Révisions 1ère
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Révisions 1ère
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/0triche/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feuille de triche
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/1algorithmique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/2mat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tableaux à deux dimensions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T2 Structures de données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T2 Structures de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/1poo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation Orientée Objet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/3piles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les piles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/4listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les listes chaînées
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/5files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/6graphes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/7arbres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les arbres binaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T3 Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T3 Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T3%20Architecture/1revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Révisions sur les réseaux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T3%20Architecture/2routage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le routage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T3%20Architecture/3processus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Processus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T4 Base de données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            T4 Base de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T4%20Base%20de%20donn%C3%A9es/1sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T4%20Base%20de%20donn%C3%A9es/2rela/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T5 Langages et programmation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Langages et programmation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1arret/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calculabilité et décidabilité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2rec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Modularité et API
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Modularité et API
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectifs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition-de-modularite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définition de modularité
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#votre-premier-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Votre premier module
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Votre premier module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#un-exemple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un exemple
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-lart-de-la-guerre" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice - L'art de la guerre
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition-dune-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définition d'une API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#une-premiere-api-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Une première API Web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-temps-est-bon-le-ciel-et-bleu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le temps est bon, le ciel et bleu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le temps est bon, le ciel et bleu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demarche-et-outils" class="md-nav__link">
+    <span class="md-ellipsis">
+      Démarche et outils
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spécifications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T6 Algorithmique
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            T6 Algorithmique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T6%20Algorithmique/3dac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diviser pour régner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T6%20Algorithmique/dp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation Dynamique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectifs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition-de-modularite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définition de modularité
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#votre-premier-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      Votre premier module
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Votre premier module">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#un-exemple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un exemple
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercice-lart-de-la-guerre" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice - L'art de la guerre
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definition-dune-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définition d'une API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#une-premiere-api-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      Une première API Web
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-temps-est-bon-le-ciel-et-bleu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le temps est bon, le ciel et bleu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le temps est bon, le ciel et bleu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#demarche-et-outils" class="md-nav__link">
+    <span class="md-ellipsis">
+      Démarche et outils
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spécifications
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="modularite-et-api">Modularité et API</h1>
+<h2 id="objectifs">Objectifs</h2>
+<ul>
+<li>
+<p>Utiliser des API ou des bibliothèques.</p>
+</li>
+<li>
+<p>Exploiter leur documentation.</p>
+</li>
+<li>
+<p>Créer des modules simples et les documenter.</p>
+</li>
+</ul>
+<h2 id="definition-de-modularite">Définition de modularité</h2>
+<p>La <strong>modularité</strong> en programmation se réfère à la décomposition d'un programme en modules autonomes et interdépendants. Un module est une unité logique qui regroupe des fonctionnalités spécifiques. Cette approche facilite la gestion, la maintenance, et la réutilisation du code.</p>
+<details class="example">
+<summary>Le module <code>math</code></summary>
+<p>Le module <code>math</code> est un excellent exemple de modularité. Il regroupe un ensemble de fonctions mathématiques standards, telles que les fonctions trigonométriques, logarithmiques, etc. Les développeurs peuvent l'importer et l'utiliser dans leurs programmes, profitant ainsi des fonctionnalités prêtes à l'emploi sans avoir à réinventer la roue.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Import complet</label><label for="__tabbed_1_2">Import complet avec alias</label><label for="__tabbed_1_3">Import partiel dans le namespace courant</label><label for="__tabbed_1_4">Import complet dans le namespace courant</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</code></pre></div>
+<p>Toutes les fonctions du module <code>math</code> sont importées, et elles sont accessibles dans un namespace spécifique. Les fonctions sont appelées en les préfixant par le nom du module, c'est-à-dire <code>math</code>.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
+</code></pre></div>
+<p>Similaire à l'import complet, mais les fonctions du module sont appelées en les préfixant par l'alias du module, ici <code>m</code>.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">sin</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span>
+</code></pre></div>
+<p>Seules les fonctions <code>sqrt</code> et <code>sin</code> sont importées, directement dans le namespace principal du fichier effectuant l'import. Les autres fonctions du module <code>math</code> ne sont pas accessibles, comme <code>cos</code> par exemple.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span>
+</code></pre></div>
+<p>En informatique, <code>*</code> signifie souvent « tout ». Toutes les fonctions sont importées directement dans l'espace de nom principal du fichier effectuant l'import. Cependant, cette méthode d'importation peut entraîner des conflits (fonctions ayant le même nom), il convient donc de l'utiliser avec précaution.</p>
+</div>
+</div>
+</div>
+</details>
+<h2 id="votre-premier-module">Votre premier module</h2>
+<h3 id="un-exemple">Un exemple</h3>
+<p>Dans un script Python <code>mon_module.py</code>, on définit les fonctions suivantes :</p>
+<div class="highlight"><span class="filename">mon_module.py</span><pre><span></span><code><span class="k">def</span> <span class="nf">celsius_vers_fahrenheit</span><span class="p">(</span><span class="n">T_celsius</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Convertit une température degrés Celsius en degrés Fahrenheit.</span>
+
+<span class="sd">    Paramètres :</span>
+<span class="sd">    - T_celsius (float) : Température en degrés Celsius à convertir.</span>
+
+<span class="sd">    Retourne :</span>
+<span class="sd">    - float : Température convertie en degrés Fahrenheit.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="n">T_celsius</span> <span class="o">*</span> <span class="mi">9</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">32</span>
+
+
+<span class="k">def</span> <span class="nf">fahrenheit_vers_celsius</span><span class="p">(</span><span class="n">T_fahrenheit</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Convertit une température degrés Fahrenheit en degrés Celsius.</span>
+
+<span class="sd">    Paramètres :</span>
+<span class="sd">    - T_fahrenheit (float) : Température en degrés Fahrenheit à convertir.</span>
+
+<span class="sd">    Retourne :</span>
+<span class="sd">    - float : Température convertie en degrés Celsius.</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">T_fahrenheit</span> <span class="o">-</span> <span class="mi">32</span><span class="p">)</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span>
+</code></pre></div>
+<p>Dans un second script Python <code>test.py</code> crée dans le même répertoire, on pourra alors importer les fonctions de ce module grâce à <code class="highlight"><span class="kn">import</span> <span class="nn">nom_du_module</span></code> :</p>
+<div class="highlight"><span class="filename">test.py</span><pre><span></span><code><span class="kn">import</span> <span class="nn">mon_module</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_module</span><span class="o">.</span><span class="n">celsius_vers_fahrenheit</span><span class="p">(</span><span class="mf">42.0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_module</span><span class="o">.</span><span class="n">fahrenheit_vers_celsius</span><span class="p">(</span><span class="mf">50.0</span><span class="p">))</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Sortie</span><pre><span></span><code><span class="go">107.6</span>
+<span class="go">10.0</span>
+</code></pre></div>
+<h3 id="exercice-lart-de-la-guerre">Exercice - L'art de la guerre</h3>
+<p>Créer un module <code>polynome2</code> qui définit une classe <code>Polynome2</code> représentant un polynôme du second degré. Un objet de cette classe possédera trois attributs <code>a</code>, <code>b</code> et <code>c</code>, à savoir les trois coefficients réels du polynôme <span class="arithmatex">\(ax^2 + bx + c\)</span>. Implémenter les méthodes suivantes :</p>
+<ul>
+<li>
+<p><code class="highlight"><span class="n">évaluer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span></code> qui évalue le polynôme à un <code>x</code> spécifique.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="n">discriminant</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span></code> qui renvoie le discriminant <span class="arithmatex">\(\Delta\)</span> du polynôme. Pour rappel :</p>
+<div class="arithmatex">\[
+\Delta = b^2 - 4ac
+\]</div>
+</li>
+<li>
+<p><code class="highlight"><span class="n">racines</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span></code> qui renvoie les deux racines réelles du polynôme dans l'ordre croissant. Pour rappel :</p>
+<div class="arithmatex">\[
+r_{1, 2} = \frac{-b \pm \sqrt \Delta}{2a}
+\]</div>
+<p>Les racines sont les valeurs <span class="arithmatex">\(x\)</span> telles que <span class="arithmatex">\(ax^2 + bx + c = 0\)</span>. La méthode renvoie <code>None</code> s'il n'existe pas de racines réelles, c'est-à-dire lorsque le discriminant du polynôme est négatif.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="n">extremum</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code> qui renvoie le maximum (respectivement minimum) du polynôme si <span class="arithmatex">\(a &gt; 0\)</span> (resp. <span class="arithmatex">\(a &lt; 0\)</span>). Renvoie <code>None</code> si <span class="arithmatex">\(a = 0\)</span>. Pour vous aider :</p>
+</li>
+</ul>
+<p></p><center>
+<img alt="" src="../ressources/max-light.png#only-light" width="50%">
+<img alt="" src="../ressources/max-dark.png#only-dark" width="50%">
+</center>
+<ul>
+<li><code class="highlight"><span class="n">distance_racines</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span></code> renvoie la distance absolue entre les deux racines.</li>
+</ul>
+<p>N'oubliez pas de bien documenter vos méthodes !</p>
+<p>Louis XIV souhaite utiliser votre nouveau module pour calculer la trajectoire de ses armes de jet sur le champ de bataille. Il vient vous voir avec les fonctions décrivant la trajectoire parabolique des projectiles de plusieurs armes :</p>
+<figure>
+<table>
+<thead>
+<tr>
+<th>Arme</th>
+<th>Équation de la trajectoire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arc</td>
+<td><span class="arithmatex">\(−0.06x^2 + 20x + 1.6\)</span></td>
+</tr>
+<tr>
+<td>Trébuchet</td>
+<td><span class="arithmatex">\(−0.1x² + 70x + 1.0\)</span></td>
+</tr>
+<tr>
+<td>Catapulte</td>
+<td><span class="arithmatex">\(−0.05x² + 18x + 0.5\)</span></td>
+</tr>
+<tr>
+<td>Fronde</td>
+<td><span class="arithmatex">\(−0.1x^2 + 5x + 1.8\)</span></td>
+</tr>
+</tbody>
+</table>
+</figure>
+<p>Dans un nouveau fichier Python <code>test_armes.py</code> importer votre module <code>polynome2</code> et calculer la portée et la flèche de chacune des armes :</p>
+<p></p><center>
+<img alt="" src="../ressources/fleche-light.png#only-light" width="50%">
+<img alt="" src="../ressources/fleche-dark.png#only-dark" width="50%">
+</center>
+<h2 id="definition-dune-api">Définition d'une API</h2>
+<p>Une <strong>API</strong>, Application Programming Interface, est un moyen pour deux programmes informatiques ou plus de communiquer entre eux. Une API expose un ensemble normalisé de classes, de méthodes, de fonctions et de constantes qui sert de façade par laquelle un logiciel offre des services à d'autres logiciels. </p>
+<p>Typiquement les différentes méthodes de votre classe <code>polynome2</code> définissent une API !</p>
+<h2 id="une-premiere-api-web">Une première API Web</h2>
+<p>On se propose d'utiliser l'API Web <a href="https://openweathermap.org/api">OpenWeather</a> qui fournit des données météorologiques en temps réel et bien plus. Inscrivez-vous pour obtenir une <strong>clé API</strong> qui vous autorisera à utiliser cet API.</p>
+<p>Sur le site, OpenWeather expose différents APIs, comme l'API <a href="https://openweathermap.org/api/geocoding-api">Geocoding</a> qui permet de déterminer la latitude et longitude d'une ville. Pour appeler cette API en Python, on utilise le module <code>requests</code> pour effectuer une requête HTTP et le module <code>json</code> pour convertir les données reçues en un dictionnaire. Le module <code>pprint</code> permet d'afficher plus lisiblement des dictionnaires :</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+
+<span class="n">API_KEY</span> <span class="o">=</span> <span class="s1">'d2902337c4a97a1d8fc513d7ab......'</span>  <span class="c1"># me demander le reste de la clé</span>
+<span class="n">city_name</span> <span class="o">=</span> <span class="s1">'Pons'</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">'http://api.openweathermap.org/geo/1.0/direct?q=</span><span class="si">{</span><span class="n">city_name</span><span class="si">}</span><span class="s1">&amp;appid=</span><span class="si">{</span><span class="n">API_KEY</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+<span class="n">pprint</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div>
+<p>Finalement, tout se passe comme si on appelait une fonction d'un module extérieure, les différents paramètres sont passés directement dans l'URL.</p>
+<div class="admonition question">
+<p class="admonition-title">Exercice</p>
+<p>Écrire la fonction <code>coordonnées(ville: str) -&gt; tuple[float, float]</code> qui renvoie la latitude et la longitude de ville <code>ville</code> donnée en paramètre. (note: <code>API_KEY</code> sera une variable globale)</p>
+</div>
+<h2 id="le-temps-est-bon-le-ciel-et-bleu">Le temps est bon, le ciel et bleu</h2>
+<p>Ce projet a pour but d'écrire le code Python qui affiche le bulletin météo des trois prochains jours de manière élégante d'une ville donnée :</p>
+<div class="highlight"><pre><span></span><code>     Bulletin météo de Pons en France
+
+┃          Mercredi 6 Décembre 2023
+┃
+┃ • Température
+┃     – Maximale             : 5.63  °C
+┃     – Moyenne              : 2.93  °C
+┃     – Minimale             : -2.03 °C
+┃ • Humidité moyenne         : 89.8%
+┃ • Vitesse moyenne du vent  : 8.68 km/h
+┃ • Pression moyenne         : 1018.4 hPa
+
+
+┃           Jeudi 7 Décembre 2023
+┃
+┃ • Température
+┃     – Maximale             : 11    °C
+┃     – Moyenne              : 6.28  °C
+┃     – Minimale             : 3.36  °C
+┃ • Humidité moyenne         : 84.75%
+┃ • Vitesse moyenne du vent  : 18.49 km/h
+┃ • Pression moyenne         : 1012.88 hPa
+
+
+┃          Vendredi 8 Décembre 2023
+┃
+┃ • Température
+┃     – Maximale             : 12.86 °C
+┃     – Moyenne              : 10.46 °C
+┃     – Minimale             : 9.35  °C
+┃ • Humidité moyenne         : 85.75%
+┃ • Vitesse moyenne du vent  : 14.58 km/h
+┃ • Pression moyenne         : 1013.0 hPa
+</code></pre></div>
+<h3 id="demarche-et-outils">Démarche et outils</h3>
+<ul>
+<li>
+<p>L'API <a href="https://openweathermap.org/forecast5">5 Day / 3 Hour Forecast</a> dont la documentation en anglais sera à lire pour récupérer les données météorologiques sur les prochains jours. Il faudra ensuite filtrer ces données pour récupérer ce que l'on souhaite.</p>
+</li>
+<li>
+<p>Le module <a href="https://docs.python.org/fr/3/library/datetime.html"><code>datetime</code></a> qui permettra de manipuler facilement les dates.</p>
+</li>
+<li>
+<p>Pour arrondir des nombres, centrer du texte etc. on utilisera les <a href="http://cissandbox.bentley.edu/sandbox/wp-content/uploads/2022-02-10-Documentation-on-f-strings-Updated.pdf">f-strings</a> de manière un peu plus avancée.</p>
+</li>
+</ul>
+<details class="tip">
+<summary>Le module <code>datetime</code></summary>
+<ul>
+<li>
+<p>La classe <code>datetime.date</code> permet de représenter une date (jour, mois, année) et de la manipuler facilement. Par exemple, <code>datetime.date.today()</code> renvoie la date actuelle sour la forme d'un objet de type <code>datetime.date</code> :</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">datetime</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2024</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># 6 Avril 2024</span>
+</code></pre></div>
+</li>
+<li>
+<p>La classe <code>datetime.timedelta</code> représente une durée, soit un écart entre deux objets de <code>datetime.date</code> :</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span> <span class="o">+</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Une instance de <code>datetime.date</code> se convertit en chaîne de caractères grâce à <code>date.strftime(format)</code> ou <code>format</code> est une chaîne de caractères qui représente la mise en forme souhaitée :</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'</span><span class="si">%d</span><span class="s1"> / %m / %Y'</span><span class="p">)</span>
+<span class="s1">'25 / 12 / 2023'</span>
+</code></pre></div>
+<p>Rendez-vous sur <a href="https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior">ce lien</a> pour connaître tous les formatages possibles.</p>
+</li>
+<li>
+<p>Pour que <code>date.strftime</code> « parle » français, il faudra spécifier la constante <code>LC_TIME</code> au début de votre programme :</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">locale</span>
+<span class="n">locale</span><span class="o">.</span><span class="n">setlocale</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">LC_TIME</span><span class="p">,</span> <span class="s1">'fr_FR'</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>La méthode <code>datetime.date.fromtimestamp</code> sera très utile pour récupérer la date depuis les données météorologiques.</p>
+</li>
+</ul>
+</details>
+<details class="tip">
+<summary>Formatage avancé</summary>
+<ul>
+<li>
+<p>Il est courant d'insérer des valeurs dans une chaîne de caractères en définissant une f-string :</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="sa">f</span><span class="s2">"La variable a contient la valeur </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> !"</span>
+<span class="s1">'La variable a contient la valeur 42 !'</span>
+</code></pre></div>
+</li>
+<li>
+<p>On peut spécifier en plus d'autres paramètres, comme le nombre de chiffres après la virgule à afficher :</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mf">10.123456789</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="sa">f</span><span class="s2">"La variable a contient la valeur </span><span class="si">{</span><span class="n">a</span><span class="si">:</span><span class="s2">.3</span><span class="si">}</span><span class="s2"> !"</span>
+<span class="s1">'La variable a contient la valeur 10.123 !'</span>
+</code></pre></div>
+</li>
+<li>
+<p>Rendez-vous sur <a href="http://cissandbox.bentley.edu/sandbox/wp-content/uploads/2022-02-10-Documentation-on-f-strings-Updated.pdf">ce lien</a> pour en savoir plus, surtout au niveau des alignements par exemple !</p>
+</li>
+</ul>
+</details>
+<h3 id="specifications">Spécifications</h3>
+<ul>
+<li>
+<p>Le bulletin météo des 3 prochains jours (pas aujourd'hui).</p>
+</li>
+<li>
+<p>Pour chaque jour :</p>
+<ul>
+<li>
+<p>Afficher correctement la date comme dans l'exemple.</p>
+</li>
+<li>
+<p>Donner la température maximale, moyenne et minimale en degré Celsius.</p>
+</li>
+<li>
+<p>Donner l'humidité moyenne.</p>
+</li>
+<li>
+<p>Donner la vitesse moyenne du vent en km/h.</p>
+</li>
+<li>
+<p>Donner la pression moyenne en hPa.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Décomposer votre programme en fonctions spécifiques et pertinentes pour rendre le code plus intelligible.</p>
+</li>
+<li>
+<p>Ne pas oublier les commentaires (pour chaque fonction) et d'utiliser des noms de variables pertinents.</p>
+</li>
+</ul></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

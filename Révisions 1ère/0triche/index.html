@@ -1,0 +1,1808 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../D%C3%A9fis/1schelling/">
+      
+      
+        <link rel="next" href="../1algorithmique/">
+      
+      
+      <link rel="icon" href="../../assets/laptop-code.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>Feuille de triche - Terminale NSI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_ansi.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#feuille-de-triche" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Terminale NSI" class="md-header__button md-logo" aria-label="Terminale NSI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Terminale NSI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Feuille de triche
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Terminale NSI" class="md-nav__button md-logo" aria-label="Terminale NSI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    Terminale NSI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    La correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Défis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Défis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D%C3%A9fis/1schelling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modèle de ségrégation de Schelling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Révisions 1ère
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Révisions 1ère
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Feuille de triche
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Feuille de triche
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types-et-valeurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types et Valeurs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sortie-entree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sortie / Entrée
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boucles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boucles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boucle-non-bornee-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucle non-bornée while
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boucle-bornee-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucle bornée for
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conteneurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conteneurs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conteneurs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tableau-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tableau list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dictionnaire-dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dictionnaire dict
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliotheques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bibliothèques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compléments
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1algorithmique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2mat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tableaux à deux dimensions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T2 Structures de données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T2 Structures de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/1poo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation Orientée Objet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/3piles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les piles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/4listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les listes chaînées
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/5files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/6graphes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/7arbres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les arbres binaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T3 Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T3 Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T3%20Architecture/1revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Révisions sur les réseaux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T3%20Architecture/2routage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le routage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T3%20Architecture/3processus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Processus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T4 Base de données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            T4 Base de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T4%20Base%20de%20donn%C3%A9es/1sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T4%20Base%20de%20donn%C3%A9es/2rela/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T5 Langages et programmation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Langages et programmation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/1arret/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calculabilité et décidabilité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/2rec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/3api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modularité et API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T6 Algorithmique
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            T6 Algorithmique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T6%20Algorithmique/3dac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diviser pour régner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T6%20Algorithmique/dp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation Dynamique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types-et-valeurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types et Valeurs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sortie-entree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sortie / Entrée
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boucles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boucles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boucle-non-bornee-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucle non-bornée while
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boucle-bornee-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucle bornée for
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conteneurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conteneurs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Conteneurs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tableau-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tableau list
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dictionnaire-dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dictionnaire dict
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliotheques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bibliothèques
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compléments
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="feuille-de-triche">Feuille de triche</h1>
+<div class="admonition info">
+<p class="admonition-title">Révisions 1ère NSI sur Capytale</p>
+<ul>
+<li><a href="https://capytale2.ac-paris.fr/web/c/a4c3-1839468"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6 31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0l112.3-112.3zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5 50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5l112.2-112.3c31.5-31.5 82.5-31.5 114 0 27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg></span> Révision sur les listes</a></li>
+<li><a href="https://capytale2.ac-paris.fr/web/c/d35e-1851649"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6 31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0l112.3-112.3zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5 50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5l112.2-112.3c31.5-31.5 82.5-31.5 114 0 27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg></span> Révision sur les tuples et les dictionnaires</a></li>
+</ul>
+</div>
+<h2 id="types-et-valeurs"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M315.4 15.5C309.7 5.9 299.2 0 288 0s-21.7 5.9-27.4 15.5l-96 160c-5.9 9.9-6.1 22.2-.4 32.2s16.3 16.2 27.8 16.2h192c11.5 0 22.2-6.2 27.8-16.2s5.5-22.3-.4-32.2l-96-160zM288 312v144c0 22.1 17.9 40 40 40h144c22.1 0 40-17.9 40-40V312c0-22.1-17.9-40-40-40H328c-22.1 0-40 17.9-40 40zM128 512a128 128 0 1 0 0-256 128 128 0 1 0 0 256z"></path></svg></span> Types et Valeurs</h2>
+<p>Un programme manipule des <strong>valeurs</strong>. Chaque valeur appartient à un <strong>type</strong> particulier.</p>
+<details class="note">
+<summary>Principaux types</summary>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Terme anglais</th>
+<th>Signification</th>
+<th>Exemples de valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="highlight"><span class="nb">int</span></code></td>
+<td>integer</td>
+<td>Nombre entier</td>
+<td><code class="highlight"><span class="mi">45</span></code> <code class="highlight"><span class="o">-</span><span class="mi">255</span></code> <code class="highlight"><span class="mi">1998</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="nb">float</span></code></td>
+<td>float</td>
+<td>Nombre décimal (ou flottant)</td>
+<td><code class="highlight"><span class="mf">3.1412</span></code> <code class="highlight"><span class="o">-</span><span class="mf">1.14152</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="nb">str</span></code></td>
+<td>string</td>
+<td>Chaîne de caractères (texte)</td>
+<td><code class="highlight"><span class="s2">"Bonjour"</span></code> <code class="highlight"><span class="s2">"42"</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="nb">bool</span></code></td>
+<td>boolean</td>
+<td>Booléen</td>
+<td><code class="highlight"><span class="kc">True</span></code> <code class="highlight"><span class="kc">False</span></code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="note">
+<summary>Conversion entre types</summary>
+<p>Pour passer d'un type à l'autre, on utilise les fonctions <code class="highlight"><span class="nb">int</span></code>,
+<code class="highlight"><span class="nb">float</span></code>, <code class="highlight"><span class="nb">str</span></code> ou <code class="highlight"><span class="nb">bool</span></code>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="mf">17.6</span><span class="p">)</span>  <span class="c1"># float ► int</span>
+<span class="mi">17</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">int</span><span class="p">(</span><span class="s2">"42"</span><span class="p">)</span>  <span class="c1"># str   ► int</span>
+<span class="mi">42</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">str</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>  <span class="c1"># float ► str</span>
+<span class="s2">"3.14"</span>
+</code></pre></div>
+</details>
+<h2 id="variables"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M50.7 58.5 0 160h208V32H93.7c-18.2 0-34.8 10.3-43 26.5zM240 160h208L397.3 58.5c-8.2-16.2-24.8-26.5-43-26.5H240v128zm208 32H0v224c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V192z"></path></svg></span> Variables</h2>
+<p>Une variable <strong>stocke</strong> une valeur et est identifiée par un <strong>nom</strong>.
+Lors de l’évaluation d’une expression, le nom d’une variable est alors substitué par sa valeur actuelle.</p>
+<div class="highlight"><pre><span></span><code><span class="n">toto</span> <span class="o">=</span> <span class="mi">42</span>  <span class="c1"># affectation (initialisation)</span>
+<span class="n">toto</span> <span class="o">=</span> <span class="mi">56</span>  <span class="c1"># une nouvelle affectation écrase l'ancienne valeur</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">toto</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># substitution, affiche 59</span>
+</code></pre></div>
+<p>On parle d'<strong>initialisation</strong> lors de la première affectation. Le symbole <code>=</code> est l'opérateur d'affectation.</p>
+<details class="note">
+<summary>Opérateurs arithmétiques</summary>
+<table>
+<thead>
+<tr>
+<th>Opérateur arithmétique</th>
+<th>Signification</th>
+<th>Exemple</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="highlight"><span class="o">+</span></code></td>
+<td>Addition</td>
+<td><code class="highlight"><span class="mi">10</span> <span class="o">+</span> <span class="mi">3</span></code></td>
+<td><code class="highlight"><span class="mi">13</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">-</span></code></td>
+<td>Soustraction</td>
+<td><code class="highlight"><span class="mi">42</span> <span class="o">-</span> <span class="mf">10.5</span></code></td>
+<td><code class="highlight"><span class="mf">31.5</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">*</span></code></td>
+<td>Multiplication</td>
+<td><code class="highlight"><span class="mi">7</span> <span class="o">*</span> <span class="mi">8</span></code></td>
+<td><code class="highlight"><span class="mi">56</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">/</span></code></td>
+<td>Division</td>
+<td><code class="highlight"><span class="mi">13</span> <span class="o">/</span> <span class="mi">5</span></code></td>
+<td><code class="highlight"><span class="mf">2.6</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">//</span></code></td>
+<td>Division entière</td>
+<td><code class="highlight"><span class="mi">13</span> <span class="o">//</span> <span class="mi">5</span></code></td>
+<td><code class="highlight"><span class="mi">2</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">%</span></code></td>
+<td>Reste dans la division entière (ou modulo)</td>
+<td><code class="highlight"><span class="mi">13</span> <span class="o">%</span> <span class="mi">5</span></code></td>
+<td><code class="highlight"><span class="mi">3</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">**</span></code></td>
+<td>Puissance</td>
+<td><code class="highlight"><span class="mi">4</span> <span class="o">**</span> <span class="mi">3</span></code></td>
+<td><code class="highlight"><span class="mi">64</span></code></td>
+</tr>
+</tbody>
+</table>
+<p>Les calculs suivent la priorité usuelle des opérateurs.</p>
+<div class="highlight"><span class="filename">Syntaxe abrégée</span><pre><span></span><code><span class="n">x</span> <span class="o">+=</span> <span class="mi">10</span>  <span class="c1"># équivalent à x = x + 10</span>
+<span class="n">x</span> <span class="o">*=</span> <span class="mi">2</span>   <span class="c1"># équivalent à x = x * 2</span>
+<span class="n">x</span> <span class="o">//=</span> <span class="mi">2</span>  <span class="c1"># équivalent à x = x // 2</span>
+<span class="c1"># etc.</span>
+</code></pre></div>
+<p>Les opérateurs arithmétiques ont un sens différent suivant les types des valeurs manipulées :</p>
+<div class="highlight"><pre><span></span><code><span class="s2">"Oui"</span> <span class="o">+</span> <span class="s2">"Non"</span>  <span class="c1"># concaténation, renvoie "OuiNon"</span>
+<span class="s2">"Oui"</span> <span class="o">*</span> <span class="mi">3</span>  <span class="c1"># renvoie "OuiOuiOui"</span>
+</code></pre></div>
+<p>C'est tout l'intérêt d'avoir différents types, la machine les traite différemment.</p>
+</details>
+<h2 id="sortie-entree"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 0C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h176l-10.7 32H160c-17.7 0-32 14.3-32 32s14.3 32 32 32h256c17.7 0 32-14.3 32-32s-14.3-32-32-32h-69.3L336 416h176c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zm448 64v288H64V64h448z"></path></svg></span> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M64 64C28.7 64 0 92.7 0 128v256c0 35.3 28.7 64 64 64h448c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm16 64h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zM64 240c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16v-32zm16 80h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm80-176c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32zm16 80h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm-16 112c0-8.8 7.2-16 16-16h224c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H176c-8.8 0-16-7.2-16-16v-32zm112-208h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm-16 112c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32zm112-112h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm-16 112c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32zm112-112h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm-16 112c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32zm16 80h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16z"></path></svg></span> Sortie / Entrée</h2>
+<ul>
+<li>
+<p>La fonction <code class="highlight"><span class="nb">print</span></code> permet d'<strong>afficher</strong> une ou plusieurs valeurs.</p>
+<div class="highlight"><pre><span></span><code><span class="n">prénom</span> <span class="o">=</span> <span class="s2">"Arthur"</span>
+<span class="n">âge</span> <span class="o">=</span> <span class="mi">27</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">prénom</span><span class="p">,</span> <span class="s2">"a exactement "</span><span class="p">,</span> <span class="n">âge</span><span class="p">,</span> <span class="s2">"ans"</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>La fonction <code class="highlight"><span class="nb">input</span></code> récupère une <strong>saisie utilisateur</strong> au clavier. Elle renvoie une chaîne de caractères.</p>
+<div class="highlight"><pre><span></span><code><span class="n">saisie</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Rayon ?"</span><span class="p">)</span>  <span class="c1"># input renvoie une chaîne de caractères</span>
+<span class="n">rayon</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">saisie</span><span class="p">)</span> <span class="c1"># conversion vers un nombre décimal</span>
+<span class="n">aire</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="n">rayon</span> <span class="o">*</span> <span class="n">rayon</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Aire du disque: "</span><span class="p">,</span> <span class="n">rayon</span><span class="p">)</span>
+</code></pre></div>
+</li>
+</ul>
+<h2 id="conditions"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"></path></svg></span> Conditions</h2>
+<p>Les structures conditionnelles permettent d'exécuter des blocs de code spécifiques suivant le résultat d'une condition.</p>
+<details class="note">
+<summary>Opérateurs de comparaison et d'appartenance</summary>
+<p>Ces opérateurs renvoient un <strong>booléen</strong> : <code class="highlight"><span class="kc">True</span></code> ou <code class="highlight"><span class="kc">False</span></code>.</p>
+<table>
+<thead>
+<tr>
+<th>Opérateurs de comparaison</th>
+<th>Signification</th>
+<th>Exemple</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="highlight"><span class="o">==</span></code></td>
+<td>égal à</td>
+<td><code class="highlight"><span class="mi">1</span> <span class="o">==</span> <span class="mi">1</span></code></td>
+<td><code class="highlight"><span class="kc">True</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">!=</span></code></td>
+<td>différent de</td>
+<td><code class="highlight"><span class="mi">1</span> <span class="o">!=</span> <span class="mi">1</span></code></td>
+<td><code class="highlight"><span class="kc">False</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">&gt;</span></code></td>
+<td>supérieur à</td>
+<td><code class="highlight"><span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">0</span></code></td>
+<td><code class="highlight"><span class="kc">True</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">&gt;=</span></code></td>
+<td>supérieur ou égal à</td>
+<td><code class="highlight"><span class="mi">4</span> <span class="o">&gt;=</span> <span class="mi">6</span></code></td>
+<td><code class="highlight"><span class="kc">False</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">&lt;</span></code></td>
+<td>inférieur à</td>
+<td><code class="highlight"><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">5</span></code></td>
+<td><code class="highlight"><span class="kc">False</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="o">&lt;=</span></code></td>
+<td>inférieur ou égal à</td>
+<td><code class="highlight"><span class="mi">5</span> <span class="o">&lt;=</span> <span class="mi">5</span></code></td>
+<td><code class="highlight"><span class="kc">True</span></code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Opérateur d'appartenance</th>
+<th>Signification</th>
+<th>Exemple</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="highlight"><span class="n">élément</span> <span class="ow">in</span> <span class="n">itérable</span></code></td>
+<td><code>élément</code> est dans <code>itérable</code></td>
+<td><code class="highlight"><span class="s2">"t"</span> <span class="ow">in</span> <span class="s2">"chat"</span></code></td>
+<td><code class="highlight"><span class="kc">True</span></code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="note">
+<summary>Opérateurs logiques</summary>
+<p>Les opérateurs logiques permettent de <strong>combiner</strong> des conditions. Ils fonctionnent
+entre deux booléens.</p>
+<table>
+<thead>
+<tr>
+<th>Opérateurs logiques</th>
+<th>Signification</th>
+<th>Exemple</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code class="highlight"><span class="ow">not</span></code></td>
+<td><strong>non</strong> logique</td>
+<td><code class="highlight"><span class="ow">not</span> <span class="kc">True</span></code></td>
+<td><code class="highlight"><span class="kc">False</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="ow">and</span></code></td>
+<td><strong>et</strong> logique</td>
+<td><code class="highlight"><span class="kc">False</span> <span class="ow">and</span> <span class="kc">True</span></code></td>
+<td><code class="highlight"><span class="kc">False</span></code></td>
+</tr>
+<tr>
+<td><code class="highlight"><span class="ow">or</span></code></td>
+<td><strong>ou</strong> logique</td>
+<td><code class="highlight"><span class="kc">False</span> <span class="ow">or</span> <span class="kc">True</span></code></td>
+<td><code class="highlight"><span class="kc">True</span></code></td>
+</tr>
+</tbody>
+</table>
+</details>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><code class="highlight"><span class="k">if</span></code></th>
+<th style="text-align: center;"><code class="highlight"><span class="k">if</span> <span class="k">else</span></code></th>
+<th style="text-align: center;"><code class="highlight"><span class="k">if</span> <span class="k">elif</span> <span class="k">else</span></code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img alt="if" src="../ressources/if.png"></td>
+<td style="text-align: center;"><img alt="else" src="../ressources/else.png"></td>
+<td style="text-align: center;"><img alt="elif" src="../ressources/elif.png"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><span class="filename">Exemple d'une structure conditionnelle</span><pre><span></span><code><span class="n">note</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Saisissez votre note au bac :"</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Votre mention est :"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">note</span> <span class="o">&gt;=</span> <span class="mi">16</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Félicitations"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">note</span> <span class="o">&gt;=</span> <span class="mi">14</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Bien"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">note</span> <span class="o">&gt;=</span> <span class="mi">12</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Assez Bien"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Pas de mention"</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="boucles"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M0 224c0 17.7 14.3 32 32 32s32-14.3 32-32c0-53 43-96 96-96h160v32c0 12.9 7.8 24.6 19.8 29.6s25.7 2.2 34.9-6.9l64-64c12.5-12.5 12.5-32.8 0-45.3l-64-64c-9.2-9.2-22.9-11.9-34.9-6.9S320 19.1 320 32v32H160C71.6 64 0 135.6 0 224zm512 64c0-17.7-14.3-32-32-32s-32 14.3-32 32c0 53-43 96-96 96H192v-32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9l-64 64c-12.5 12.5-12.5 32.8 0 45.3l64 64c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V448h160c88.4 0 160-71.6 160-160z"></path></svg></span> Boucles</h2>
+<p>Une boucle est une structure de contrôle de flot qui permet de <strong>répéter</strong> un bloc de code.</p>
+<h3 id="boucle-non-bornee-while">Boucle non-bornée <code class="highlight"><span class="k">while</span></code></h3>
+<p>Lorsque le nombre de répétitions n'est pas connu à l'avance, la boucle <code class="highlight"><span class="k">while</span></code> permet de répéter un bloc d'instructions tant qu'une condition est vérifiée.</p>
+<figure>
+<p><img alt="while" src="../ressources/while.png" width="350px"></p>
+</figure>
+<div class="highlight"><span class="filename">Combien de fois faut-il plier une feuille pour que son épaisseur dépasse la Tour Eiffel ?</span><pre><span></span><code><span class="n">epaisseur</span> <span class="o">=</span> <span class="mf">0.0001</span>
+<span class="n">nombre_pliages</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">epaisseur</span> <span class="o">&lt;</span> <span class="mi">324</span><span class="p">:</span> 
+    <span class="n">epaisseur</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">epaisseur</span>
+    <span class="n">nombre_pliages</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Il faut"</span><span class="p">,</span> <span class="n">nombre_pliages</span><span class="p">,</span> <span class="s2">"pliages."</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="boucle-bornee-for">Boucle bornée <code class="highlight"><span class="k">for</span></code></h3>
+<p>La boucle <code class="highlight"><span class="k">for</span></code> parcourt un <strong>itérable</strong>, c'est-à-dire une structure de données qui peut être décomposée en une séquence d'éléments.</p>
+<figure>
+<p><img alt="while" src="../ressources/for.png" width="350px"></p>
+</figure>
+<p>On dit que la variable <code>élément</code> parcourt <code>itérable</code>, elle va capturer chaque élément de l'itérable à chaque tour de boucle.</p>
+<div class="highlight"><span class="filename">Exemple de parcours de plusieurs itérables</span><pre><span></span><code><span class="k">for</span> <span class="n">caractere</span> <span class="ow">in</span> <span class="s2">"bonjour"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">caractere</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">17</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span>
+</code></pre></div>
+<details class="note">
+<summary>Générer une séquence d'entiers avec <code class="highlight"><span class="nb">range</span></code></summary>
+<p><figure markdown>
+<img alt="while" src="../ressources/range.png" width="350px">
+</figure></p>
+</details>
+<h2 id="fonctions">Fonctions</h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># définition d'une fonction</span>
+<span class="k">def</span> <span class="nf">double</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>  <span class="c1"># nombre est un paramètre / argument</span>
+    <span class="k">return</span> <span class="n">nombre</span> <span class="o">*</span> <span class="mi">2</span>  <span class="c1"># return permet de renvoyer une valeur</span>
+
+<span class="n">résultat</span> <span class="o">=</span> <span class="n">double</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>  <span class="c1"># appel de la fonction </span>
+<span class="nb">print</span><span class="p">(</span><span class="n">résultat</span><span class="p">)</span>  <span class="c1"># affiche 42</span>
+</code></pre></div>
+<h2 id="conteneurs"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160v-48zm-48 48H48c-26.5 0-48 21.5-48 48v208c0 53 43 96 96 96h256c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48h-64v-48C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1-48 0z"></path></svg></span> Conteneurs</h2>
+<h3 id="tableau-list">Tableau <code class="highlight"><span class="nb">list</span></code></h3>
+<ul>
+<li>
+<p>Opérations de base :</p>
+<div class="highlight"><pre><span></span><code><span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Accès à un élément grâce à son indice</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1"># (lecture) affiche 58</span>
+<span class="n">tab</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">999</span>  <span class="c1"># (écriture) tab vaut [3, 4, 999, 10, 2]</span>
+
+<span class="c1"># Taille d'une liste</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">))</span>  <span class="c1"># affiche 5</span>
+
+<span class="c1"># Ajouter/retirer un élément</span>
+<span class="n">tab</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span> <span class="c1"># tab vaut [3, 4, 999, 10, 2, 42]</span>
+<span class="n">tab</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># tab vaut [3, 4, 999, 2, 42]</span>
+</code></pre></div>
+</li>
+<li>
+<p>Créer un tableau :
+    </p><div class="highlight"><pre><span></span><code><span class="c1"># Création explicite</span>
+<span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+
+<span class="c1"># Création à partir d'un élément</span>
+<span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'chat'</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span>  <span class="c1"># ['chat', 'chat', 'chat', 'chat', 'chat']</span>
+
+<span class="c1"># Création à partir d'un autre itérable</span>
+<span class="n">tab</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>  <span class="c1"># tab vaut [0, 1, 2, 3, 4, 5]</span>
+<span class="n">tab</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s2">"salut"</span><span class="p">)</span>   <span class="c1"># tab vaut ['s', 'a', 'l', 'u', 't']</span>
+
+<span class="c1"># Création à partir d'une liste vide</span>
+<span class="n">tab</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># liste vide</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">tab</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span>
+<span class="c1"># tab vaut [0, 1, 4, 9, 16]</span>
+
+<span class="c1"># Liste en compréhensions</span>
+<span class="n">tab</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>  <span class="c1"># tab vaut [0, 1, 4, 9, 16]</span>
+<span class="n">tab_pair</span> <span class="o">=</span> <span class="p">[</span><span class="n">n</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">tab</span> <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>  <span class="c1"># (filtre) tab_pair vaut [0, 4, 16] </span>
+</code></pre></div>
+</li>
+<li>
+<p>Parcourir un tableau :</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">élément</span> <span class="ow">in</span> <span class="n">tab</span><span class="p">:</span>  <span class="c1"># parcours par élément</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">élément</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tab</span><span class="p">)):</span>  <span class="c1"># parcours par indice</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">tab</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</code></pre></div>
+</li>
+</ul>
+<h3 id="dictionnaire-dict">Dictionnaire <code class="highlight"><span class="nb">dict</span></code></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Construction explicite d'un dictionnaire :</span>
+<span class="n">eleve</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"prénom"</span><span class="p">:</span> <span class="s2">"Michel"</span><span class="p">,</span>
+    <span class="s2">"nom"</span><span class="p">:</span> <span class="s2">"Dupont"</span><span class="p">,</span>
+    <span class="s2">"âge"</span><span class="p">:</span> <span class="mi">17</span><span class="p">,</span>
+    <span class="s2">"taille"</span><span class="p">:</span> <span class="mi">175</span>
+<span class="p">}</span>
+
+<span class="c1"># On accède à une valeur, grâce à sa clé :</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eleve</span><span class="p">[</span><span class="s2">"prénom"</span><span class="p">])</span>
+
+<span class="c1"># Modification d'une valeur :</span>
+<span class="n">eleve</span><span class="p">[</span><span class="s2">"age"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span>
+
+<span class="c1"># Suppression d'une association :</span>
+<span class="n">eleve</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">"taille"</span><span class="p">)</span> <span class="c1"># (note : ici, la méthode .pop renvoie la valeur associée à la clé, donc 175)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">eleve</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="c1"># ensemble des clés</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eleve</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="c1"># ensemble des valeurs</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eleve</span><span class="o">.</span><span class="n">items</span><span class="p">())</span> <span class="c1"># ensemble des clés-valeurs</span>
+
+<span class="c1"># parcours par clé </span>
+<span class="k">for</span> <span class="n">clé</span> <span class="ow">in</span> <span class="n">eleve</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">clé</span><span class="p">,</span> <span class="n">eleve</span><span class="p">[</span><span class="n">clé</span><span class="p">])</span>
+
+<span class="c1"># parcours par valeurs</span>
+<span class="k">for</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">eleve</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">valeur</span><span class="p">)</span>
+
+<span class="c1"># parcours par clé et valeurs</span>
+<span class="k">for</span> <span class="n">clé</span><span class="p">,</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">eleve</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">clé</span><span class="p">,</span> <span class="n">valeur</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="bibliotheques">Bibliothèques</h2>
+<h2 id="complements">Compléments</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

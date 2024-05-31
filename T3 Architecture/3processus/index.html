@@ -1,0 +1,1493 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2routage/">
+      
+      
+        <link rel="next" href="../../T4%20Base%20de%20donn%C3%A9es/1sql/">
+      
+      
+      <link rel="icon" href="../../assets/laptop-code.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>Processus - Terminale NSI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_ansi.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#processus" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Terminale NSI" class="md-header__button md-logo" aria-label="Terminale NSI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Terminale NSI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Processus
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Terminale NSI" class="md-nav__button md-logo" aria-label="Terminale NSI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    Terminale NSI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    La correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Défis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Défis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D%C3%A9fis/1schelling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modèle de ségrégation de Schelling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Révisions 1ère
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Révisions 1ère
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/0triche/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feuille de triche
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/1algorithmique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/2mat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tableaux à deux dimensions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T2 Structures de données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T2 Structures de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/1poo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation Orientée Objet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/3piles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les piles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/4listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les listes chaînées
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/5files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/6graphes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/7arbres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les arbres binaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T3 Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T3 Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Révisions sur les réseaux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2routage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le routage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Processus
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Processus
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-du-systeme-dexploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rôle du système d'exploitation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-dun-processus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Création d'un processus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-3-etats-dun-processus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les 3 états d'un processus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-interruptions-sytemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les interruptions sytèmes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-veritable-chef-dorchestre-lordonnanceur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le véritable chef d'orchestre : l'ordonnanceur
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le véritable chef d'orchestre : l'ordonnanceur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interblocage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interblocage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T4 Base de données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            T4 Base de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T4%20Base%20de%20donn%C3%A9es/1sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T4%20Base%20de%20donn%C3%A9es/2rela/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T5 Langages et programmation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Langages et programmation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/1arret/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calculabilité et décidabilité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/2rec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/3api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modularité et API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T6 Algorithmique
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            T6 Algorithmique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T6%20Algorithmique/3dac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diviser pour régner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T6%20Algorithmique/dp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation Dynamique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définition
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-du-systeme-dexploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rôle du système d'exploitation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-dun-processus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Création d'un processus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-3-etats-dun-processus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les 3 états d'un processus
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-interruptions-sytemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les interruptions sytèmes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-veritable-chef-dorchestre-lordonnanceur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le véritable chef d'orchestre : l'ordonnanceur
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le véritable chef d'orchestre : l'ordonnanceur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interblocage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interblocage
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="processus">Processus</h1>
+<ul>
+<li>Création d'un processus</li>
+<li>Ordonnancement de plusieurs processus</li>
+<li>Risque de l'interblocage (deadlock)</li>
+</ul>
+<details class="note">
+<summary>Rappels de 1ère</summary>
+<p>Un programme, ou exécutable, est une suite d'instructions en langage machine, c'est-à-dire une suite d’octets que le processeur est capable de décoder et exécuter. Pour des facilités de lecture, on le traduit en langage assembleur, par exemple :</p>
+<div class="grid cards" markdown>
+<div class="highlight"><span class="filename">Code machine</span><pre><span></span><code><span class="err">00011010</span>
+<span class="err">00100010</span><span class="w"> </span>
+<span class="err">00010011</span>
+<span class="err">00000011</span>
+<span class="err">01111000</span><span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Code assembleur</span><pre><span></span><code><span class="nf">LD</span><span class="w"> </span><span class="no">A</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="no">DE</span><span class="p">)</span><span class="w"> </span>
+<span class="no">LD</span><span class="w"> </span><span class="p">(</span><span class="no">HL</span><span class="err">+</span><span class="p">),</span><span class="w"> </span><span class="no">A</span><span class="w"> </span>
+<span class="no">INC</span><span class="w"> </span><span class="no">DE</span><span class="w"> </span>
+<span class="no">DEC</span><span class="w"> </span><span class="no">BC</span><span class="w"> </span>
+<span class="no">LD</span><span class="w"> </span><span class="no">A</span><span class="p">,</span><span class="w"> </span><span class="no">B</span><span class="w"> </span>
+</code></pre></div>
+</div>
+<p>Lorsque ce programme est exécuté, l'OS le charge dans la RAM à une certaine adresse et inscrit cette adresse dans le registre IP (Instruction Pointer) du processeur. Le processeur continue alors sa routine :</p>
+<ul>
+<li><strong>Récupérer</strong> l'instruction à exécuter en mémoire</li>
+<li><strong>Décoder</strong> l'instruction (déterminer dans la suite d'octets l'instruction à effectuer)</li>
+<li><strong>Exécuter</strong> l'instruction</li>
+</ul>
+<p>Ce cycle se répète jusqu'à l'arrêt de la machine.</p>
+</details>
+<h2 id="definition">Définition</h2>
+<p>Lorsqu'un programme (fichier <code>.exe</code> sur Windows) est exécuté sur un ordinateur, un (parfois plusieurs) <strong>processus</strong> est crée. Un processus comprend notamment :</p>
+<ul>
+<li>les <strong>instructions</strong> à exécuter, c'est-à-dire le programme en lui-même ;</li>
+<li>un espace <strong>mémoire</strong> reservé ;</li>
+<li>des permissions d'accès à des  <strong>ressources</strong> extérieures (par exemple, un fichier en ouverture).</li>
+</ul>
+<p>Un processus est donc une instance d'exécution de ce programme. </p>
+<h2 id="role-du-systeme-dexploitation">Rôle du système d'exploitation</h2>
+<p>Un système d'exploitation (Windows, Linux, MacOS etc.) capable de gérer l'exécution de <strong>plusieurs processus</strong> est dit <strong>multitâches</strong>. Sur les OS basés sur UNIX, la commande <code>top</code> (ou <code>ps</code>) permet de surveiller en temps réel l'ensemble des processus en cours d'exécution sur la machine :</p>
+<figure>
+<img alt="" class="center" src="../top.png" width="100%">
+</figure>
+<p>Sur Windows, le gestionnaire de tâches (accessible par le raccourci <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-delete">Del</kbd></span>) réalise le même rôle.</p>
+<h2 id="creation-dun-processus">Création d'un processus</h2>
+<p>Un processus peut être crée :</p>
+<ul>
+<li>Au démarrage du système</li>
+<li>Par un appel d'un autre processus</li>
+<li>Par l'utilisateur</li>
+</ul>
+<p>Lors de sa création, le système d'exploitation attribue au processus un identifiant unique, appelé <strong>PID</strong> (Process Identifier).  Si un processus <strong>parent</strong> crée un processus <strong>fils</strong>, l'OS attribue au processus fils, en plus de son PID, l'identifiant de son parent, appelé <strong>PPID</strong> (Parent Process Identifier).</p>
+<details class="info">
+<summary>Pourquoi le PPID ?</summary>
+<p>Le PPID permet de <strong>hiérarchiser</strong> les processus sous la forme d'un <strong>arbre de processus</strong>. Ainsi, si un processus parent est terminé, tous ses processus fils seront également terminés, et donc par récursion, toute sa descendance.</p>
+<p><figure markdown="span">
+<img alt="" class="center" src="../tree.png" width="100%">
+</figure></p>
+<p>Certaines commandes permettent de visualiser facilement cet arbre. Ici, on peut voir une partie des processus exécutés lorsque que j'utilise mon IDE préféré VSCode.</p>
+</details>
+<h2 id="les-3-etats-dun-processus">Les <strong>3</strong> états d'un processus</h2>
+<p>On rappelle qu'un processeur ne peut traiter qu'une seule instruction à la fois. Autrement dit, on ne peux exécuter qu'un seul processus à la fois. Pour donner l'illusion de simultanéité d'exécution, <strong>les processus se partagent le processeur à tour de rôle</strong>. Ainsi un processus est soit dans l'état <strong>prêt</strong>, soit dans l'état <strong>élu</strong> :</p>
+<figure>
+<img alt="" class="center" src="../states.png" width="50%">
+</figure>
+<p>Les processus doivent aussi se partager des ressources extérieures comme la mémoire, le clavier, les fichiers, l'imprimante etc. Lorsqu'un processus a besoin d'une de ces ressources et qu'elle n'est pas disponible, en attendant qu'elle le soit, il libère le processeur et passe en état <strong>bloqué</strong>.</p>
+<details class="question">
+<summary>Question</summary>
+<p>Soit le programme Python suivant :</p>
+<div class="highlight"><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">'Votre âge ?'</span><span class="p">)</span>
+<span class="n">age</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Bon anniversaire ! Vous avez </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s1"> ans !'</span><span class="p">)</span>
+<span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Vous êtes maintenant un peu plus vieux !'</span><span class="p">)</span>
+<span class="n">fichier</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'codes_nucléaires.txt'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fichier</span><span class="o">.</span><span class="n">readlines</span><span class="p">())</span>
+<span class="n">fichier</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p>Lorsqu'on exécute ce programme, un processus est crée, mais à quel moment passe-t-il dans l'état <strong>bloqué</strong> ?</p>
+</details>
+<h2 id="les-interruptions-sytemes">Les interruptions sytèmes</h2>
+<p>Si un programme est en cours d'exécution sur un processeur, ce dernier exécutera bêtement chaque instruction jusqu'à la dernière. Alors, comment le système d'exploitation parvient-il à reprendre la main ?</p>
+<p>Grâce à un mécanisme appellée <strong>interruption</strong> (ou signal) ! Le processeur suspend temporairement le programme en cours lorsqu'une interruption se produit, permettant au système d'exploitation d'intervenir. Une fois terminé, le programme reprend là où il s'était arrêté.</p>
+<p>Une interruption peut être déclenchée par différentes actions, comme une touche pressée sur le clavier, une écriture terminée sur le disque dur, ou la réception d'un paquet par la carte réseau. Parmi elles, il y a les interruptions d'horloge, qui se produisent à intervalles réguliers (environ toutes les 100 ns aujourd'hui) et permettent l'exécution de programmes de manière concurrente.</p>
+<h2 id="le-veritable-chef-dorchestre-lordonnanceur">Le véritable chef d'orchestre : l'ordonnanceur</h2>
+<p>Bien, nous avons plusieurs processus en attente d'exécution. Comment l'OS détermine le prochain processus à élire ? Et combien de temps d'exécution lui allouer ? C'est le rôle de l'<strong>ordonnanceur</strong> de répondre à ces problématiques.</p>
+<p>Que faut-il faire ?</p>
+<ul>
+<li>Traiter le processus le plus prioritaire ?</li>
+<li>ou le plus rapide d'abord ?</li>
+<li>ou dans l'ordre où ils ont été crées ?</li>
+<li>ou à tour de rôle chacun pendant un temps fixe ?</li>
+</ul>
+<h3 id="exemple">Exemple</h3>
+<p>Supposons qu'un processeur doive traiter quatre processus nommés A, B, C et D, chacun ayant des temps d'exécution différents et se présentant à différents instants au processeur :</p>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Processus</th>
+<th style="text-align: center;">Cycle de création</th>
+<th style="text-align: center;">Durée en cycles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figure>
+<img alt="Chronogramme" src="../chrono-creation.svg">
+</figure>
+<p>Étant donné que le processeur ne peut traiter qu'un processus à la fois, il est nécessaire de les ordonner de manière à éviter les chevauchements. Voici quelques stratégie d'ordonnancement :</p>
+<div class="admonition example">
+<p><figure markdown="span">
+<img alt="Chronogramme" src="../paps.svg">
+</figure></p>
+<p>Cette méthode repose sur le principe <em>« Premier Arrivé, Premier Servi »</em> ou FIFO. C'est un ordonnanceur <strong>non-préemtif</strong> car un processus est exécuté de bout en bout.</p>
+<hr>
+<p><figure markdown="span">
+<img alt="Chronogramme" src="../sjf.svg">
+</figure></p>
+<p>La méthode <em>Short Job First</em> (SJF) consiste à choisir le processus en attente qui sera le plus rapide à terminer. Elle est non-préemtive.</p>
+<hr>
+<p><figure markdown="span">
+<img alt="Chronogramme" src="../srt.svg">
+</figure></p>
+<p>La méthode <em>Shortest Remaining Time</em> (SRT) est une version préemptive de l’algorithme <em>Shortest Job First</em> (SJF). Lorsqu’un nouveau processus arrive dans la file d’attente, l'ordonnanceur compare sa durée d'exécution estimé avec celui du processus actuellement en cours d'exécution. Si le temps restant du nouveau processus est plus court, ce dernier prend immédiatement la place du processus en cours. C'est un ordonnanceur préemptif car un processus peut être interrompu pour permettre l'exécution d'un autre processus.</p>
+<hr>
+<p>La méthode <strong>Round Robin</strong> (RR), ou algorithme du tourniquet, sera en exercice.</p>
+</div>
+<p>Pour comparer ces algorithmes, on peut mesurer :</p>
+<ul>
+<li>
+<p>La moyenne du <strong>temps de séjour</strong> pour chaque processus. Le temps de séjour est le délai entre le temps d'arrivée et le temps de terminaison d'un processus.</p>
+</li>
+<li>
+<p>La moyenne du <strong>temps d'attente</strong> pour chaque processus. Le temps d'attente est la différence entre le temps de séjour et la durée totale du processus.</p>
+</li>
+</ul>
+<p>Par exemple, pour la méthode SRT :</p>
+<figure>
+<img alt="Chronogramme" src="../srt.svg">
+</figure>
+<div class="center-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Processus</th>
+<th style="text-align: center;">Temps de séjour</th>
+<th style="text-align: center;">Temps d'attente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;"><span class="arithmatex">\(10 - 0 = 10\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(10 - 5 = 5\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;"><span class="arithmatex">\(4 - 1 = 3\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3 - 3 = 0\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;"><span class="arithmatex">\(6 - 3 = 3\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(3 - 2 = 1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;"><span class="arithmatex">\(14 - 5 = 9\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(9 - 4 = 5\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Ainsi le temps de séjour moyen est de <span class="arithmatex">\(6.25\)</span> et le temps d'attente moyen de <span class="arithmatex">\(2.75\)</span>.</p>
+<details class="question">
+<summary>Question</summary>
+<p>Faites-en de même pour les méthodes PAPS et SJF. Dresser ensuite un tableau pour comparer ces méthodes.</p>
+</details>
+<h2 id="interblocage">Interblocage</h2>
+<p>Comme nous venons de le voir, un processus peut être dans l'état <strong>bloqué</strong> dans l'attente de la libération d'une ressource.</p>
+<p>Ces ressources (l'accès en écriture à un fichier...) ne peuvent être données à deux processus à la fois. Des processus souhaitant accéder à cette ressource sont donc en <strong>concurrence</strong> sur cette ressource. Un processus peut donc devoir attendre qu'une ressource se libère avant de pouvoir y accéder (et ainsi passer de l'état bloqué à l'état prêt). Mais une situation gênante peut appparaître :</p>
+<figure>
+<img alt="" src="../tab_proc.png">
+
+
+</figure></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

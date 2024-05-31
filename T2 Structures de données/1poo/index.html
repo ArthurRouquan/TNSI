@@ -1,0 +1,1724 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../R%C3%A9visions%201%C3%A8re/2mat/">
+      
+      
+        <link rel="next" href="../3piles/">
+      
+      
+      <link rel="icon" href="../../assets/laptop-code.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>Programmation Orientée Objet - Terminale NSI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_ansi.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programmation-orientee-objet" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Terminale NSI" class="md-header__button md-logo" aria-label="Terminale NSI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Terminale NSI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Programmation Orientée Objet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Terminale NSI" class="md-nav__button md-logo" aria-label="Terminale NSI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    Terminale NSI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    La correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Défis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Défis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D%C3%A9fis/1schelling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modèle de ségrégation de Schelling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Révisions 1ère
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Révisions 1ère
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/0triche/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feuille de triche
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/1algorithmique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/2mat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tableaux à deux dimensions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T2 Structures de données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T2 Structures de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Programmation Orientée Objet
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Programmation Orientée Objet
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preambule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Préambule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-objet-un-agglomerat-de-valeurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un objet ? Un agglomérat de valeurs.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-objet-un-agglomerat-de-valeurs-et-de-fonctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un objet ? Un agglomérat de valeurs ET de fonctions.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resume-et-vocabulaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      Résumé et vocabulaire
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projet-mettre-le-paquet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini-Projet : Mettre le paquet
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3piles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les piles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les listes chaînées
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6graphes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7arbres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les arbres binaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T3 Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T3 Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T3%20Architecture/1revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Révisions sur les réseaux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T3%20Architecture/2routage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le routage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T3%20Architecture/3processus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Processus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T4 Base de données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            T4 Base de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T4%20Base%20de%20donn%C3%A9es/1sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T4%20Base%20de%20donn%C3%A9es/2rela/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T5 Langages et programmation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Langages et programmation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/1arret/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calculabilité et décidabilité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/2rec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/3api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modularité et API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T6 Algorithmique
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            T6 Algorithmique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T6%20Algorithmique/3dac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diviser pour régner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T6%20Algorithmique/dp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation Dynamique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preambule" class="md-nav__link">
+    <span class="md-ellipsis">
+      Préambule
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-objet-un-agglomerat-de-valeurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un objet ? Un agglomérat de valeurs.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-objet-un-agglomerat-de-valeurs-et-de-fonctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un objet ? Un agglomérat de valeurs ET de fonctions.
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resume-et-vocabulaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      Résumé et vocabulaire
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projet-mettre-le-paquet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mini-Projet : Mettre le paquet
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="programmation-orientee-objet">Programmation Orientée Objet</h1>
+<div class="admonition info">
+<p class="admonition-title">Liens Capytale</p>
+<ul>
+<li>Exercices : <a href="https://capytale2.ac-paris.fr/web/c/d7ca-1776728"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6 31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0l112.3-112.3zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5 50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5l112.2-112.3c31.5-31.5 82.5-31.5 114 0 27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg></span> Notebook Capytale d7ca-1776728</a></li>
+<li>Correction : <a href="https://capytale2.ac-paris.fr/web/c/4e10-1778758"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6 31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0l112.3-112.3zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5 50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5l112.2-112.3c31.5-31.5 82.5-31.5 114 0 27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg></span> Notebook Capytale 4e10-1778758</a>  </li>
+</ul>
+</div>
+<h2 id="preambule">Préambule</h2>
+<p>La Programmation Orientée Objet (abrégée POO) est un <strong>paradigme de programmation</strong>, au même titre que la programmation impérative que nous pratiquons déjà ou la programmation fonctionnelle que nous étudierons cette année. Chaque paradigme de programmation peut être considéré comme une philosophie, un parti-pris revendiqué dans la manière d'aborder un problème à résoudre.</p>
+<p>En optant pour la POO, nous faisons le choix d'organiser et structurer notre code de manière à regrouper des données et des fonctionnalités associées au sein d'entités autonomes appelées objets. C'est un outil que tout programmeur doit maîtriser !</p>
+<h2 id="un-objet-un-agglomerat-de-valeurs">Un objet ? Un agglomérat de valeurs.</h2>
+<p>Il arrive parfois que certaines valeurs, prises séparément, n'aient pas de signification en elles-mêmes. Par exemple, un livre peut être représenté par plusieurs valeurs : un titre, un auteur, une année de parution etc. Un exemple de livre concret :</p>
+<div class="highlight"><pre><span></span><code><span class="n">titre</span>  <span class="o">=</span> <span class="s2">"L'Étranger"</span>
+<span class="n">auteur</span> <span class="o">=</span> <span class="s2">"Albert Camus"</span>
+<span class="n">année</span>  <span class="o">=</span> <span class="mi">1942</span>
+</code></pre></div>
+<p>Or le lien logique entre ces trois valeurs n'apparaît pas dans ce programme, elles sont effectivement indépendantes. La POO propose alors un moyen de regrouper, de lier logiquement, plusieurs valeurs au sein d'une même entité, un <strong>objet</strong>. Ces valeurs sont alors appelées <strong>attributs</strong> de l'objet. Ainsi dans l'exemple précédent, on regroupera ces trois valeurs (titre, auteur et année) dans un même objet. On aboutira à :</p>
+<div class="highlight"><pre><span></span><code><span class="n">un_livre</span> <span class="o">=</span> <span class="n">Livre</span><span class="p">(</span><span class="s2">"L'Étranger"</span><span class="p">,</span> <span class="s2">"Albert Camus"</span><span class="p">,</span> <span class="mi">1942</span><span class="p">)</span> <span class="c1">#(1)!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">un_livre</span><span class="o">.</span><span class="n">titre</span><span class="p">)</span>  <span class="c1"># affiche "L'Étranger"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">un_livre</span><span class="o">.</span><span class="n">année</span><span class="p">)</span>  <span class="c1"># affiche "1942"</span>
+</code></pre></div>
+<ol>
+<li><code class="highlight"><span class="n">Livre</span><span class="p">(</span><span class="s2">"L'Étranger"</span><span class="p">,</span> <span class="s2">"Albert Camus"</span><span class="p">,</span> <span class="mi">1942</span><span class="p">)</span></code> crée un nouveau livre.</li>
+</ol>
+<p>Au lieu de manipuler trois valeurs séparément, on manipulera alors qu'un seul objet. Puisqu'un objet regroupe plusieurs valeurs, un objet peut être vu comme une <em>grosse</em> variable, une variable qui contient d'autres variables !</p>
+<div class="admonition tip">
+<p class="admonition-title">Accès à un attribut</p>
+<p>Pour accéder à un attribut d'un objet, on écrira <code>objet.attribut</code>.</p>
+</div>
+<p>Une <strong>classe</strong> est le modèle général à partir duquel les objets sont créés, elle définit notamment les attributs de l'objet. De la même manière qu'une valeur est une instance d'un type, <strong>un objet est une instance d'une classe</strong>. Une classe définit donc un <strong>type personnalisé</strong>, il arrive souvent que les notions de classe et de type soient confondues.</p>
+<figure>
+<p><img alt="" src="../ressources/type.png#only-light" width="400">
+<img alt="" src="../ressources/type-dark.png#only-dark" width="400"></p>
+</figure>
+<p>En Python, la définition de la classe <code>Livre</code> s'écrira comme :</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Livre</span><span class="p">:</span>  <span class="c1">#(1)!</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">un_titre</span><span class="p">,</span> <span class="n">un_auteur</span><span class="p">,</span> <span class="n">une_année</span><span class="p">):</span> <span class="c1">#(2)!</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">titre</span>  <span class="o">=</span> <span class="n">un_titre</span> <span class="c1">#(3)!</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">auteur</span> <span class="o">=</span> <span class="n">un_auteur</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">année</span>  <span class="o">=</span> <span class="n">une_année</span>
+</code></pre></div>
+<ol>
+<li>
+<p>Début de la définition de la classe. Il est usuel de commencer le nom d'une classe par une <strong>majuscule</strong> pour le différencier d'un nom de variable.</p>
+</li>
+<li>
+<p><code>__init__</code> une fonction spéciale, c'est le <strong>constructeur</strong>. Pour qu'un utilisateur crée un nouveau livre, il aura besoin de fournir son titre, son auteur et son année de parution. C'est précisément la fonction qui est appelée lorsque l'expression <code class="highlight"><span class="n">Livre</span><span class="p">(</span><span class="s2">"L'Étranger"</span><span class="p">,</span> <span class="s2">"Albert Camus"</span><span class="p">,</span> <span class="mi">1942</span><span class="p">)</span></code> est évaluée.</p>
+</li>
+<li>
+<p><code class="highlight"><span class="bp">self</span><span class="o">.</span><span class="n">titre</span></code> est le premier attribut de l'objet en cours de création. On y affecte alors le titre passé en argument au constructeur, à savoir <code>un_titre</code>. Le mot-clé <code class="highlight"><span class="bp">self</span></code> est une référence à l'instance courante de la classe (l'objet en cours de création ou de manipulation), ce qui vous permet d'accéder aux attributs de cette instance.</p>
+</li>
+</ol>
+<p>À la suite de cette définition, on pourra alors <strong>instancier</strong> plusieurs objets (ici des livres) de la classe <code>Livre</code> :</p>
+<div class="highlight"><pre><span></span><code><span class="n">livre1</span> <span class="o">=</span> <span class="n">Livre</span><span class="p">(</span><span class="s2">"L'Étranger"</span><span class="p">,</span> <span class="s2">"Albert Camus"</span><span class="p">,</span> <span class="mi">1942</span><span class="p">)</span>
+<span class="n">livre2</span> <span class="o">=</span> <span class="n">Livre</span><span class="p">(</span><span class="s2">"Martin Eden"</span><span class="p">,</span> <span class="s2">"Jack London"</span><span class="p">,</span> <span class="mi">1909</span><span class="p">)</span>
+<span class="n">livre3</span> <span class="o">=</span> <span class="n">Livre</span><span class="p">(</span><span class="s2">"Les Frères Karamazov"</span><span class="p">,</span> <span class="s2">"Fiodor Dostoïevski"</span><span class="p">,</span> <span class="mi">1880</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Visualisation du déroulement avec PythonTutor</p>
+<p>Il est possible de visualiser l’exécution du programme pas-à-pas grâce à <a href="https://pythontutor.com/render.html#code=class%20Livre%3A%20%20%0A%20%20%20%20def%20__init__%28self,%20un_titre,%20un_auteur,%20une_ann%C3%A9e%29%3A%20%0A%20%20%20%20%20%20%20%20self.titre%20%20%3D%20un_titre%20%0A%20%20%20%20%20%20%20%20self.auteur%20%3D%20un_auteur%0A%20%20%20%20%20%20%20%20self.ann%C3%A9e%20%20%3D%20une_ann%C3%A9e%0A%0Alivre1%20%3D%20Livre%28%22L'%C3%89tranger%22,%20%22Albert%20Camus%22,%201942%29%0Alivre2%20%3D%20Livre%28%22Martin%20Eden%22,%20%22Jack%20London%22,%201909%29%0Alivre3%20%3D%20Livre%28%22Les%20Fr%C3%A8res%20Karamazov%22,%20%22Fiodor%20Dosto%C3%AFevski%22,%201880%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6 31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0l112.3-112.3zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5 50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5l112.2-112.3c31.5-31.5 82.5-31.5 114 0 27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg></span> PythonTutor</a>. Il est indispensable en programmation de connaître exactement le déroulement des opérations !</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Code de base d'une classe</p>
+<p>Une nouvelle classe s'écrit souvent comme :</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">NomDeLaClasse</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">paramètre1</span><span class="p">,</span> <span class="n">paramètre2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attribut1</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">attribut2</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="o">...</span>
+</code></pre></div>
+<p>Côté utilisateur, un objet de cette classe sera instancié comme :</p>
+<div class="highlight"><pre><span></span><code><span class="n">mon_objet</span> <span class="o">=</span> <span class="n">NomDeLaClasse</span><span class="p">(</span><span class="n">paramètre1</span><span class="p">,</span> <span class="n">paramètre2</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mon_objet</span><span class="o">.</span><span class="n">attribut1</span><span class="p">)</span>  <span class="c1"># accès à un attribut</span>
+</code></pre></div>
+</div>
+<details class="note">
+<summary>Similarité avec un dictionnaire</summary>
+<p>Finalement, un objet est une structure de données plus ou moins similaire à un dictionnaire. En effet, il aurait été possible de représenter un livre comme :</p>
+<div class="highlight"><pre><span></span><code><span class="n">livre1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"titre"</span><span class="p">:</span> <span class="s2">"L'Étranger"</span><span class="p">,</span>
+    <span class="s2">"auteur"</span><span class="p">:</span> <span class="s2">"Albert Camus"</span><span class="p">,</span>
+    <span class="s2">"année"</span><span class="p">:</span> <span class="mi">1942</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">livre1</span><span class="p">[</span><span class="s2">"titre"</span><span class="p">])</span>  <span class="c1"># accès similaire à un attribut</span>
+</code></pre></div>
+<p>Alors pourquoi s'embêter avec la POO ? Patience, les objets offrent tout un tas de fonctionnalités spécifiques que l'on étudiera par la suite.</p>
+</details>
+<details class="question">
+<summary><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"></path></svg></span>   Exercice 1 - Un rat de bibliothèque</summary>
+<ol>
+<li>
+<p>Instancier un nouveau livre <code>mon_livre_favori</code> et afficher ensuite son titre.</p>
+</li>
+<li>
+<p>Le professeur documentaliste souhaite que vos livres prennent en compte la langue originale d'écriture. Modifiez donc la classe <code>Livre</code> pour inclure un nouvel attribut appelé <code>langue_originale</code>. Ensuite, mettez à jour l'instantiation des quatre livres précédemment créés pour inclure également l'information sur la langue originale.</p>
+</li>
+<li>
+<p>Écrire une fonction <code>plus_ancien(livre1, livre2)</code> qui renvoie le titre du livre ayant été publié en premier parmi les deux livres passés en argument.</p>
+<div class="highlight"><span class="filename">Exemple d'utilisation de la classe</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">livre1</span> <span class="o">=</span> <span class="n">Livre</span><span class="p">(</span><span class="s2">"L'Étranger"</span><span class="p">,</span> <span class="s2">"Albert Camus"</span><span class="p">,</span> <span class="mi">1942</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">livre2</span> <span class="o">=</span> <span class="n">Livre</span><span class="p">(</span><span class="s2">"Martin Eden"</span><span class="p">,</span> <span class="s2">"Jack London"</span><span class="p">,</span> <span class="mi">1909</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">livre3</span> <span class="o">=</span> <span class="n">Livre</span><span class="p">(</span><span class="s2">"Les Frères Karamazov"</span><span class="p">,</span> <span class="s2">"Fiodor Dostoïevski"</span><span class="p">,</span> <span class="mi">1880</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">plus_ancien</span><span class="p">(</span><span class="n">livre1</span><span class="p">,</span> <span class="n">livre3</span><span class="p">)</span>
+<span class="s1">'Les Frères Karamazov'</span>
+</code></pre></div>
+</li>
+</ol>
+</details>
+<details class="question">
+<summary><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M224 256a128 128 0 1 0 0-256 128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3 0 498.7 13.3 512 29.7 512h388.6c16.4 0 29.7-13.3 29.7-29.7 0-98.5-79.8-178.3-178.3-178.3h-91.4z"></path></svg></span>   Exercice 2 - Classe et salle de classe</summary>
+<ol>
+<li>
+<p>Écrire une classe <code>Eleve</code> contenant les attributs <code>nom</code>, <code>classe</code> et <code>moyenne</code>.</p>
+</li>
+<li>
+<p>Instancier trois élèves de cette classe de NSI.</p>
+</li>
+<li>
+<p>Écrire une fonction <code>chouchou(eleve1, eleve2)</code> qui renvoie le nom de l'élève ayant la meilleure moyenne.</p>
+<div class="highlight"><span class="filename">Exemple d'utilisation de la classe</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">riri</span> <span class="o">=</span> <span class="n">Eleve</span><span class="p">(</span><span class="s2">"Hubert"</span><span class="p">,</span> <span class="s2">"TG2"</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">fifi</span> <span class="o">=</span> <span class="n">Eleve</span><span class="p">(</span><span class="s2">"Louie"</span><span class="p">,</span> <span class="s2">"TG6"</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">loulou</span> <span class="o">=</span> <span class="n">Eleve</span><span class="p">(</span><span class="s2">"Hugues"</span><span class="p">,</span> <span class="s2">"TG1"</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">chouchou</span><span class="p">(</span><span class="n">riri</span><span class="p">,</span> <span class="n">fifi</span><span class="p">)</span>
+<span class="s1">'Louie'</span>
+</code></pre></div>
+</li>
+</ol>
+</details>
+<details class="question">
+<summary><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M282.6 78.1c8-27.3 33-46.1 61.4-46.1h200c17.7 0 32 14.3 32 32s-14.3 32-32 32H344L238.7 457c-3.6 12.3-14.1 21.2-26.8 22.8s-25.1-4.6-31.5-15.6L77.6 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h45.6c22.8 0 43.8 12.1 55.3 31.8l65.2 111.8 84.5-289.5zm110.8 155.3c12.5-12.5 32.8-12.5 45.3 0l41.3 41.3 41.4-41.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3L525.3 320l41.4 41.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L480 365.3l-41.4 41.4c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l41.4-41.4-41.4-41.4c-12.5-12.5-12.5-32.8 0-45.3z"></path></svg></span>   Exercice 3 - Un constructeur plus original</summary>
+<p>Écrire une classe <code>TriangleRectangle</code> qui contiendra les attributs <code>cote1</code>, <code>cote2</code> et <code>hypotenuse</code>. Cependant, le constructeur ne prendra en paramètres que <code>cote1</code> et <code>cote2</code>, l'attribut <code>hypotenuse</code> se calculera automatiquement.</p>
+<div class="highlight"><span class="filename">Exemple d'utilisation de la classe</span><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">mon_triangle</span> <span class="o">=</span> <span class="n">TriangleRectangle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mon_triangle</span><span class="o">.</span><span class="n">cote1</span>
+<span class="mi">3</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mon_triangle</span><span class="o">.</span><span class="n">cote2</span>
+<span class="mi">4</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">mon_triangle</span><span class="o">.</span><span class="n">hypotenuse</span>
+<span class="mf">5.0</span>
+</code></pre></div>
+</details>
+<details class="note">
+<summary>On vous a menti !</summary>
+<p>En Python, tout est objet. Il n'existe pas de types primitifs comme dans la plupart des langages ! Même un simple entier est en fait un objet :</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="o">&lt;</span><span class="k">class</span> <span class="err">'</span><span class="nc">int</span><span class="s1">'&gt;</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">n</span><span class="o">.</span><span class="n">real</span>
+<span class="mi">42</span>
+</code></pre></div>
+<p>Les chaînes de caractères, les flottants, les listes, les dictionnaires etc. sont tous des objets !</p>
+</details>
+<h2 id="un-objet-un-agglomerat-de-valeurs-et-de-fonctions">Un objet ? Un agglomérat de valeurs ET de fonctions.</h2>
+<p>Un objet regroupe des valeurs (attributs) et aussi des fonctions qui agissent sur ces valeurs, et ces fonctions sont appelées <strong>méthodes</strong>. Par exemple, définissons une classe <code>Rectangle</code> rudimentaire :</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">longueur</span><span class="p">,</span> <span class="n">largeur</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">longueur</span> <span class="o">=</span> <span class="n">longueur</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">largeur</span>  <span class="o">=</span> <span class="n">largeur</span>
+</code></pre></div>
+<p>On pourrait alors souhaiter calculer l'aire des rectangles de cette classe, une manière de faire serait de définir une simple fonction :</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">calculer_aire</span><span class="p">(</span><span class="n">rectangle</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">rectangle</span><span class="o">.</span><span class="n">longueur</span> <span class="o">*</span> <span class="n">rectangle</span><span class="o">.</span><span class="n">largeur</span>
+</code></pre></div>
+<p>Une fois la classe <code>Rectangle</code> et la fonction <code>calculer_aire</code> définies, l'utilisateur peut les utiliser comme :</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Création d'objets de la classe Rectangle</span>
+<span class="n">rect1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">rect2</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Appel de la fonction calculer_aire</span>
+<span class="n">aire1</span> <span class="o">=</span> <span class="n">calculer_aire</span><span class="p">(</span><span class="n">rect1</span><span class="p">)</span>
+<span class="n">aire2</span> <span class="o">=</span> <span class="n">calculer_aire</span><span class="p">(</span><span class="n">rect2</span><span class="p">)</span>
+
+<span class="c1"># Affichage des aires calculées</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">aire1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">aire2</span><span class="p">)</span>
+</code></pre></div>
+<p>Une nouvelle manière de faire est de déplacer la fonction <code>calculer_aire</code> <strong>à l'intérieur de la classe</strong>, cette fonction devient alors une <strong>méthode</strong> :</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Rectangle</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">longueur</span><span class="p">,</span> <span class="n">largeur</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">longueur</span> <span class="o">=</span> <span class="n">longueur</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">largeur</span>  <span class="o">=</span> <span class="n">largeur</span>
+
+<span class="hll">    <span class="k">def</span> <span class="nf">calculer_aire</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span class="hll">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">longueur</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">largeur</span>
+</span>
+
+<span class="c1"># Création d'objets de la classe Rectangle</span>
+<span class="n">rect1</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">rect2</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Appel de la méthode calculer_aire</span>
+<span class="hll"><span class="n">aire1</span> <span class="o">=</span> <span class="n">rect1</span><span class="o">.</span><span class="n">calculer_aire</span><span class="p">()</span>
+</span><span class="hll"><span class="n">aire2</span> <span class="o">=</span> <span class="n">rect2</span><span class="o">.</span><span class="n">calculer_aire</span><span class="p">()</span>
+</span>
+<span class="c1"># Affichage des aires calculées</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">aire1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">aire2</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Appel d'une méthode</p>
+<p>Pour appeler une méthode sur un objet, on écrira <code>objet.méthode(arg1, arg2, ...)</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Plus de précision sur <code>self</code></p>
+<ul>
+<li>
+<p>Lorsque <code class="highlight"><span class="n">calculer_aire</span><span class="p">(</span><span class="n">rect1</span><span class="p">)</span></code> est évalué, le paramètre <code>rectangle</code> de la fonction <code>calculer_aire(rectangle)</code> reçoit une référence à l'objet <code>rect1</code>.</p>
+</li>
+<li>
+<p>Exactement de la même manière, lorsque <code class="highlight"><span class="n">rect1</span><span class="o">.</span><span class="n">calculer_aire</span><span class="p">()</span></code> est évalué, le paramètre <code class="highlight"><span class="bp">self</span></code> de la méthode <code class="highlight"><span class="n">calculer_aire</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code> reçoit une référence à l'objet <code class="highlight"><span class="n">rect1</span></code>.</p>
+</li>
+</ul>
+<p>En d'autres termes, <code class="highlight"><span class="bp">self</span></code> est une référence à l'objet sur lequel la méthode est appelée.</p>
+</div>
+<details class="note">
+<summary>Juste une autre façon d'appeler une fonction ?</summary>
+<p>Finalement, quelle différence entre <code>rect1.calculer_aire()</code> et <code>calculer_aire(rect1)</code> ? La différence réside dans la façon dont le calcul de l'aire est organisé :</p>
+<ul>
+<li>
+<p>En Python, <code>calculer_aire(rectangle)</code> est une fonction indépendante et générale qui prend un objet de n'importe quel type en tant que paramètre.</p>
+</li>
+<li>
+<p><code>rect1.calculer_aire()</code> est appelé en tant que méthode de l'objet <code>rect1</code>. Cela signifie que la méthode <code>calculer_aire</code> est définie <em>spécifiquement</em> pour les objets de la classe <code>Rectangle</code>. Une nouvelle classe <code>Cercle</code> pourrait alors définir une méthode <code>calculer_aire</code> spécifique.</p>
+</li>
+</ul>
+</details>
+<p>Le <strong>constructeur</strong> <code class="highlight"><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span></code> est donc une méthode spéciale qui permet d'instancier un nouvel objet et d'<strong>initialiser</strong> ses attributs.</p>
+<h2 id="exercices">Exercices</h2>
+<details class="question">
+<summary><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M315.4 15.5C309.7 5.9 299.2 0 288 0s-21.7 5.9-27.4 15.5l-96 160c-5.9 9.9-6.1 22.2-.4 32.2s16.3 16.2 27.8 16.2h192c11.5 0 22.2-6.2 27.8-16.2s5.5-22.3-.4-32.2l-96-160zM288 312v144c0 22.1 17.9 40 40 40h144c22.1 0 40-17.9 40-40V312c0-22.1-17.9-40-40-40H328c-22.1 0-40 17.9-40 40zM128 512a128 128 0 1 0 0-256 128 128 0 1 0 0 256z"></path></svg></span>   Exercice 4 - Ça ne manque pas d'aire !</summary>
+<ol>
+<li>
+<p>Créer une fonction <code>calculer_périmètre(rectangle)</code> externe qui renvoie le périmètre du rectangle donné en argument.</p>
+</li>
+<li>
+<p>Transformer cette fonction en une méthode de la classe <code>Rectangle</code>.</p>
+</li>
+<li>
+<p>Au sein du même script où est définit la classe <code>Rectangle</code>, définir une nouvelle classe <code>Cercle</code>. On souhaite une fonction ou une méthode qui permet de calculer aussi l'aire pour les instances de <code>Cercle</code>.</p>
+</li>
+</ol>
+</details>
+<details class="question">
+<summary><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M135.2 117.4 109.1 192h293.8l-26.1-74.6c-4.5-12.8-16.6-21.4-30.2-21.4H165.4c-13.6 0-25.7 8.6-30.2 21.4zm-95.6 79.4L74.8 96.3C88.3 57.8 124.6 32 165.4 32h181.2c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2v192c0 17.7-14.3 32-32 32h-32c-17.7 0-32-14.3-32-32v-48H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0-64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"></path></svg></span>   Exercice 5 - Vroum Vroum</summary>
+<ol>
+<li>
+<p>Écrire une classe <code>Voiture</code> qui contiendra les attributs <code>kilometrage</code>, <code>consommation</code> (nombre de litres de carburant consommé par kilomètre) dont les valeurs seront données comme arguments à l'initialisation et un dernier attribut <code>carburant</code> valant 0 par défaut.</p>
+</li>
+<li>
+<p>Doter la classe d'une méthode <code>affiche</code> qui affiche le kilométrage et le carburant disponible.</p>
+</li>
+<li>
+<p>Doter la classe d'une méthode <code>remplir</code> qui prend en argument un entier correspondant au volume de carburant à ajouter au réservoir.</p>
+</li>
+<li>
+<p>Doter la classe d'une méthode <code>avance</code> qui prend en argument un entier correspondant au nombre de kilomètres parcourus et qui actualise les valeurs des attributs <code>kilometrage</code> et <code>consommation</code>.</p>
+</li>
+</ol>
+<div class="highlight"><span class="filename">Exemple d'utilisation de la classe</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">vega_myssil</span> <span class="o">=</span> <span class="n">Voiture</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vega_myssil</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span>
+<span class="go">La voiture a parcouru 0 kilomètres et il y a 0 litres d'essence dans le réservoir.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vega_myssil</span><span class="o">.</span><span class="n">remplir</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vega_myssil</span><span class="o">.</span><span class="n">avance</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vega_myssil</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span>
+<span class="go">La voiture a parcouru 200 kilomètres et il y a 9.0 litres d'essence dans le réservoir.</span>
+</code></pre></div>
+</details>
+<details class="question">
+<summary><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 0a256 256 0 1 1 0 512 256 256 0 1 1 0-512zm-24 120v136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"></path></svg></span>   Exercice 6 - Tic Tac</summary>
+<ol>
+<li>
+<p>Écrire une classe <code>Horloge</code> qui contiendra les attributs <code>heures</code>, <code>minutes</code> et <code>secondes</code>.</p>
+</li>
+<li>
+<p>Doter la classe d'une méthode <code class="highlight"><span class="n">affiche</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></code> qui affiche le temps de l'instance <code class="highlight"><span class="bp">self</span></code>.</p>
+</li>
+<li>
+<p>Doter la classe d'une méthode <code class="highlight"><span class="n">avance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span></code> qui avance le temps de <code>s</code> secondes de l'instance <code class="highlight"><span class="bp">self</span></code>.</p>
+</li>
+</ol>
+<div class="highlight"><span class="filename">Exemple d'utilisation de la classe</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">Horloge</span><span class="p">(</span><span class="mi">17</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">38</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span><span class="o">.</span><span class="n">heures</span>
+<span class="go">17</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span><span class="o">.</span><span class="n">minutes</span>
+<span class="go">25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span><span class="o">.</span><span class="n">secondes</span>
+<span class="go">38</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span>
+<span class="go">Il est 17 heures, 25 minutes et 38 secondes.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span><span class="o">.</span><span class="n">avance</span><span class="p">(</span><span class="mi">27</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span><span class="o">.</span><span class="n">affiche</span><span class="p">()</span>
+<span class="go">Il est 17 heures, 26 minutes et 5 secondes.</span>
+</code></pre></div>
+</details>
+<details class="question">
+<summary><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M192 64C86 64 0 150 0 256s86 192 192 192h256c106 0 192-86 192-192S554 64 448 64H192zm304 104a40 40 0 1 1 0 80 40 40 0 1 1 0-80zM392 304a40 40 0 1 1 80 0 40 40 0 1 1-80 0zM168 200c0-13.3 10.7-24 24-24s24 10.7 24 24v32h32c13.3 0 24 10.7 24 24s-10.7 24-24 24h-32v32c0 13.3-10.7 24-24 24s-24-10.7-24-24v-32h-32c-13.3 0-24-10.7-24-24s10.7-24 24-24h32v-32z"></path></svg></span>   Exercice 7 - Un début de jeu vidéo</summary>
+<p>Écrire une classe <code>Player</code> qui :</p>
+<ul>
+<li>ne prendra aucun argument lors de l'instanciation.</li>
+<li>affectera à chaque objet créé un attribut <code>energie</code> valant 3 par défaut. </li>
+<li>affectera à chaque objet créé un attribut <code>alive</code> valant <code>True</code> par défaut.</li>
+<li>fournira à chaque objet une méthode <code>blessure()</code> qui diminue l'attribut <code>energie</code> de 1.</li>
+<li>fournira à chaque objet une méthode <code>soin()</code> qui augmente l'attribut <code>energie</code> de 1.</li>
+<li>si l'attribut <code>energie</code> passe à 0, l'attribut <code>alive</code> doit passer à <code>False</code> et ne doit plus pouvoir évoluer.</li>
+</ul>
+<div class="highlight"><span class="filename">Exemple d'utilisation de la classe</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">mario</span> <span class="o">=</span> <span class="n">Player</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mario</span><span class="o">.</span><span class="n">energie</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mario</span><span class="o">.</span><span class="n">soin</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mario</span><span class="o">.</span><span class="n">energie</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mario</span><span class="o">.</span><span class="n">blessure</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mario</span><span class="o">.</span><span class="n">blessure</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mario</span><span class="o">.</span><span class="n">blessure</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mario</span><span class="o">.</span><span class="n">alive</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mario</span><span class="o">.</span><span class="n">blessure</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mario</span><span class="o">.</span><span class="n">alive</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mario</span><span class="o">.</span><span class="n">soin</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mario</span><span class="o">.</span><span class="n">alive</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mario</span><span class="o">.</span><span class="n">energie</span>
+<span class="go">0</span>
+</code></pre></div>
+</details>
+<details class="question">
+<summary><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M320 96H192l-47.4-71.1c-7.1-10.7.5-24.9 13.3-24.9h196.2c12.8 0 20.4 14.2 13.3 24.9L320 96zm-128 32h128c3.8 2.5 8.1 5.3 13 8.4 56.7 36.3 179 114.5 179 279.6 0 53-43 96-96 96H96c-53 0-96-43-96-96 0-165.1 122.3-243.3 179-279.6 4.8-3.1 9.2-5.9 13-8.4zm84 88c0-11-9-20-20-20s-20 9-20 20v14c-7.6 1.7-15.2 4.4-22.2 8.5-13.9 8.3-25.9 22.8-25.8 43.9.1 20.3 12 33.1 24.7 40.7 11 6.6 24.7 10.8 35.6 14l1.7.5c12.6 3.8 21.8 6.8 28 10.7 5.1 3.2 5.8 5.4 5.9 8.2.1 5-1.8 8-5.9 10.5-5 3.1-12.9 5-21.4 4.7-11.1-.4-21.5-3.9-35.1-8.5-2.3-.8-4.7-1.6-7.2-2.4-10.5-3.5-21.8 2.2-25.3 12.6s2.2 21.8 12.6 25.3c1.9.6 4 1.3 6.1 2.1 8.3 2.9 17.9 6.2 28.2 8.4V424c0 11 9 20 20 20s20-9 20-20v-13.8c8-1.7 16-4.5 23.2-9 14.3-8.9 25.1-24.1 24.8-45-.3-20.3-11.7-33.4-24.6-41.6-11.5-7.2-25.9-11.6-37.1-15l-.7-.2c-12.8-3.9-21.9-6.7-28.3-10.5-5.2-3.1-5.3-4.9-5.3-6.7 0-3.7 1.4-6.5 6.2-9.3 5.4-3.2 13.6-5.1 21.5-5 9.6.1 20.2 2.2 31.2 5.2 10.7 2.8 21.6-3.5 24.5-14.2s-3.5-21.6-14.2-24.5c-6.5-1.7-13.7-3.4-21.1-4.7V216z"></path></svg></span>   Exercice 8 - Un stage chez la Société Générale</summary>
+<p>Définir une classe <code>CompteBancaire</code> dont le constructeur recevra en paramètres :</p>
+<ul>
+<li>un attribut <code>titulaire</code> stockant le nom du propriétaire.</li>
+<li>un attribut <code>solde</code> contenant le solde disponible sur le compte.</li>
+</ul>
+<p>Cette classe contiendra deux méthodes <code>retrait</code> et <code>depot</code> qui permettront de retirer ou de déposer de l'argent sur le compte.</p>
+<div class="highlight"><span class="filename">Exemple d'utilisation de la classe</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">mon_compte</span> <span class="o">=</span> <span class="n">CompteBancaire</span><span class="p">(</span><span class="s2">"A. Rouquan"</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mon_compte</span><span class="o">.</span><span class="n">retrait</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="go">Vous avez retiré 50 euros</span>
+<span class="go">Solde actuel du compte : 950 euros</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mon_compte</span><span class="o">.</span><span class="n">retrait</span><span class="p">(</span><span class="mi">40000</span><span class="p">)</span>
+<span class="go">Retrait impossible</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mon_compte</span><span class="o">.</span><span class="n">depot</span><span class="p">(</span><span class="mi">10000000</span><span class="p">)</span>
+<span class="go">Vous avez déposé 10000000 euros</span>
+<span class="go">Solde actuel du compte : 10000950 euros</span>
+</code></pre></div>
+</details>
+<details class="question">
+<summary><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M274.9 34.3c-28.1-28.1-73.7-28.1-101.8 0L34.3 173.1c-28.1 28.1-28.1 73.7 0 101.8l138.8 138.8c28.1 28.1 73.7 28.1 101.8 0l138.8-138.8c28.1-28.1 28.1-73.7 0-101.8L274.9 34.3zM200 224a24 24 0 1 1 48 0 24 24 0 1 1-48 0zM96 200a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm128 176a24 24 0 1 1 0-48 24 24 0 1 1 0 48zm128-176a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm-128-80a24 24 0 1 1 0-48 24 24 0 1 1 0 48zm96 328c0 35.3 28.7 64 64 64h192c35.3 0 64-28.7 64-64V256c0-35.3-28.7-64-64-64H461.7c11.6 36 3.1 77-25.4 105.5L320 413.8V448zm160-120a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"></path></svg></span>   Exercice 9 - Des dès</summary>
+<p>On souhaite construire une base d'objets servant à créer des jeux utilisant des dés.</p>
+<ul>
+<li>
+<p>Un dé possède un nombre de faces, ainsi qu'une valeur (la face supérieure du dé une fois qu'on l'a lancé, et la valeur -1 s'il n'a pas encore été lancé). On doit pouvoir lancer le dé, c'est-à-dire lui attribuer une valeur aléatoire entre 1 et son nombre de faces. </p>
+</li>
+<li>
+<p>Un jeu de dés est un ensemble de dés. On doit pouvoir lancer tous les dés (en une fois), faire la somme des valeurs des dés, et on souhaite afficher la valeur des dés ainsi que leur somme.</p>
+</li>
+</ul>
+<p>Questions :</p>
+<ol>
+<li>
+<p>Déterminer les attributs et méthodes pour deux classes représentant ce problème : une classe <code>Jeu</code> et une classe <code>Dé</code>.</p>
+</li>
+<li>
+<p>Définir les classes en Python. sachant qu'une instance de classe <code>Jeu</code> doit prendre en arguments le nombre de dés et le nombre de faces de chaque dé (identique pour tous les dés), et qu'une instance de classe <code>De</code> doit prendre en argument son nombre de faces.</p>
+</li>
+</ol>
+<div class="highlight"><span class="filename">Exemple d'utilisation</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">j</span> <span class="o">=</span> <span class="n">Jeu</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># création d'un jeu de 3 dés à 6 faces</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">j</span><span class="o">.</span><span class="n">afficher</span><span class="p">()</span>
+<span class="go">Les dés n'ont pas été lancés !</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">j</span><span class="o">.</span><span class="n">lancer</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">j</span><span class="o">.</span><span class="n">somme</span><span class="p">()</span>
+<span class="go">13</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">j</span><span class="o">.</span><span class="n">afficher</span><span class="p">()</span>
+<span class="go">Les dés valent 2, 5 et 6 et leur somme vaut 13.</span>
+</code></pre></div>
+</details>
+<h2 id="resume-et-vocabulaire">Résumé et vocabulaire</h2>
+<p><div class="video-container"><iframe src="../ressources/objet.mp4" style="width: 100%" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
+<table>
+<thead>
+<tr>
+<th>Terme</th>
+<th>Définition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Classe</strong></td>
+<td>Type personnalisé. Modèle pour créer des objets définissant leurs attributs et leurs méthodes.</td>
+</tr>
+<tr>
+<td><strong>Objet</strong></td>
+<td>Instance concrète d'une classe. Agglomère un ensemble de valeurs (attributs).</td>
+</tr>
+<tr>
+<td><strong>Attributs</strong></td>
+<td>Valeurs agglomérées dans un objet.</td>
+</tr>
+<tr>
+<td><strong>Méthodes</strong></td>
+<td>Fonctions spécifiques et internes à une classe.</td>
+</tr>
+<tr>
+<td><strong>Constructeur</strong></td>
+<td>Méthode spéciale qui permet d'instancier un nouvel objet et d'initialiser ses attributs.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mini-projet-mettre-le-paquet">Mini-Projet : Mettre le paquet</h2>
+<p>L'objectif principal de ce projets est d'apprendre à structurer son code en définissant des classes pertinentes.</p>
+<p>On souhaite créer le jeu de cartes <em>Bataille</em> (un peu plus tard). Pour y parvenir, on souhaite d'abord représenter <strong>un paquet de cartes</strong> qui soit général : il pourra s'agir du paquet des 52 cartes, mais aussi de la main d'un joueur ou d'un tas de cartes quelconque. </p>
+<div class="highlight"><span class="filename">Exemple d'utilisation</span><pre><span></span><code><span class="gp">&gt;&gt;&gt; </span><span class="n">paquet</span> <span class="o">=</span> <span class="n">créer_52_cartes</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paquet</span><span class="o">.</span><span class="n">mélanger</span><span class="p">()</span> 
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">paquet</span><span class="p">)</span>
+<span class="go">Le paquet contient les cartes :</span>
+<span class="go">3♦️ 10♥ D♥ 4♥ 9♠️ 3♥ As♠️ 8♠️ 4♦️ 6♣️ R♥ V♥ V♠️ 2♥ 5♣️ 8♣️ 9♣️ D♦️ V♣️ 6♦️ 3♠️ 7♥ D♣️ 3♣️ R♠️ 7♣️ 2♣️ 6♥ 2♠️ As♣️ 2♦️ 5♠️ V♦️ 5♦️ 7♦️ 8♥ 6♠️ 7♠️ 9♥ 8♦️ 9♦️ 10♣️ R♣️ R♦️ As♦️ As♥ 4♠️ 5♥ 4♣️ 10♦️ D♠️ 10♠️</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">carte</span> <span class="o">=</span> <span class="n">paquet</span><span class="o">.</span><span class="n">tirer_carte</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">carte</span><span class="p">)</span>
+<span class="go">10♠️</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">paquet</span><span class="p">)</span>
+<span class="go">51</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paquet</span><span class="o">.</span><span class="n">ajouter_carte_dessous</span><span class="p">(</span><span class="n">carte</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">paquet</span><span class="p">)</span>
+<span class="go">52</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paquet1</span><span class="p">,</span> <span class="n">paquet2</span> <span class="o">=</span> <span class="n">couper</span><span class="p">(</span><span class="n">paquet</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">paquet1</span><span class="p">)</span>
+<span class="go">Le paquet contient les cartes :</span>
+<span class="go">10♠️ 3♦️ 10♥ D♥ 4♥ 9♠️ 3♥ As♠️ 8♠️ 4♦️ 6♣️ R♥ V♥ V♠️ 2♥ 5♣️ 8♣️ 9♣️ D♦️ V♣️ 6♦️ 3♠️ 7♥ D♣️ 3♣️ R♠️</span>
+</code></pre></div>
+<p>Implémenter les classes (attributs, méthodes) et les fonctions pertinentes pour aboutir à ces fonctionnalités.</p>
+<!-- 
+=== "Un jeu similaire à agar.io"
+    L'objectif de ce projet est de créer une version simplifiée du jeu [agar.io](https://agar.io/) en utilisant Python et Pygame. Le joueur contrôle une cellule circulaire avec les touches directionnelles pour absorber les cellules plus petites tout en évitant les cellules plus grandes. Vous pouvez utiliser des objets pour représenter ces cellules par exemple. On se propose initialement de créer des cellules ennemies fixes de différentes tailles.
+
+    [:fontawesome-solid-link: La documentation Pygame](https://www.pygame.org/docs/)
+
+    <div class="highlight"><span class="filename">Un code minimal introductif à Pygame</span><pre><span></span><code><span class="kn">import</span> <span class="nn">pygame</span>
+
+<span class="c1"># Initialisation de Pygame</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<span class="n">fenêtre</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span><span class="p">))</span>  <span class="c1"># création d&#39;une nouvelle fenêtre</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="s2">&quot;Mon super programme&quot;</span><span class="p">)</span>  <span class="c1"># titre de la fenêtre</span>
+
+
+<span class="c1"># Boucle principale du jeu</span>
+<span class="n">continuer</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">while</span> <span class="n">continuer</span><span class="p">:</span>
+
+    <span class="c1"># Gestion des événements (touche clavier pressée, clic de souris etc.)</span>
+    <span class="k">for</span> <span class="n">événement</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">événement</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>  <span class="c1"># lorsque l&#39;utilisateur ferme la fenêtre</span>
+            <span class="n">continuer</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="c1"># Dessin (draw)</span>
+    <span class="n">fenêtre</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="s2">&quot;#21222c&quot;</span><span class="p">)</span>  <span class="c1"># efface l&#39;écran (fill = remplir)</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">fenêtre</span><span class="p">,</span> <span class="s2">&quot;#f3bc3e&quot;</span><span class="p">,</span> <span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">),</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># dessine un disque</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>  <span class="c1"># mise à jour de l&#39;affichage</span>
+
+
+<span class="c1"># Sortie</span>
+<span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</code></pre></div>
+
+=== "Combat Pokémon"
+    L'objectif de ce projet est de créer une version très simplifiée du jeu de combat au tour par tour Pokémon. 
+
+    * Un pokémon a un nom, un type, un niveau, un nombre de PV, une statistique d'attaque et de défense, et un ensemble de 4 capacités.
+
+    * Une capacité possède une puissance de base, un type et un pourcentage d'échec critique.
+
+    * La formule suivante permet de déterminer le nombre de PV perdus :
+        $$
+            \texttt{PV}_\text{perdus} = \left\lfloor \left( \left\lfloor 0.02 \times \frac{\left\lfloor \texttt{Niv} \times 0.4 +2 \right\rfloor \times \texttt{Att} \times \texttt{Pui}}{\texttt{Déf}} \right\rfloor + 2 \right) \times \texttt{CM} \right\rfloor
+        $$
+
+        * $\texttt{Niv}$ (resp. $\texttt{Att}$) est le niveau (resp. attaque) du Pokémon attaquant
+        * $\texttt{Déf}$ est la défense du Pokémon attaqué
+        * $\texttt{Pui}$ est la puissance de base de la capacité utilisée
+        * $\texttt{CM}$ est un coefficient multiplicateur qui résulte de la multiplication des paramètres suivants :
+            * $\times 1.5$ si le Pokémon est du même type que la capacité qu'il lance 
+            * $\times 1$ ou $\times 2$ ou $\times 0.5$ suivant l'efficacité du type de la capacité 
+            * Un nombre généré aléatoirement compris entre 0.85 et 1
+    * Un Pokémon adversaire est choisi aléatoirement et le joueur choisit un Pokémon parmi trois propositions. Le combat débute et se termine quand un des deux Pokémons est KO. Les combats sont au tour par tour, avec le joueur choisissant la capacité à lancer pour son Pokémon.
+
+
+<!-- ## Compléments
+
+??? note "Points clés de la POO non abordés"
+    Curieusement, les concepts les plus importants de la POO ne seront pas abordés cette année, à savoir l'**héritage**, le **polymorphisme** et l'**encapsulation**. Les concepts abordés ici sont finalement plus ou moins transposables dans n'importe quel langage au paradigme impératif comme le C. 
+ --></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

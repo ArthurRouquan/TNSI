@@ -1,0 +1,1744 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../T2%20Structures%20de%20donn%C3%A9es/7arbres/">
+      
+      
+        <link rel="next" href="../2routage/">
+      
+      
+      <link rel="icon" href="../../assets/laptop-code.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>Révisions sur les réseaux - Terminale NSI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_ansi.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#revisions-sur-les-reseaux" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Terminale NSI" class="md-header__button md-logo" aria-label="Terminale NSI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Terminale NSI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Révisions sur les réseaux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Terminale NSI" class="md-nav__button md-logo" aria-label="Terminale NSI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    Terminale NSI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    La correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Défis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Défis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D%C3%A9fis/1schelling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modèle de ségrégation de Schelling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Révisions 1ère
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Révisions 1ère
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/0triche/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feuille de triche
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/1algorithmique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/2mat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tableaux à deux dimensions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T2 Structures de données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T2 Structures de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/1poo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation Orientée Objet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/3piles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les piles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/4listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les listes chaînées
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/5files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/6graphes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/7arbres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les arbres binaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T3 Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T3 Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Révisions sur les réseaux
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Révisions sur les réseaux
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#un-reseau-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un réseau local
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Un réseau local">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#un-premier-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un premier réseau
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avant-lenvoie-de-donnees-sur-le-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avant l'envoie de données sur le réseau
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apres-lenvoie-de-donnees-sur-le-reseau-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      Après l'envoie de données sur le réseau local
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ou-est-charlie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Où est Charlie ?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sous-reseaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sous-réseaux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sous-réseaux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#une-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Une introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masque-de-sous-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Masque de sous-réseau
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adresse-ip-et-masque-de-sous-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adresse IP et masque de sous-réseau
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appartenance-a-un-meme-sous-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appartenance à un même sous-réseau
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-routeur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le routeur
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2routage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le routage
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3processus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Processus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T4 Base de données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            T4 Base de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T4%20Base%20de%20donn%C3%A9es/1sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T4%20Base%20de%20donn%C3%A9es/2rela/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T5 Langages et programmation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Langages et programmation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/1arret/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calculabilité et décidabilité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/2rec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/3api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modularité et API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T6 Algorithmique
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            T6 Algorithmique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T6%20Algorithmique/3dac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diviser pour régner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T6%20Algorithmique/dp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation Dynamique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#un-reseau-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un réseau local
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Un réseau local">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#un-premier-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un premier réseau
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avant-lenvoie-de-donnees-sur-le-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avant l'envoie de données sur le réseau
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apres-lenvoie-de-donnees-sur-le-reseau-local" class="md-nav__link">
+    <span class="md-ellipsis">
+      Après l'envoie de données sur le réseau local
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ou-est-charlie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Où est Charlie ?
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sous-reseaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sous-réseaux
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sous-réseaux">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#une-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Une introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masque-de-sous-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Masque de sous-réseau
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adresse-ip-et-masque-de-sous-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adresse IP et masque de sous-réseau
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#appartenance-a-un-meme-sous-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Appartenance à un même sous-réseau
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-routeur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le routeur
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="revisions-sur-les-reseaux">Révisions sur les réseaux</h1>
+<div class="admonition info">
+<p class="admonition-title">Filius</p>
+<p><strong>Filius</strong> est un logiciel qui permet de simuler un réseau informatique.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Document Réponse Capytale</p>
+<p>Notez vos différentes réponses sur le <a href="https://capytale2.ac-paris.fr/web/c/ad88-3511375">document réponse</a>, logique, non ?</p>
+</div>
+<h2 id="un-reseau-local">Un réseau local</h2>
+<div class="admonition success">
+<p class="admonition-title">Objectif</p>
+<p>L'objectif de cette partie est de comprendre comment le <strong>switch</strong> achemine les <strong>trames</strong> d'un nœud source vers le bon nœud de destination grâce aux adresses MAC.</p>
+</div>
+<h3 id="un-premier-reseau">Un premier réseau</h3>
+<ul>
+<li>Dans Filius, réaliser le réseau suivant. Cocher « Utiliser l'adresse IP comme nom » et « Utiliser l'adresse MAC comme nom ». Veuillez à bien définir les adresses IP des hôtes.</li>
+</ul>
+<figure>
+<p><img alt="" src="../images/premier_reseau.png" width="829"></p>
+</figure>
+<ul>
+<li>A travers ce TP, on associe aux différentes machines un utilisateur :</li>
+</ul>
+<p></p><center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Utilisateur</th>
+<th style="text-align: center;">Adresse IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Alice</td>
+<td style="text-align: center;"><code>192.168.0.1</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Bob</td>
+<td style="text-align: center;"><code>192.168.0.2</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Charlie</td>
+<td style="text-align: center;"><code>192.168.0.3</code></td>
+</tr>
+</tbody>
+</table>
+<p></p></center>
+<ul>
+<li>
+<p>Lancer la simulation.</p>
+</li>
+<li>
+<p>Définir la vitesse de la simulation à 1%.</p>
+</li>
+</ul>
+<h3 id="avant-lenvoie-de-donnees-sur-le-reseau">Avant l'envoie de données sur le réseau</h3>
+<ul>
+<li>
+<p>Cliquer le switch pour révéler sa table interne SAT avant l'envoie de données sur le réseau.</p>
+</li>
+<li>
+<p>Cliquer sur le premier hôte <code>192.168.0.1</code> (Alice). Installer le logiciel <strong>Ligne de commande</strong> sur cette machine et exécuter-le.</p>
+</li>
+</ul>
+<details class="question">
+<summary>Questions 1</summary>
+<ol>
+<li>
+<p>Que vaut la table SAT du switch initialement ?</p>
+</li>
+<li>
+<p>Que renvoie la commande <code>ipconfig</code> ?</p>
+</li>
+<li>
+<p>Que renvoie la commande <code>arp</code> ?</p>
+</li>
+</ol>
+</details>
+<h3 id="apres-lenvoie-de-donnees-sur-le-reseau-local">Après l'envoie de données sur le réseau local</h3>
+<ul>
+<li>Réaliser un <strong>ping</strong> de Alice <code>192.168.0.1</code> vers Charlie <code>192.168.0.3</code> grâce à la commande <code>ping 192.168.0.3</code>.</li>
+</ul>
+<details class="question">
+<summary>Questions 2</summary>
+<ol>
+<li>
+<p>Que vaut maintenant la table SAT du switch ? À quoi sert-elle ?</p>
+</li>
+<li>
+<p>Que renvoie maintenant la commande <code>arp</code> ? À quoi sert la table ARP ?</p>
+</li>
+<li>
+<p>Que renvoie la commande <code>arp</code> sur l'hôte de destination Charlie <code>192.168.0.3</code> ? Et Bob <code>192.168.0.2</code> ?</p>
+</li>
+</ol>
+</details>
+<h3 id="ou-est-charlie">Où est Charlie ?</h3>
+<p><strong>Avant le premier ping, les différents hôtes et le switch n'ont aucune connaissance du réseau local auquel ils sont connectés.</strong> Ainsi quand Alice envoie un message à Charlie, elle ne connaît pas encore l'adresse MAC de ce dernier. Quelle adresse MAC de destination doit-elle inscrire sur la trame qu'elle envoie sur le réseau ?</p>
+<p>Elle envoie simplement un message à <strong>tout le monde</strong> sur le réseau local pour trouver Charlie ! C'est ce que l'on appelle une <strong>diffusion générale</strong>, ou un <strong>broadcast</strong>.</p>
+<details class="info">
+<summary>Analyse de la découverte du réseau</summary>
+<ol>
+<li>
+<p><strong>Alice génère une trame :</strong> Alice fait une demande de ping, le message est « <em>Bonjour Bob, c'est Alice, ceci est un ping. Renvoie-moi un message.</em> ». Le protocole TCP encapsule ce message dans un segment, puis le protocole IP encapsule ce segment TCP dans un paquet IP. Ce paquet est enfin encapsulé dans une trame Ethernet.</p>
+</li>
+<li>
+<p>** En-tête de la trame<strong> : Sur la trame qu'elle envoie sur le réseau, Alice y inscrit l'adresse MAC de destination <code>FF:FF:FF:FF:FF:FF</code>, c'est </strong>l'adresse de diffusion générale (broadcast)**.</p>
+</li>
+<li>
+<p><strong>Réception par le switch</strong> : Le switch reçoit la trame broadcast d'Alice et la diffuse sur tous ses autres ports, à Bob et à Charlie donc. Par ailleurs, il enregistre dans sa table SAT l'adresse MAC d'Alice (l'adresse MAC source de la trame) en y associant le port où Alice est connectée.</p>
+</li>
+<li>
+<p><strong>Réception par Bob</strong> : Bob reçoit la trame broadcast depuis le switch. Il la décapsule en un paquet et regarde l'adresse IP de destination. Ce n'est pas la sienne, donc il ignore le paquet.</p>
+</li>
+<li>
+<p><strong>Réception par Charlie</strong> : Charlie reçoit la trame broadcast et la décapsule, l'adresse IP de destination indiquée sur le paquet est la sienne. Il décapsule enfin le paquet jusqu'à lire le message d'Alice « <em>Bonjour Bob, c'est Alice, ceci est un ping. Renvoie-moi un message.</em> ». Il note aussi l'adresse MAC d'Alice dans sa table ARP. </p>
+</li>
+<li>
+<p><strong>Charlie génère une trame</strong> : Charlie renvoie donc un message à Alice. Il y inscrit l'adresse IP d'Alice sur le paquet et son adresse MAC sur la trame.</p>
+</li>
+<li>
+<p><strong>Réception par le switch</strong> : La trame de Charlie passe tout d'abord par le switch. Ce dernier ajoute l'adresse MAC de Charlie dans sa table ARP. Le switch connaît l'adresse MAC d'Alice, donc il aiguille la trame sur le bon port. </p>
+</li>
+<li>
+<p><strong>Réception par Alice</strong> : Alice reçoit le message de Charlie et note son adresse MAC dans sa table ARP.</p>
+</li>
+</ol>
+</details>
+<details class="info">
+<summary>En vidéo</summary>
+<p>N'hésitez pas à faire pause à chaque étape :</p>
+<p></p><div class="video-wrap">
+<div class="video-container">
+    <iframe src="https://peertube.lyceeconnecte.fr/videos/embed/d073c76d-b2ad-4bb9-8e74-90179cf14623" frameborder="0" allowfullscreen="1"></iframe>
+</div>
+</div>
+</details>
+<!-- <iframe title="Découverte du réseau local par une machine" width="560" height="315" src="https://peertube.lyceeconnecte.fr/videos/embed/d073c76d-b2ad-4bb9-8e74-90179cf14623" frameborder="0" allowfullscreen="" sandbox="allow-same-origin allow-scripts allow-popups"></iframe> -->
+
+<details class="question">
+<summary>Questions 3</summary>
+<ol>
+<li>
+<p>Quelles sont les adresses MAC source et de destination inscrit dans l'en-tête dans la première trame envoyée par Alice ?</p>
+</li>
+<li>
+<p>Cette trame encapsule un paquet. Quelles sont les adresses IP source et de destination inscrit dans l'en-tête de ce paquet ? </p>
+</li>
+<li>
+<p>Pourquoi Bob refuse ce qu'il reçoit ?</p>
+</li>
+<li>
+<p>Pourquoi Charlie refuse ce qu'il reçoit ?</p>
+</li>
+<li>
+<p>Quelles sont les adresses MAC source et de destination inscrit dans l'en-tête dans la trame envoyée par Charlie ? Et les adresses IP source et de destination du paquet encapsulé dans la trame ?</p>
+</li>
+<li>
+<p>Est-ce que le switch décapsule les trames qu'il reçoit ? C'est-à-dire, regarde-t-il les adresses IP du paquet contenu dans la trame ? Change-t-il les adresses MAC source/destination de la trame ? </p>
+</li>
+<li>
+<p>Est-ce que les différents hôtes, Alice, Bob et Charlie décapsulent les trames qu'ils reçoivent ?</p>
+</li>
+<li>
+<p>Que se passe-t-il si Alice envoie un ping à l'adresse IP <code>192.168.0.4</code> dans la simulation (remettre la vitesse de simulation à 100%) ? Est-ce logique ?</p>
+</li>
+</ol>
+</details>
+<h2 id="sous-reseaux"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 64h128v64H256V64zM240 0c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h48v32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h96v32H80c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h160c26.5 0 48-21.5 48-48v-96c0-26.5-21.5-48-48-48h-48v-32h256v32h-48c-26.5 0-48 21.5-48 48v96c0 26.5 21.5 48 48 48h160c26.5 0 48-21.5 48-48v-96c0-26.5-21.5-48-48-48h-48v-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H352v-32h48c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48H240zM96 448v-64h128v64H96zm320-64h128v64H416v-64z"></path></svg></span> Sous-réseaux</h2>
+<div class="admonition success">
+<p class="admonition-title">Objectif</p>
+<p>L'objectif de cette partie est de comprendre comment la notion de <strong>sous-réseaux</strong> : la division d'un réseau en plusieurs sous-groupes.</p>
+</div>
+<h3 id="une-introduction">Une introduction</h3>
+<ul>
+<li>Renommer le switch en « SwitchFrance ». Créer un second réseau de trois machines d'adresses IP <code>192.168.1.1</code>, <code>192.168.1.2</code> et <code>192.168.1.3</code> avec un « SwitchUkraine ». Relier les deux switchs.</li>
+</ul>
+<p></p><center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Utilisateur</th>
+<th style="text-align: center;">Adresse IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Anastasia</td>
+<td style="text-align: center;"><code>192.168.1.1</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Boris</td>
+<td style="text-align: center;"><code>192.168.1.2</code></td>
+</tr>
+<tr>
+<td style="text-align: center;">Katia</td>
+<td style="text-align: center;"><code>192.168.1.3</code></td>
+</tr>
+</tbody>
+</table>
+<p></p></center>
+<details class="question">
+<summary>Questions 4</summary>
+<ol>
+<li>
+<p>Tester un ping de <code>192.168.0.1</code> (Alice) vers <code>192.168.1.2</code> (Boris). Que se passe-t-il?</p>
+</li>
+<li>
+<p>Renommer la machine <code>192.168.1.2</code> (Boris) en <code>192.168.0.4</code> et retenter le ping. Que se passe-t-il?</p>
+</li>
+</ol>
+</details>
+<h3 id="masque-de-sous-reseau">Masque de sous-réseau</h3>
+<p>Lorsqu'une machine A veut envoyer un message à une machine B, elle doit déterminer si cette machine :</p>
+<ul>
+<li>
+<p><strong>appartient au même sous-réseau</strong> : auquel cas le message est envoyé directement via un ou plusieurs switchs.</p>
+</li>
+<li>
+<p><strong>n'appartient pas au même sous-réseau</strong> : auquel cas le message doit d'abord transiter par un routeur (voir plus loin).</p>
+</li>
+</ul>
+<p>La notion de sous-réseau n'est pas topologique — <em>il ne suffit pas de relier physiquement les dispositifs entre eux</em> — mais obéit à des règles <strong>numériques</strong>. C'est le <strong>masque de sous-réseau</strong> (parfois simplement <em>masque</em>, ou <em>netmask</em> en anglais) qui permet de déterminer quelles adresses font partie d'un même sous-réseau.</p>
+<h3 id="adresse-ip-et-masque-de-sous-reseau">Adresse IP et masque de sous-réseau</h3>
+<p>Une adresse IP est codée sur 4 octets (32 bits) et peut être coupé en deux :</p>
+<ul>
+<li>
+<p><strong>L'adresse du réseau</strong> : les <span class="arithmatex">\(k\)</span> premiers bits</p>
+</li>
+<li>
+<p><strong>L'adresse du réseau</strong> : les <span class="arithmatex">\(32 - k\)</span> bits restants.</p>
+</li>
+</ul>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Exemple 1</label><label for="__tabbed_1_2">Exemple 2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ul>
+<li>
+<p>Par défaut, le masque de Filius est <code>255.255.255.0</code>, soit en binaire <code>11111111.11111111.11111111.00000000</code>.</p>
+</li>
+<li>
+<p>Donc <span class="arithmatex">\(k = 24\)</span>. On note souvent l'adresse IP d'Alice comme <code>192.168.0.1 /24</code></p>
+</li>
+<li>
+<p>Suivant ce masque, 256 machines peuvent donc appartenir au même sous-réseau (ce n'est pas tout à fait le cas car des adresses finissant par 0 ou par 255 sont réservées).</p>
+</li>
+<li>
+<p>Deux machines appartiennent a un même sous-réseau si elles partagent donc les 24 premiers bits, c'est à dire les 3 premiers nombres (octets). Ainsi Alice est dans le sous-réseau « <code>192.168.0</code> ».</p>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>
+<p>Soit le masque <code>255.255.248.0</code>, en binaire <code>11111111.11111111.11111000.00000000</code>.</p>
+</li>
+<li>
+<p>Donc <span class="arithmatex">\(k = 21\)</span>. L'adresse IP d'Alice se note <code>192.168.0.1 /21</code>.</p>
+</li>
+<li>
+<p>Deux machines appartiennent au même sous-réseau si elles partagent les 21 premiers bits de leur adresse IP.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<details class="question">
+<summary>Question 5</summary>
+<p>Dans l'exemple 2, combien de machines peuvent appartenir à ce même sous-réseau ?</p>
+</details>
+<h3 id="appartenance-a-un-meme-sous-reseau">Appartenance à un même sous-réseau</h3>
+<p>Pour que deux machines appartiennent à un même sous-réseau, il faut donc que leurs adresses IP respectives partagent les mêmes <span class="arithmatex">\(k\)</span> premiers bits définis par le masque.</p>
+<p>Pour cela, on extrait les <span class="arithmatex">\(k\)</span> premiers bits correspondant au sous-réseau d'une adresse IP quelconque grâce l'opération du <strong>ET logique bit à bit</strong> (<em>bitwise and</em> en anglais) que l'on note <code>&amp;</code> pour le différencier du ET logique usuel <code>&amp;&amp;</code>. On effectue le calcul <code>Adresse IP &amp; Masque</code>. Par exemple :</p>
+<div class="highlight"><pre><span></span><code>• Adresse IP :  192.168.1.2    =  11000000.10101000.00000001.00000010
+• Masque     :  255.255.248.0  =  11111111.11111111.11111000.00000000
+
+• Adresse IP &amp; Masque :
+
+    11000000.10101000.00000001.00000010  ◀  Adresse IP
+ &amp;  11111111.11111111.11111000.00000000  ◀  Masque
+ ───────────────────────────────────────────
+    11000000.10101000.00000000000000000  ◀  Sous-réseau
+</code></pre></div>
+<p>Comme vous pouvez le constater, les bits à <code>0</code> <strong>masque</strong> la partie inférieure de l'adresse IP !</p>
+<details class="question">
+<summary>Question 6</summary>
+<p>On considère trois hôtes A, B et C aux adresses IP respectives <code>192.168.129.10</code>, <code>192.168.135.200</code> et <code>192.168.145.1</code> configurées avec le masque de sous-réseau <code>255.255.248.0</code>. Remplir le tableau :</p>
+<p></p><center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Machines</th>
+<th style="text-align: left;">Adresse IP</th>
+<th style="text-align: left;">Masque</th>
+<th style="text-align: left;">Adresse IP &amp; Masque</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">A</td>
+<td style="text-align: left;"><code>192.168.129.10</code></td>
+<td style="text-align: left;"><code>255.255.248.0</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">B</td>
+<td style="text-align: left;"><code>192.168.135.200</code></td>
+<td style="text-align: left;"><code>255.255.248.0</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">C</td>
+<td style="text-align: left;"><code>192.168.145.1</code></td>
+<td style="text-align: left;"><code>255.255.248.0</code></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p></p></center>
+</details>
+<h2 id="le-routeur"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8m1-7v3h2l-3 3-3-3h2v-3m-6 0h3v2l3-3-3-3v2H5m6 0V8H9l3-3 3 3h-2v3m6 0h-3V9l-3 3 3 3v-2h3"></path></svg></span> Le routeur</h2>
+<div class="admonition success">
+<p class="admonition-title">Objectif</p>
+<p>L'objectif de cette partie est de comprendre comment le <strong>routeur</strong> interconnecte deux sous-réseaux en routant les paquets.</p>
+</div>
+<div class="admonition idea">
+<p class="admonition-title">Fichier Filius</p>
+<p>Si vous n'avez pas sauvegardé votre réseau, <a href="../images/start_routeur.fls">téléchargez ce fichier</a>.</p>
+</div>
+<p>Comment faire pour que le sous-réseau « France » communique avec le sous-réseau « Ukraine » ? Comment interconnecter les deux sous-réseaux conçus précédemment ? Grâce à un équipement de la couche 3 (couche réseau), le <strong>routeur</strong>. Ce dispositif, parfois appelé <strong>passerelle</strong>, est équipé de deux cartes réseaux (chacune ayant une adresse physique MAC et une adresse logique IP) ou plus.</p>
+<figure>
+<p><img alt="" src="../images/sousr%C3%A9seau_routeur.png" width="600"></p>
+</figure>
+<ol>
+<li>
+<p>En mode conception <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M413.5 237.5c-28.2 4.8-58.2-3.6-80-25.4L295.4 174c-15-15-23.4-35.2-23.4-56.4v-12.1L192.3 62c-5.3-2.9-8.6-8.6-8.3-14.7s3.9-11.5 9.5-14l47.2-21C259.1 4.2 279 0 299.2 0h18.1c36.7 0 72 14 98.7 39.1l44.6 42c24.2 22.8 33.2 55.7 26.6 86L503 183l8-8c9.4-9.4 24.6-9.4 33.9 0l24 24c9.4 9.4 9.4 24.6 0 33.9l-88 88c-9.4 9.4-24.6 9.4-33.9 0l-24-24c-9.4-9.4-9.4-24.6 0-33.9l8-8-17.5-17.5zM27.4 377.1l233.5-194.5c3.5 4.9 7.5 9.6 11.8 14l38.1 38.1c6 6 12.4 11.2 19.2 15.7L134.9 484.6C120.4 502 98.9 512 76.3 512 34.1 512 0 477.8 0 435.7c0-22.6 10.1-44.1 27.4-58.6z"></path></svg></span>, <strong>ajouter un routeur</strong> à deux interfaces et le relier aux deux switchs. Si vous ne l'avez pas déjà fait, supprimer le câble entre les deux switchs.</p>
+<blockquote>
+<p>Pourquoi deux interfaces ? Il faut bien une carte réseau par sous-réseau !</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Configurer le routeur</strong> :</p>
+<ul>
+<li>Son interface reliée au « SwitchFrance » doit appartenir au sous-réseau « France ». Donc on doit configurer son adresse IP sous la forme <code>192.168.0.XXX</code> (on conserve le masque par défaut <code>255.255.255.0</code>).</li>
+</ul>
+<blockquote>
+<p>Généralement, on donne une adresse finissant par <code>254</code> (<code>255</code> étant réservé pour effectuer un ping l'intégralité d'un sous-réseau).</p>
+</blockquote>
+<ul>
+<li>
+<p>Faire de même pour la deuxième interface du routeur.</p>
+</li>
+<li>
+<p>Sélectionner « Routage automatique » dans l'onglet « Général ».</p>
+</li>
+</ul>
+<p><figure markdown>
+<img alt="" src="../images/routeursettings.png" width="500">
+</figure></p>
+</li>
+<li>
+<p>En mode simulation <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80v352c0 17.4 9.4 33.4 24.5 41.9S58.2 482 73 473l288-176c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"></path></svg></span> , tester un <code>ping</code> depuis la machine <code>192.168.0.1</code> (Alice) vers <code>192.168.1.1</code> (Anastasia). Que se passe-t-il ?</p>
+<blockquote>
+<p>La carte réseau d'Alice ne sait pas où envoyer les paquets car l'adresse IP d'Anastasia ne fait pas parti de son sous-réseau. Alice ne sait pas non plus qu'il existe un routeur (passerelle) dans son sous-réseau.</p>
+</blockquote>
+</li>
+<li>
+<p>En mode configuration <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M413.5 237.5c-28.2 4.8-58.2-3.6-80-25.4L295.4 174c-15-15-23.4-35.2-23.4-56.4v-12.1L192.3 62c-5.3-2.9-8.6-8.6-8.3-14.7s3.9-11.5 9.5-14l47.2-21C259.1 4.2 279 0 299.2 0h18.1c36.7 0 72 14 98.7 39.1l44.6 42c24.2 22.8 33.2 55.7 26.6 86L503 183l8-8c9.4-9.4 24.6-9.4 33.9 0l24 24c9.4 9.4 9.4 24.6 0 33.9l-88 88c-9.4 9.4-24.6 9.4-33.9 0l-24-24c-9.4-9.4-9.4-24.6 0-33.9l8-8-17.5-17.5zM27.4 377.1l233.5-194.5c3.5 4.9 7.5 9.6 11.8 14l38.1 38.1c6 6 12.4 11.2 19.2 15.7L134.9 484.6C120.4 502 98.9 512 76.3 512 34.1 512 0 477.8 0 435.7c0-22.6 10.1-44.1 27.4-58.6z"></path></svg></span>, cliquer sur la machine d'Alice et lui <strong>renseigner la passerelle</strong> de son sous-réseau. Retenter le ping.</p>
+<blockquote>
+<p>Le ping se termine en <code>timeout</code> ? Il ne faut pas oublier qu'un <em>ping</em> renvoie un écho <em>pong</em>... </p>
+</blockquote>
+</li>
+<li>
+<p>Une fois qu'Alice et Anastasia peuvent communiquer, effectuer un <code>traceroute</code> pour afficher le nombre de sauts nécessaires.</p>
+</li>
+</ol>
+<details class="question">
+<summary>Questions 7</summary>
+<p>Exécuter l'invite de commandes de Windows : <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-r">R</kbd></span> puis <code>cmd</code> puis <span class="keys"><kbd class="key-enter">Enter</kbd></span>.</p>
+<ol>
+<li>
+<p>Grâce à la commande <code>ipconfig /all</code>, donner l'adresse IP et MAC de la carte réseau du PC.</p>
+</li>
+<li>
+<p>Donner aussi l'adresse IP de la passerelle par défaut.</p>
+</li>
+<li>
+<p>Afficher aussi la table ARP grâce à la commande <code>arp -a</code>. Quelle est l'adresse MAC de la passerelle ?</p>
+</li>
+<li>
+<p><code>traceroute</code> devient <code>tracert</code> sous Windows. L'adresse IP du serveur Web https://lycee-pons.org/ est <code>213.186.33.4</code>. Combien faut-il de sauts pour y parvenir depuis votre poste ?</p>
+</li>
+</ol>
+</details></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

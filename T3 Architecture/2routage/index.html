@@ -1,0 +1,1776 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1revision/">
+      
+      
+        <link rel="next" href="../3processus/">
+      
+      
+      <link rel="icon" href="../../assets/laptop-code.svg">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>Le routage - Terminale NSI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_pyodide.css">
+    
+      <link rel="stylesheet" href="../../assets/_markdown_exec_ansi.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#le-routage" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="Terminale NSI" class="md-header__button md-logo" aria-label="Terminale NSI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Terminale NSI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Le routage
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Terminale NSI" class="md-nav__button md-logo" aria-label="Terminale NSI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
+
+    </a>
+    Terminale NSI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    La correction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Défis
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Défis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../D%C3%A9fis/1schelling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modèle de ségrégation de Schelling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Révisions 1ère
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Révisions 1ère
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/0triche/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feuille de triche
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/1algorithmique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../R%C3%A9visions%201%C3%A8re/2mat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tableaux à deux dimensions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T2 Structures de données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            T2 Structures de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/1poo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation Orientée Objet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/3piles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les piles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/4listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les listes chaînées
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/5files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/6graphes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T2%20Structures%20de%20donn%C3%A9es/7arbres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les arbres binaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T3 Architecture
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            T3 Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1revision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Révisions sur les réseaux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Le routage
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Le routage
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rappels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rappels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-de-routage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table de routage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routage-manuel-sur-3-routeurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routage manuel sur 3 routeurs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-premier-protocole-automatique-de-routage-rip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un premier protocole automatique de routage : RIP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Un premier protocole automatique de routage : RIP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activite-debranchee" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activité débranchée
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-dapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple d'application
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemple d'application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialisation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points-importants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points importants
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-deuxieme-protocole-automatique-de-routage-ospf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un deuxième protocole automatique de routage : OSPF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Un deuxième protocole automatique de routage : OSPF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-principe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le principe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lalgorithme-de-dijkstra" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'algorithme de Dijkstra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-protocole-ospf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le protocole OSPF
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3processus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Processus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T4 Base de données
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            T4 Base de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T4%20Base%20de%20donn%C3%A9es/1sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T4%20Base%20de%20donn%C3%A9es/2rela/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T5 Langages et programmation
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            T5 Langages et programmation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/1arret/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Calculabilité et décidabilité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/2rec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Récursivité
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T5%20Langages%20et%20programmation/3api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modularité et API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    T6 Algorithmique
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            T6 Algorithmique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T6%20Algorithmique/3dac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Diviser pour régner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../T6%20Algorithmique/dp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programmation Dynamique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rappels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rappels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-de-routage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table de routage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#routage-manuel-sur-3-routeurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Routage manuel sur 3 routeurs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-premier-protocole-automatique-de-routage-rip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un premier protocole automatique de routage : RIP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Un premier protocole automatique de routage : RIP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#activite-debranchee" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activité débranchée
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-dapplication" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple d'application
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemple d'application">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialisation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etape-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étape 3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points-importants" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points importants
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-deuxieme-protocole-automatique-de-routage-ospf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un deuxième protocole automatique de routage : OSPF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Un deuxième protocole automatique de routage : OSPF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-principe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le principe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lalgorithme-de-dijkstra" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'algorithme de Dijkstra
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-protocole-ospf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le protocole OSPF
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="le-routage">Le routage</h1>
+<div class="admonition info">
+<p class="admonition-title">Document Réponse Capytale</p>
+<p>Capytale buggue ces derniers jours, le document réponse arrive promis 🙏 Pendant ce temps, utiliser un document texte (Google Doc, Notepad etc.).</p>
+</div>
+<h2 id="rappels">Rappels</h2>
+<p>Les machines (ou hôtes) d'un même sous-réseau communiquent grâce à un <strong>switch</strong> (ou commutateur en français). Pour que deux machines de sous-réseaux différents communiquent, les sous-réseaux sont interconnectés par des <strong>routeurs</strong>. Un routeur est une machine qui redirige les paquets au sein d'un réseau pour qu'ils arrivent à destination.</p>
+<p></p><center>
+<img alt="" src="../images/r%C3%A91.png" width="75%">
+</center>
+<p>Le but de ce chapitre est de comprendre comment les routeurs parviennent à rediriger les paquets.</p>
+<h2 id="table-de-routage">Table de routage</h2>
+<p>Pour se concentrer sur le routage des paquets, un tel réseau peut aussi se représenter comme :</p>
+<p></p><center>
+<img alt="" src="../images/r%C3%A92.png" width="75%">
+</center>
+<p>Lorsqu'un routeur reçoit un paquet, il utilise sa <strong>table de routage</strong> pour déterminer le prochain nœud vers lequel le paquet doit être dirigé. Par exemple, la table de routage du routeur <strong>R1</strong> peut être écrite comme :</p>
+<p></p><center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Réseau destination</th>
+<th style="text-align: center;">Prochain routeur</th>
+<th style="text-align: center;">Interface Ethernet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">eth0</td>
+</tr>
+<tr>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">R3</td>
+<td style="text-align: center;">eth1</td>
+</tr>
+<tr>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">R2</td>
+<td style="text-align: center;">eth2</td>
+</tr>
+</tbody>
+</table>
+<p></p></center>
+<details class="question">
+<summary>Question 1</summary>
+<ol>
+<li>
+<p>Que fait le routeur <strong>R1</strong> lorsqu'il reçoit le paquet suivant ?</p>
+<ul>
+<li>IP Source : <code>192.168.1.120</code></li>
+<li>IP Destination : <code>192.168.3.88</code>    </li>
+</ul>
+</li>
+<li>
+<p>Proposer deux tables de routage possibles pour le routeur <strong>R3</strong>.</p>
+</li>
+<li>Le routeur <strong>R3</strong> tombe en panne, comment est modifiée la table de routage du routeur <strong>R1</strong> ?</li>
+</ol>
+</details>
+<h2 id="routage-manuel-sur-3-routeurs">Routage manuel sur 3 routeurs</h2>
+<p>Sur le logiciel Filius, configurer le réseau suivant :</p>
+<p><img src="../images/RoutageManuel3R.png" style="width: 100%; border-radius: 5px; display: block; margin: 0 auto;"></p>
+<div class="admonition note">
+<p class="admonition-title">Un peu de vocabulaire</p>
+<ul>
+<li>
+<p>Les routeurs R1 et R3 sont appelés <strong>routeurs d'accès</strong>, car ils sont en bordure de réseaux.</p>
+</li>
+<li>
+<p>Le routeur R2 est un <strong>routeur interne</strong>.</p>
+</li>
+</ul>
+</div>
+<p>La table de routage initiale du routeur R1 :</p>
+<p><img src="../images/TR_R1.png" style="width: 75%; border-radius: 5px; display: block; margin: 0 auto;"></p>
+<details class="question">
+<summary>Question 2</summary>
+<p>Chercher sur le web la signification de loopback (ou rebouclage), comment ce principe s'applique-t-il ici ?</p>
+</details>
+<p>Indiquons au routeur R1 la direction que devra prendre un paquet à destination du réseau <code>192.168.1.0/24</code> (tout à droite) :</p>
+<ul>
+<li>Ajouter une nouvelle ligne à la table de routage de R1</li>
+<li>
+<p>Compléter alors les champs :</p>
+<ul>
+<li>IP de destination : <code>192.168.1.0/24</code></li>
+<li>Masque : <code>255.255.255.0</code></li>
+<li>Passerelle suivante : <code>1.0.0.2</code></li>
+<li>Via l'interface : <code>1.0.0.1</code></li>
+</ul>
+</li>
+<li>
+<p>Tester à partir de P1 et la commande ping <code>192.168.1.0</code>.</p>
+</li>
+</ul>
+<details class="question">
+<summary>Questions 3</summary>
+<ol>
+<li>
+<p>Le paquet est-il transmis à P2 ? Vous pouvez ouvrir les fenêtres d'échanges de données nécessaires.</p>
+</li>
+<li>
+<p>Compléter et donner les tables de routages de R2 et et R3 pour que la commande ping fonctionne correctement.</p>
+</li>
+</ol>
+</details>
+<p>Nous allons modifier la topologie du réseau, en ajoutant un routeur R4 et un portable P3 de la manière suivante (le portable P1 et le routeur R1 sont inchangés) :</p>
+<p><img src="../images/RoutageManuel4R.png" style="width: 75%; border-radius: 5px; display: block; margin: 0 auto;"></p>
+<div class="admonition tip">
+<p class="admonition-title">Astuce</p>
+<p>Si vous êtes à cours de prises réseaux sur certains routeurs, vous pouvez en ajouter de nouvelles via le bouton "Gérer les connexions".</p>
+</div>
+<details class="question">
+<summary>Question 4</summary>
+<p>Modifiez les tables de routages nécessaires pour que les 3 portables puissent communiquer. Télécharger le fichier du réseau et le remettre au professeur !</p>
+</details>
+<p>Même pour des réseaux de petites taille, il est difficile de maintenir des tables de routages manuellement. Dès que le nombre de routeurs internes augmente, arrivent d'autres questions :</p>
+<p><img src="../images/RoutageManuel6R.png" style="width: 75%; border-radius: 5px; display: block; margin: 0 auto;"></p>
+<p>Dans une telle situation, quelle route est à privilégier pour relier le client au serveur ?</p>
+<ul>
+<li><code>R1 ► R2 ► R3 ► R5 ► R6</code></li>
+<li><code>R1 ► R2 ► R4 ► R5 ► R6</code></li>
+<li><code>R1 ► R2 ► R5 ► R6</code></li>
+</ul>
+<p>Nous aurions tendance à penser naturellement qu'il faut prendre la troisième solution, pour laquelle un saut de moins est nécessaire, mais est-ce judicieux si les liaisons <code>R2 ► R3 ► R5</code> sont fibrées alors que la liaison <code>R2 ► R5</code> est une liaison cuivre classique ?</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sT9-IcbjqzI?si=q5-oMpYrmx4zRUjx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 75%; border-radius: 5px; display: block; margin: 0 auto;"></iframe>
+
+<h2 id="un-premier-protocole-automatique-de-routage-rip">Un premier protocole automatique de routage : RIP</h2>
+<p>Le <strong>protocole RIP</strong> (<em>Routing Information Protocol</em>) rentre dans la catégorie des protocoles à <strong>vecteur de distance</strong>. Un vecteur de distance est un couple <code>(adresse, distance)</code>, et ce protocole cherche à minimiser le nombre de routeurs à traverser pour atteindre la destination (on cherche ici à minimiser le nombre de sauts).</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kzablGaqUXM?si=Acg1gEH9whGcVMAb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 75%; border-radius: 5px; display: block; margin: 0 auto;"></iframe>
+
+<p>Chaque routeur reçoit en permanence (toutes les 30 secondes environ) de ses voisins les informations de routage qu'ils possèdent. Il va alors exploiter ces informations pour construire lui-même sa table de routage en ne retenant que les informations les plus pertinentes : une simple comparaison permet de ne garder que le chemin le plus avantageux. Il transmettra à son tour ces informations à ses voisins et ainsi de suite. C'est l'algorithme de Bellman-Ford (un algorithme du plus court chemin comme Dijkstra mais basé sur de la programmation dynamique), un des algorithmes de recherche de plus court chemin dans un graphe, que nous étudierons plus en détail dans le chapitre sur les graphes.</p>
+<p>A l'issue de quelques étapes, les tables de tous les routeurs se stabilisent et le routage est pleinement opérationnel. Le temps nécessaire à la stabilisation des tables est proportionnel au diamètre du réseau, c'est-à-dire à la plus grande route possible entre deux routeurs - c'est ce qui est appelé vitesse de convergence.</p>
+<div class="admonition note">
+<p class="admonition-title">Algorithme RIP</p>
+<p>Lorsqu'un routeur reçoit une nouvelle route de la part d'un voisin, 4 cas sont envisageables :</p>
+<ul>
+<li>Il découvre une route vers un nouveau réseau <strong>inconnu</strong> : il l'ajoute à sa table.</li>
+<li>Il découvre une route vers un réseau <strong>connu</strong>, plus <strong>courte</strong> que celle qu'il possède dans sa table : il la remplace par la nouvelle.</li>
+<li>Il découvre une route vers un réseau <strong>connu</strong>, plus <strong>longue</strong> que celle qu'il possède dans sa table : il l'ignore.</li>
+<li>Il reçoit une route vers un réseau connu en provenance d'un routeur déjà existant dans sa table : il met à jour sa table car la topologie du réseau a été modifiée.</li>
+</ul>
+<p>Quand il met à jour les distances reçues, il <strong>ajoute 1</strong> à celles-ci, pour prendre en compte le hop (saut) supplémentaire effectué.</p>
+</div>
+<h3 id="activite-debranchee">Activité débranchée</h3>
+<p>Chacun d'entre-vous se verra remettre un numéro de routeur, ainsi que la connaissance de ses voisins proches. Nous allons simuler l'exécution de l'algorithme de Bellman-Ford, en construisant petit-à-petit vos tables de routages.</p>
+<h3 id="exemple-dapplication">Exemple d'application</h3>
+<p>On reconsidère le réseau suivant :</p>
+<p><img src="../images/RoutageManuel6R.png" style="width: 100%; border-radius: 5px; display: block; margin: 0 auto;"></p>
+<ul>
+<li>
+<p>Le poste client et le poste serveur se voient attribués respectivement la première adresse de la plage de leur réseau ( soit respectivement <code>192.168.0.1</code> et <code>172.16.180.1</code>)</p>
+</li>
+<li>
+<p>Les routeurs d'accès R1 et R6 ont sur leur interface réseau les dernières adresses IP de la plage de leur réseau (soit respectivement <code>192.168.0.254</code> et <code>172.16.180.254</code>)</p>
+</li>
+<li>
+<p>Entre deux interfaces internes, le routeur de plus bas indice possède la première adresse et le routeur de dernier indice la seconde adresse : par exemple entre R2 et R5, les interfaces sont connectées par le réseau <code>10.1.4.0/30</code>, donc l'interface de R2 est <code>10.1.4.1</code> et celle de R5 est <code>10.1.4.2</code></p>
+</li>
+</ul>
+<h4 id="initialisation">Initialisation</h4>
+<p>Au démarrage, les routeurs ne connaissent que leur voisin immédiat. Les tables de routages pour les routeurs R1, R2 et R3 sont donc :</p>
+<p><img src="../images/RIP1.png" style="width: 300px; display: block; margin: 0 auto;"></p>
+<h4 id="etape-1">Étape 1</h4>
+<ul>
+<li>
+<p>R1 reçoit les routes de R2. Sa table de routage devient :
+    <img src="../images/RIP2.png" style="width: 300px; display: block; margin: 0 auto;"></p>
+</li>
+<li>
+<p>R3 reçoit les routes de R2 et celles de R5. On peut constater qu'on peut atteindre de deux manières différentes les routeurs R2 et R5, car R3 ne réalise pas que les interfaces 10.1.2.1 et 10.1.4.1 sont toutes les deux deux interfaces de R2. De même il sait rejoindre de deux manières ayant la même métrique le réseau 10.1.4.0/30, donc il garde la première arrivée (ici on suppose d'il a reçu les informations de R2 avant celles de R5)
+    <img src="../images/RIP3.png" style="width: 300px; display: block; margin: 0 auto;"></p>
+</li>
+<li>
+<p>R2 reçoit les routes de R1, puis de R3, mais aussi de R4 et de R5 :
+    <img src="../images/RIP4.png" style="width: 300px; display: block; margin: 0 auto;"></p>
+</li>
+</ul>
+<h4 id="etape-2">Étape 2</h4>
+<ul>
+<li>
+<p>R1 reçoit les nouvelles routes de R2 :
+    <img src="../images/RIP5.png" style="width: 300px; display: block; margin: 0 auto;"></p>
+</li>
+<li>
+<p>R2 reçoit les nouvelles routes de R3 et de R5 :
+    <img src="../images/RIP6.png" style="width: 300px; display: block; margin: 0 auto;"></p>
+</li>
+<li>
+<p>R2 reçoit les nouvelles routes de R1 (qui ne lui apportent rien), de R3, de R4, de R5 :
+    <img src="../images/RIP7.png" style="width: 300px; display: block; margin: 0 auto;"></p>
+</li>
+</ul>
+<h4 id="etape-3">Étape 3</h4>
+<p>Cette dernière table de R2 sera transmise à l'étape suivante à R1, et une liaison sera alors possible dès l'étape 3 entre le Client et le Serveur. Dans ce mini-réseau, les tables sont alors toutes stabilisées dès la troisième étape, et le réseau est totalement opérationnel.</p>
+<details class="question">
+<summary>Question 5</summary>
+<p>Donner les tables de routage des routeurs R3 et R6 du réseau suivant une fois le protocole RIP stabilisé :</p>
+<p></p><center>
+<img alt="" src="../images/r%C3%A92.png" width="50%">
+</center>
+<p>Pour simplifier les tables, on les écrira comme celle de routeur R1 :</p>
+<p></p><center>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Réseau destination</th>
+<th style="text-align: center;">Prochain routeur</th>
+<th style="text-align: center;">Distance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">R3</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">R2</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+<p></p></center>
+</details>
+<h3 id="points-importants">Points importants</h3>
+<p>Un des inconvénients du protocole RIP est qu'il génère un traffic important entre voisins, chacun envoyant sa table de routage à tous ses voisins à intervalles réguliers.</p>
+<p>En conséquences, le protocole RIP est configuré pour se limiter à un nombre maximum de 15 sauts, ce qui le réserve à des réseaux de petites taille.</p>
+<p>L'avantage de cette limite est qu'elle permet d'éviter les éventuelles boucles de routage (comme <code>R2 ► R3 ► R5 ► R2</code>), en utilisant le TTL qui ne doit pas dépasser 15, afin qu'un paquet qui tourne en rond soit détruit.</p>
+<p>De même, si un routeur ne reçoit pas d'informations d'un de ses voisins directs au bout d'un ordre de temps de trois minutes, il considère que ce routeur est hors-service et lui affecte une distance de 16, qui est alors considérée dans ce protocole comme une distance infinie. En conséquence tous ses voisins recalculeront leurs vecteurs en évitant le lien qui est tombé.</p>
+<h2 id="un-deuxieme-protocole-automatique-de-routage-ospf">Un deuxième protocole automatique de routage : OSPF</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-utHPKREZV8" title="L3 : Le routage à état de liens 📶" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width: 75%; border-radius: 5px; display: block; margin: 0 auto;"></iframe>
+
+<h3 id="le-principe">Le principe</h3>
+<p>Les algorithmes de routage à état de lien utilisent une méthode appelée <strong>plus court chemin d'abord</strong> (SPF, Shortest Path First). Pour trouver le plus court chemin, les routeurs doivent connaître la <strong>carte complète du réseau</strong>. Pour cela, chaque routeur envoie régulièrement l’état de ses liens à tous les autres routeurs du réseau. Les informations échangées concernent uniquement la qualité des connexions entre deux routeurs, souvent mesurée par leur vitesse en <strong>bits par seconde</strong> (bps), comme Mbps ou Gbps.</p>
+<p>Si un routeur reçoit une nouvelle information différente de celle qu’il a déjà, il met à jour ses données. Après un certain temps, tous les routeurs ont échangé ces informations et possèdent tous la <strong>même</strong> table de routage. Ainsi, chaque routeur peut trouver le chemin le plus court pour envoyer des données à travers le réseau.</p>
+<div style="display: flex; justify-content: space-around; align-items: center;">
+    <img src="../images/OSPF1.png" alt="OSPF Image" style="max-width: 50%; height: auto;">
+    <table>
+        <thead>
+            <tr>
+                <th align="center">Routeur</th>
+                <th align="center">Lien</th>
+                <th align="center">Vitesse (Mbps)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">A</td>
+                <td align="center">AB</td>
+                <td align="center">1000</td>
+            </tr>
+            <tr>
+                <td align="center">A</td>
+                <td align="center">AE</td>
+                <td align="center">10</td>
+            </tr>
+            <tr>
+                <td align="center">B</td>
+                <td align="center">BA</td>
+                <td align="center">1000</td>
+            </tr>
+            <tr>
+                <td align="center">B</td>
+                <td align="center">BC</td>
+                <td align="center">1000</td>
+            </tr>
+            <tr>
+                <td align="center">C</td>
+                <td align="center">CB</td>
+                <td align="center">1000</td>
+            </tr>
+            <tr>
+                <td align="center">C</td>
+                <td align="center">CD</td>
+                <td align="center">100</td>
+            </tr>
+            <tr>
+                <td align="center">D</td>
+                <td align="center">DC</td>
+                <td align="center">100</td>
+            </tr>
+            <tr>
+                <td align="center">D</td>
+                <td align="center">DE</td>
+                <td align="center">10</td>
+            </tr>
+            <tr>
+                <td align="center">E</td>
+                <td align="center">ED</td>
+                <td align="center">10</td>
+            </tr>
+            <tr>
+                <td align="center">E</td>
+                <td align="center">EA</td>
+                <td align="center">10</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>Si on considère l'exemple précédent, le routeur A sélectionnera le routeur B comme voie pour atteindre C et D. Il choisira par contre de rejoindre E par sa liaison directe avec lui, certes lente mais qui reste plus rapide que de passer par <code>B ► C ► D ► E</code>.</p>
+<h3 id="lalgorithme-de-dijkstra">L'algorithme de Dijkstra</h3>
+<p>Pour déterminer le plus court chemin, on utilise <strong>l'algorithme de Dijkstra</strong> !</p>
+<div class="admonition question">
+<p class="admonition-title">Question 6</p>
+<p>Un journaliste britannique d’une revue consacrée à l’automobile doit tester les autoroutes françaises. Pour remplir sa mission, il décide de louer une voiture et de circuler entre six grandes villes françaises : Bordeaux (B), Lyon (L),Marseille (M), Nantes (N), Paris (P) et Toulouse(T).</p>
+<p><img src="../images/dijkstra3.png" style="width: 50%; border-radius: 5px; display: block; margin: 0 auto;"></p>
+<p>Le journaliste se trouve à Nantes et désire se rendre le plus rapidement possible à Marseille. Déterminer un trajet qui minimise son temps de parcours.</p>
+<p>Dérouler l'algorithme de Dijkstra sur cet exemple.</p>
+</div>
+<h3 id="le-protocole-ospf">Le protocole OSPF</h3>
+<p>Le protocole OSPF pour Open Shortest Path First est un protocole à état de lien, normalisé en 1990, décrit dans la RFC 2328. Il est pris en charge par le protocole IP. C’est le protocole de routage interne dominant et il est supporté par la plupart des routeurs. Ce protocole attribue un coût à chaque lien entre les routeurs du réseau. Le O du sigle OSPF signifie que sa spécification doit appartenir au domaine public et que toute solution propriétaire est exclue.</p>
+<p>L’algorithme pour trouver la meilleure route est celui de Dijkstra qui fournit dans ce cas le coût cumulé le plus faible des liens de la route vers une destination d’une zone donnée. Le coût utilisé pour chaque lien doit être inversement proportionnel à la bande passante du lien en question. Ce coût peut être défini manuellement ou calculé avec la formule suivante :</p>
+<div class="arithmatex">\[
+\text{Coût} = \frac{C}{ \text{Bande passante} }
+\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Une constate à bien définir</p>
+<p>La constante <span class="arithmatex">\(C\)</span> est arbitraire. Elle peut valoir 10^8, 10^9 ou 10^10 selon la plus grande bande passante du réseau. Par contre, il faut veiller à utiliser la même valeur pour tous les routeurs d'un même réseau. Ce choix est effectué afin que tous les coûts calculés soient des entiers positifs.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exemple</p>
+<p>En reprenant les bandes passantes données dans le premier exemple, et avec une constante de <span class="arithmatex">\(10^9\)</span> :</p>
+<ul>
+<li>1 Gbps a un coût de <span class="arithmatex">\(\frac{10^9}{10^9} = 1\)</span></li>
+<li>100 Mbps a un coût de <span class="arithmatex">\(\frac{10^9}{100 \times 10^6} = 10\)</span></li>
+<li>10 Mbps a un coût de <span class="arithmatex">\(\frac{10^9}{10 \times 10^6} = 100\)</span></li>
+</ul>
+<p>Ainsi une route à 10 Mbps est considérée comme 100 fois plus « lente » qu'une liaison à 1 Gbps.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question 7</p>
+<p>Faire l'annale de bac suivante : <a href="../images/exo.pdf">Sujet 2021 - Exercice 5</a></p>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="../../assets/_markdown_exec_pyodide.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
